@@ -1,4 +1,3 @@
 # media-analytics-docs
-Documentation for Adobe Media Analytics
+Adobe Media Analytics Documentation 
 
-Who doesn't love Markdown?
