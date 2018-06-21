@@ -1,6 +1,7 @@
 # Table of contents
 
-* [Introduction](README.md)
-* [Measuring Video in Adobe Analytics](measuring-video-in-adobe-analytics.md)
-* [VA Implementation Paths](va-implementation-paths.md)
+* [Measuring Media in Adobe Analytics](measuring-media.md)
+* [Before You Begin](before-you-begin/README.md)
+    * [Prerequisites](before-you-begin/prerequisites.md)
+    * [Implementation Paths](before-you-begin/implementation-paths.md)
 

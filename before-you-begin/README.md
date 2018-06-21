@@ -1,11 +1,13 @@
 # Before You Begin
 
-Before you begin your VHL implementation, you have some early decisions to
-make, regarding which implementation makes the most sense for your situation.
-The information in the following _Getting Started_ sections will help you
-determine how best to proceed:
+Before you begin your Media Analytics implementation, there are prequisites to cover, and some early decisions for you to make about which implementation path makes the most sense for your organization. The following sections will help you determine how best to proceed:
 
-  * With one of the Video Analytics paths using the latest VHL SDKs (the standard, recommended implementation)
-  * With Milestone (the older Adobe tracking implementation)
-  * Without using VHL SDKs, implementing video tracking with Data Insertion APIs.
+* Prerequisites
+    * Experience Cloud Enablement (required)
+    * Analytics Enablement (required)
+    * Audience Manager (optional)
+* Implementation Paths: 
+    * Client-side Integration (VA SDK and/or Media Collection API)
+    * Adobe Launch Integration
+    * Adobe Primetime Integration
 
