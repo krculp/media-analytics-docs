@@ -76,3 +76,4 @@ The table below provides a list of the devices that are currently supported thro
 | **Xbox 1** |  | **✔** |
 | **Sony PS3/PS4** |  | **✔** |
 
+
