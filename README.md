@@ -1,4 +1,4 @@
-# media-analytics-docs
+# Introduction
 
 ## Adobe Media Analytics Documentation
 
