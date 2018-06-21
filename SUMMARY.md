@@ -4,4 +4,4 @@
 * [Before You Begin](before-you-begin/README.md)
     * [Prerequisites](before-you-begin/prerequisites.md)
     * [Implementation Paths](before-you-begin/implementation-paths.md)
-* [Temporary Holding Link](add_link.md)
+* [Temporary Holding Link](tmp/add_link.md)

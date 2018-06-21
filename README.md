@@ -2,7 +2,7 @@
 
 **Last Updated: June 21, 2018**
 
-**Important:** The documentation provided here is specific to clients utilizing version 1.5 or higher of Adobe's video SDK for heartbeat measurement, and does not include instructions around the legacy Milestone video implementation. We encourage all customers to move towards adopting the latest video SDK to capitalize on the improvements and expanded measurement, you can view the [benefits of transitioning to the SDK](add_link.md) below. While we will continue to support the milestone method of tracking videos, there will not be any planned updates, fixes or feature improvements. Please reach out to your Adobe Account Manager if you have any further questions.
+**Important:** The documentation provided here is specific to clients utilizing version 1.5 or higher of Adobe's video SDK for heartbeat measurement, and does not include instructions around the legacy Milestone video implementation. We encourage all customers to move towards adopting the latest video SDK to capitalize on the improvements and expanded measurement, you can view the [benefits of transitioning to the SDK](tmp/add_link.md) below. While we will continue to support the milestone method of tracking videos, there will not be any planned updates, fixes or feature improvements. Please reach out to your Adobe Account Manager if you have any further questions.
 
 ## Overview
 
@@ -18,7 +18,7 @@ Some of the many benefits that Adobe's video solution provides include:
 
 * **Timely analysis** - Make real-time, actionable decisions utilizing key video performance metrics \(e.g., duration\) across multiple channels. Video events are measured in **10-second** intervals to capture all activity as it occurs. 
 * **Drive engagement** - Fully engage users through fewer buffering events and by understanding where and when ads should display within video content to provide a smooth, less intrusive viewing experience that brings users back and delivers repeat visits. 
-* **Holistic picture** - Combine multiple data points across all of your content distributors to get a full view of all your video activity, and measure engagement and views across all possible channels through [Federated Analytics](add_link.md). 
+* **Holistic picture** - Combine multiple data points across all of your content distributors to get a full view of all your video activity, and measure engagement and views across all possible channels through [Federated Analytics](tmp/add_link.md). 
 * **Increased granularity** - Evaluate viewing behavior at the most granular level, including individual visitor time of day, concurrent viewers by minute, and average duration the content was viewed. 
 * **Precise measurement** - Measure across the multiple devices used for video consumption, including OTT, smartphone, tablet, desktop, and more, to monitor user engagement patterns and habits. 
 * **Segmentation** - Apply classifications to your players, devices, genres, chapters, and shows to see how each has an impact on your overall views and customer engagement with content, audio, ads, and combined. 
@@ -58,7 +58,7 @@ Adobe Analytics for Video has evolved with the industry to provide strong data c
 
 The SDK’s are routinely updated when new versions of devices are released, and you can use these SDKs to integrate with most of the largest video players today, including Brightcove and Ooyala.
 
-The table below provides a list of the devices that are currently supported through our SDK implementation or Analytics API. To download the most recent version of the SDK, visit [Download the Video Heartbeat Library SDKs ](add_link.md). If there is a device that is not listed which you are seeking measurement against, please contact customer care or your solution consultant for the status of that device.
+The table below provides a list of the devices that are currently supported through our SDK implementation or Analytics API. To download the most recent version of the SDK, visit [Download the Video Heartbeat Library SDKs ](tmp/add_link.md). If there is a device that is not listed which you are seeking measurement against, please contact customer care or your solution consultant for the status of that device.
 
 |  | **Adobe Video SDK** | **Video Analytics Collection API** |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
