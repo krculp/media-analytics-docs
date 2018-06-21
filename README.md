@@ -2,7 +2,7 @@
 
 **Last Updated: June 21, 2018**
 
-**Important:** The documentation provided here is specific to clients utilizing version 1.5 or higher of Adobe's video SDK for heartbeat measurement, and does not include instructions around the legacy Milestone video implementation. We encourage all customers to move towards adopting the latest video SDK to capitalize on the improvements and expanded measurement, you can view the [benefits of transitioning to the SDK](add_link.md) below. While we will continue to support the milestone method of tracking videos, there will not be any planned updates, fixes or feature improvements. Please reach out to your Adobe Account Manager if you have any further questions.
+**Important:** The documentation provided here is specific to clients utilizing version 1.5 or higher of Adobe's video SDK for heartbeat measurement, and does not include instructions around the legacy Milestone video implementation. We encourage all customers to move towards adopting the latest video SDK to capitalize on the improvements and expanded measurement, you can view the [benefits of transitioning to the SDK](add_link) below. While we will continue to support the milestone method of tracking videos, there will not be any planned updates, fixes or feature improvements. Please reach out to your Adobe Account Manager if you have any further questions.
 
 ## Overview
 
