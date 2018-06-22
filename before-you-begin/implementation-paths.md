@@ -4,7 +4,7 @@
 
 This path requires only your player and one of these two Media Analytics solutions: the Video Analytics SDK or the Media Collection API. There are SDKs for several platforms, including iOS, Android, JS (browser), Chromecast, Roku, with more to come. The Media Collection API supports players with no VA SDK, instead making RESTful API calls directly to a VA back-end server. These solutions can be used across any video player, including customer and/or OVP players such as Brightcove, Ooyala, thePlatform, and so on. 
 
-If Video Analytics is your intended path, see the [VA SDK Implementation](tmp/add_link.md) and the [Media Collection API](tmp/add_link.md). To use Video Analytics, customers must also use Adobe Analytics. 
+If Video Analytics is your intended path, see the [VA SDK Implementation]() and the [Media Collection API](). To use Video Analytics, customers must also use Adobe Analytics. 
 
 ## Adobe Launch
 
