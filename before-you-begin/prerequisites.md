@@ -6,7 +6,7 @@ As part of the requirements to implement the Video Heartbeat SDK, you need to im
 
 The Marketing Cloud ID service enables the common identification framework for the Marketing Cloud Core Services, solutions, and customer attributes and audiences in the People core service. It works by assigning a unique, persistent ID to a site visitor. When your organization implements the ID service, this ID lets you identify the same site visitor and their data in different Marketing Cloud solutions.
 
-![](.gitbook/assets/mc_id_service_graphic.png)
+![](../.gitbook/assets/mc_id_service_graphic.png)
 
 The ID service can also replace the different solution-specific IDs (for example, Analytics AID). Through the [Customer IDs and Authentication States](https://marketing.adobe.com/resources/help/en_US/mcvid/mcvid-authenticated-state.html) functionality, the ID service lets you pass in your own customer IDs to the Marketing Cloud. Keep in mind, however, that the ID service only works with the solutions to which you have already subscribed. If you are not signed up for access to other products, the ID service does not provide the access.
 
