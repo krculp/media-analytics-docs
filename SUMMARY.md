@@ -4,4 +4,14 @@
 * [Before You Begin](before-you-begin/README.md)
     * [Prerequisites](before-you-begin/prerequisites.md)
     * [Implementation Paths](before-you-begin/implementation-paths.md)
-* [Temporary Holding Link](tmp/add_link.md)
+* [Implementation]implementation/README.md
+    * [VA SDKs]implementation/sdks/README.md
+    * [Media Collection API]implementation/collection-api/README.md
+    * [Launch]implementation/launch/README.md
+* [Validation]validation/README.md
+* [Metrics and Metadata]metrics/README.md
+* [Reporting & Analysis]reporting/README.md
+* [Nielsen Partnership]nielsen/README.md
+* [Federated Analytics]federated.md
+* [Documentation Updates]documentation-updates.md
+* [Contact & Legal Information]contact-and-legal.md
