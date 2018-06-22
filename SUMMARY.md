@@ -8,6 +8,7 @@
     * [VA SDKs](implementation/sdks/README.md)
     * [Media Collection API](implementation/collection-api/README.md)
     * [Launch](implementation/launch/README.md)
+    * [Media Analytics Cookbook](cookbook/README.md)
 * [Validation](validation/README.md)
 * [Metrics and Metadata](metrics/README.md)
 * [Reporting & Analysis](reporting/README.md)
