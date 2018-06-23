@@ -1,4 +1,4 @@
-# Table of contents
+# Table of Contents
 
 * [Measuring Media in Adobe Analytics](README.md)
 * [Before You Begin](before-you-begin/README.md)
@@ -9,8 +9,8 @@
   * [Media Collection API](implementation/collection-api/README.md)
   * [Launch](implementation/launch/README.md)
   * [Media Analytics Cookbook](implementation/cookbook/README.md)
-* [Validation](validation/README.md)
 * [Metrics and Metadata](metrics/README.md)
+* [Validation](validation/README.md)
 * [Reporting & Analysis](reporting/README.md)
 * [Nielsen Partnership](nielsen/README.md)
 * [Federated Analytics](federated.md)
