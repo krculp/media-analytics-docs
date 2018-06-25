@@ -1,1 +1,0 @@
-# Video Analytics Launch Documentation
