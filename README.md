@@ -90,47 +90,47 @@ Some of the many benefits of the Heartbeats method include:
     <thead class="thead">	
         <tr> 
             <th> </th>
-            <th>Video Analytics- Milestone</strong> </th>
-            <th>Video Analytics- Heartbeats</strong> </th>
+            <th><strong>Video Analytics- Milestone</strong> </th>
+            <th><strong>Video Analytics- Heartbeats</strong> </th>
         </tr>
     </thead>
     <tbody class="tbody"> 
         <tr> 
-            <td>Video Events</strong> </td>
+            <td><strong>Video Events</strong> </td>
             <td>High-level Standard Events </td>
             <td>Detailed and Custom Events every 10s for main content, every 1s for ads</td>
         </tr>
         <tr> 
-            <td>Metrics and Dimensions</strong> </td>
+            <td><strong>Metrics and Dimensions</strong> </td>
             <td>Variances among Vendors, Non-Standardized Metrics and
         Dimensions </td>
             <td>Clear, Standardized Metrics, Dimensions, and Benchmarks
         across Vendors </td>
         </tr>
         <tr> 
-            <td>Integrations w/ Adobe Products</strong> </td>
+            <td><strong>Integrations w/ Adobe Products</strong> </td>
             <td>Individual Sessions w/ some Mappings and Integrations </td>
             <td>Stitched Experience Cloud ID linked to full Adobe Experience Cloud for easier
         cross-analysis </td>
         </tr>
         <tr> 
-            <td>Pricing</strong> </td>
+            <td><strong>Pricing</strong> </td>
             <td>Tracked and billed against each server call </td>
             <td>Transparent tracking by video stream (single) </td>
         </tr>
         <tr> 
-            <td>Implementation and Support</strong> </td>
+            <td><strong>Implementation and Support</strong> </td>
             <td>Longer integrations with limited support on legacy versions
         &amp; no upgrades </td>
             <td>Streamlined configuration with ongoing updates and improvements </td>
         </tr>
         <tr> 
-            <td>Partner Sharing</strong> </td>
+            <td><strong>Partner Sharing</strong> </td>
             <td>N/A </td>
             <td>Federated Analytics and Certified Metrics </td>
         </tr>
         <tr> 
-            <td>Advanced Tracking</strong> </td>
+            <td><strong>Advanced Tracking</strong> </td>
             <td>N/A </td>
             <td>Error Recovery Tracking and Concurrent Viewers </td>
         </tr>
