@@ -164,7 +164,7 @@ Library SDKs](c_vhl_download-sdks.html). If there is a device that is not
 listed which you are seeking measurement against, please contact customer care
 or your solution consultant for the status of that device.
 
-#### Table 2.
+#### Table 2. VA SDK versus Media Collection API
 
 <table>
     <thead>
@@ -175,8 +175,6 @@ or your solution consultant for the status of that device.
         </tr>
     </thead>
     <tbody>
-        <tr>
-        </tr>
         <tr>
             <td  align="left" valign="top" ><strong >JavaScript Browser</strong> </td>
             <td  align="center" valign="top" ><strong >✔</strong> </td>
