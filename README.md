@@ -2,7 +2,7 @@
 
 **Last Updated: June 21, 2018**
 
-**Important:** The documentation provided here is specific to clients utilizing version 1.5 or higher of Adobe's video SDK for heartbeat measurement, and does not include instructions around the legacy Milestone video implementation. We encourage all customers to move towards adopting the latest video SDK to capitalize on the improvements and expanded measurement, you can view the [benefits of transitioning to the SDK]() below. While we will continue to support the milestone method of tracking videos, there will not be any planned updates, fixes or feature improvements. Please reach out to your Adobe Account Manager if you have any further questions.
+**Important:** The documentation provided here is specific to clients utilizing version 1.5 or higher of Adobe's video SDK for heartbeat measurement, and does not include instructions around the legacy Milestone video implementation. We encourage all customers to move towards adopting the latest video SDK to capitalize on the improvements and expanded measurement, you can view the <a href="#bennies>Heartbeat versus Milestone Benefits</a> below. While we will continue to support the milestone method of tracking videos, there will not be any planned updates, fixes or feature improvements. Please reach out to your Adobe Account Manager if you have any further questions.
 
 ## Overview
 
@@ -11,6 +11,7 @@ Adobe Analytics for Video is an add-on to the base Analytics offering that provi
 Adobe Analytics for Video enables clients to track the full customer journey across their site, which includes video consumption, and these measures are easily integrated into Analytics reporting and other Experience Cloud products. Video measurement allows you to slice and dice your data into multiple dimensions and segments, capturing all of the metadata you need to do a full detailed analysis, and to attribute success criteria to fully viewed videos, average time spent and completed ads.
 
 The video solution not only measures vital video delivery metrics related to QoS, such as dropped frames, time spent buffering, and average bitrate, but it can also be combined with your website or app data to visualize the flow of the customer and their interests to better be able to make recommendations and personalize their experiences through the Adobe Experience Cloud.
+
 
 ## Benefits
 
@@ -23,7 +24,7 @@ Some of the many benefits that Adobe's video solution provides include:
 * **Precise measurement** - Measure across the multiple devices used for video consumption, including OTT, smartphone, tablet, desktop, and more, to monitor user engagement patterns and habits. 
 * **Segmentation** - Apply classifications to your players, devices, genres, chapters, and shows to see how each has an impact on your overall views and customer engagement with content, audio, ads, and combined. 
 
-## Heartbeat versus Milestone Benefits
+<h2 id="bennies">Heartbeat versus Milestone Benefits</h2>
 
 Adobe Analytics for Video is able to be measured through two means: the legacy Milestone method and the current Heartbeats method. The Heartbeats method is the preferred method of measurement and we encourage all clients to move to this version if they haven’t already, to take advantage of the benefits described below.
 
