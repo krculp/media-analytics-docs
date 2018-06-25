@@ -160,7 +160,7 @@ backend.
 The table below provides a list of the devices that are currently supported
 through our SDK implementation and Media Collection API implementation. To
 download the most recent version of the SDK, visit [Download Video Heartbeat
-Library SDKs](c_vhl_download-sdks.html). If there is a device that is not
+Library SDKs](download-sdks.md). If there is a device that is not
 listed which you are seeking measurement against, please contact customer care
 or your solution consultant for the status of that device.
 
