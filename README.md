@@ -78,7 +78,7 @@ The table below provides a list of the devices that are currently supported thro
 ### Table 2. VA SDK versus Media Collection API
 
 |  | **Video Analytics SDK** | **Media Collection API** |
-| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| --- | :---: | :---: | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | **JavaScript Browser** | **✔** | ✔ |
 | **iOS Devices** | **✔** | ✔ |
 | **Android Devices** | **✔** |  |
