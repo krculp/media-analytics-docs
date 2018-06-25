@@ -87,52 +87,52 @@ Some of the many benefits of the Heartbeats method include:
 #### Table 1. Comparison Chart
 
 <table>
-    <thead class="thead" align="left">	
+    <thead class="thead">	
         <tr> 
-            <th  valign="top" > </th>
-            <th  valign="top" >Video Analytics- Milestone</strong> </th>
-            <th  valign="top" >Video Analytics- Heartbeats</strong> </th>
+            <th> </th>
+            <th>Video Analytics- Milestone</strong> </th>
+            <th>Video Analytics- Heartbeats</strong> </th>
         </tr>
     </thead>
     <tbody class="tbody"> 
         <tr> 
-            <td  valign="top" >Video Events</strong> </td>
-            <td  valign="top" >High-level Standard Events </td>
-            <td  valign="top" >Detailed and Custom Events every 10s for main content, every 1s for ads</td>
+            <td>Video Events</strong> </td>
+            <td>High-level Standard Events </td>
+            <td>Detailed and Custom Events every 10s for main content, every 1s for ads</td>
         </tr>
         <tr> 
-            <td  valign="top" >Metrics and Dimensions</strong> </td>
-            <td  valign="top" >Variances among Vendors, Non-Standardized Metrics and
+            <td>Metrics and Dimensions</strong> </td>
+            <td>Variances among Vendors, Non-Standardized Metrics and
         Dimensions </td>
-            <td  valign="top" >Clear, Standardized Metrics, Dimensions, and Benchmarks
+            <td>Clear, Standardized Metrics, Dimensions, and Benchmarks
         across Vendors </td>
         </tr>
         <tr> 
-            <td  valign="top" >Integrations w/ Adobe Products</strong> </td>
-            <td  valign="top" >Individual Sessions w/ some Mappings and Integrations </td>
-            <td  valign="top" >Stitched Experience Cloud ID linked to full Adobe Experience Cloud for easier
+            <td>Integrations w/ Adobe Products</strong> </td>
+            <td>Individual Sessions w/ some Mappings and Integrations </td>
+            <td>Stitched Experience Cloud ID linked to full Adobe Experience Cloud for easier
         cross-analysis </td>
         </tr>
         <tr> 
-            <td  valign="top" >Pricing</strong> </td>
-            <td  valign="top" >Tracked and billed against each server call </td>
-            <td  valign="top" >Transparent tracking by video stream (single) </td>
+            <td>Pricing</strong> </td>
+            <td>Tracked and billed against each server call </td>
+            <td>Transparent tracking by video stream (single) </td>
         </tr>
         <tr> 
-            <td  valign="top" >Implementation and Support</strong> </td>
-            <td  valign="top" >Longer integrations with limited support on legacy versions
+            <td>Implementation and Support</strong> </td>
+            <td>Longer integrations with limited support on legacy versions
         &amp; no upgrades </td>
-            <td  valign="top" >Streamlined configuration with ongoing updates and improvements </td>
+            <td>Streamlined configuration with ongoing updates and improvements </td>
         </tr>
         <tr> 
-            <td  valign="top" >Partner Sharing</strong> </td>
-            <td  valign="top" >N/A </td>
-            <td  valign="top" >Federated Analytics and Certified Metrics </td>
+            <td>Partner Sharing</strong> </td>
+            <td>N/A </td>
+            <td>Federated Analytics and Certified Metrics </td>
         </tr>
         <tr> 
-            <td  valign="top" >Advanced Tracking</strong> </td>
-            <td  valign="top" >N/A </td>
-            <td  valign="top" >Error Recovery Tracking and Concurrent Viewers </td>
+            <td>Advanced Tracking</strong> </td>
+            <td>N/A </td>
+            <td>Error Recovery Tracking and Concurrent Viewers </td>
         </tr>
     </tbody>
 </table>
@@ -169,95 +169,95 @@ or your solution consultant for the status of that device.
 <table>
     <thead>
         <tr>
-            <td  align="left" valign="top" > </td>
-            <td  align="center" valign="top" ><strong >Video Analytics SDK</strong> </td>
-            <td  align="center" valign="top" ><strong >Media Collection API</strong> </td>
+            <td> </td>
+            <td><strong>Video Analytics SDK</strong> </td>
+            <td><strong>Media Collection API</strong> </td>
         </tr>
     </thead>
     <tbody>
         <tr>
-            <td  align="left" valign="top" ><strong >JavaScript Browser</strong> </td>
-            <td  align="center" valign="top" ><strong >✔</strong> </td>
-            <td  align="center" valign="top" >✔</td>
+            <td><strong>JavaScript Browser</strong> </td>
+            <td><strong>✔</strong> </td>
+            <td>✔</td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >iOS Devices</strong> </td>
-            <td  align="center" valign="top" ><strong >✔</strong> </td>
-            <td  align="center" valign="top" >✔</td>
+            <td><strong>iOS Devices</strong> </td>
+            <td><strong>✔</strong> </td>
+            <td>✔</td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >Android Devices</strong> </td>
-            <td  align="center" valign="top" ><strong >✔</strong> </td>
-            <td  align="center" valign="top" > </td>
+            <td><strong>Android Devices</strong> </td>
+            <td><strong>✔</strong> </td>
+            <td> </td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >Unified Windows Platforms (UWP)</strong> </td>
-            <td  align="center" valign="top" > </td>
-            <td  align="center" valign="top" ><strong >✔</strong> </td>
+            <td><strong>Unified Windows Platforms (UWP)</strong> </td>
+            <td> </td>
+            <td><strong>✔</strong> </td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >Blackberry</strong> </td>
-            <td  align="center" valign="top" > </td>
-            <td  align="center" valign="top" ><strong >✔</strong> </td>
+            <td><strong>Blackberry</strong> </td>
+            <td> </td>
+            <td><strong>✔</strong> </td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >Apple TV (new/legacy)</strong> </td>
-            <td  align="center" valign="top" ><strong >✔</strong> </td>
-            <td  align="center" valign="top" > </td>
+            <td><strong>Apple TV (new/legacy)</strong> </td>
+            <td><strong>✔</strong> </td>
+            <td> </td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >ROKU (JS)</strong> </td>
-            <td  align="center" valign="top" ><strong >✔</strong> </td>
-            <td  align="center" valign="top" >✔</td>
+            <td><strong>ROKU (JS)</strong> </td>
+            <td><strong>✔</strong> </td>
+            <td>✔</td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >ROKU (Native app)</strong> </td>
-            <td  align="center" valign="top" > </td>
-            <td  align="center" valign="top" >✔</td>
+            <td><strong>ROKU (Native app)</strong> </td>
+            <td> </td>
+            <td>✔</td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >OSX</strong> </td>
-            <td  align="center" valign="top" > </td>
-            <td  align="center" valign="top" ><strong >✔</strong> </td>
+            <td><strong>OSX</strong> </td>
+            <td> </td>
+            <td><strong>✔</strong> </td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >Fire TV</strong> </td>
-            <td  align="center" valign="top" ><strong >✔</strong> </td>
-            <td  align="center" valign="top" >✔</td>
+            <td><strong>Fire TV</strong> </td>
+            <td><strong>✔</strong> </td>
+            <td>✔</td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >Android TV</strong>
+            <td><strong>Android TV</strong>
         </td>
-            <td  align="center" valign="top" ><strong >✔</strong>
+            <td><strong>✔</strong>
         </td>
-            <td  align="center" valign="top" >✔</td>
+            <td>✔</td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >Chromecast</strong>
+            <td><strong>Chromecast</strong>
         </td>
-            <td  align="center" valign="top" ><strong >✔</strong>
+            <td><strong>✔</strong>
         </td>
-            <td  align="center" valign="top" >✔</td>
+            <td>✔</td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >Xbox One/360</strong>
+            <td><strong>Xbox One/360</strong>
         </td>
-            <td  align="center" valign="top" > </td>
-        <td  align="center" valign="top" ><strong >✔</strong>
-        </td>
-        </tr>
-        <tr>
-            <td  align="left" valign="top" ><strong >Sony PS3/PS4</strong>
-        </td>
-            <td  align="center" valign="top" > </td>
-            <td  align="center" valign="top" ><strong >✔</strong>
+            <td> </td>
+        <td><strong>✔</strong>
         </td>
         </tr>
         <tr>
-            <td  align="left" valign="top" ><strong >(Other/New Connected Devices)</strong>
+            <td><strong>Sony PS3/PS4</strong>
         </td>
-            <td  align="center" valign="top" > </td>
-            <td  align="center" valign="top" >✔</td>
+            <td> </td>
+            <td><strong>✔</strong>
+        </td>
+        </tr>
+        <tr>
+            <td><strong>(Other/New Connected Devices)</strong>
+        </td>
+            <td> </td>
+            <td>✔</td>
         </tr>
     </tbody>
 </table>
