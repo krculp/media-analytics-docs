@@ -52,7 +52,7 @@ Some of the many benefits of the Heartbeats method include:
 ### Table 1. Comparison Chart
 
 || Video Analytics- Milestone | Video Analytics- Heartbeats |
-| --- | --- | --- | 
+| -- | -- | -- | 
 | **Video Events** | High-level Standard Events | Detailed and Custom Events every 10s for main content, every 1s for ads |
 | **Metrics and Dimensions** | Variances among Vendors, Non-Standardized Metrics and Dimensions | Clear, Standardized Metrics, Dimensions, and Benchmarks across Vendors |
 | **Integrations with Adobe Products** | Individual Sessions with some Mappings and Integrations | Stitched Experience Cloud ID linked to full Adobe Experience Cloud for easier cross-analysis |
@@ -78,7 +78,7 @@ The table below provides a list of the devices that are currently supported thro
 ### Table 2. VA SDK versus Media Collection API
 
 || Video Analytics SDK | Media Collection API |
-| --- | :---: | :---: | 
+| -- | :--: | :--: | 
 | **JavaScript Browser** | **✔** | ✔ |
 | **iOS Devices** | **✔** | ✔ |
 | **Android Devices** | **✔** |  |
