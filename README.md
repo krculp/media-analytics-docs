@@ -49,7 +49,7 @@ Some of the many benefits of the Heartbeats method include:
 * **Partnerships with Certified Ratings Partners** - Adobe partners with audience ratings partner Nielsen to provide neutral census third party measurement to allow for trusted, certified video ratings. 
 * **Standardized solution across all platforms** - Enable consistent, standardized variables across all of your videos and platforms to allow for a more efficient cross-campaign, device and vendor comparison. 
 
-### Table 1. Comparison Chart
+#### Table 1. Comparison Chart
 
 || Video Analytics- Milestone | Video Analytics- Heartbeats |
 | -- | -- | -- | 
@@ -75,7 +75,7 @@ For devices or platforms that do not currently have SDK support \(or even if the
 
 The table below provides a list of the devices that are currently supported through our SDK implementation and Media Collection API implementation. To download the most recent version of the SDK, visit [Download Video Heartbeat Library SDKs](https://github.com/krculp/media-analytics-docs/tree/c21a8363a24601b55871136d5c52d7e85a080d88/download-sdks.md). If there is a device that is not listed which you are seeking measurement against, please contact customer care or your solution consultant for the status of that device.
 
-### Table 2. VA SDK versus Media Collection API
+#### Table 2. VA SDK versus Media Collection API
 
 || Video Analytics SDK | Media Collection API |
 | -- | :--: | :--: | 
