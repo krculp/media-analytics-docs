@@ -5,7 +5,7 @@
 This topic contains the following information:
 
 * [Overview](./#overview)
-* [Benefits](./)
+* [Benefits](./#benefits)
 * [Heartbeat versus Milestone Benefits](./#hb_vs_m_b)
 * [Devices Supported](./#devices_supported)
 
@@ -31,7 +31,7 @@ Video tracking is enabled through either of the following:
 
 * VA SDK integrations with the most commonly used video players. The latest SDKs 
   have the additional capability of capturing audio related metrics. 
-* Media Collection API integrations \(RESTful API\) in players for which there 
+* Media Collection API integrations (RESTful API) in players for which there 
   is no SDK support, or for which you choose not to use the SDK.
 
 Adobe Analytics for Video enables clients to track the full customer journey across 
@@ -53,7 +53,7 @@ personalize their experiences through the Adobe Experience Cloud.
 Some of the many benefits that Adobe's video solutions provide include:
 
 * **Timely analysis** - Make real-time, actionable decisions utilizing key video 
-  performance metrics \(e.g., duration\) across multiple channels. Main content 
+  performance metrics (e.g., duration) across multiple channels. Main content 
   video events are measured in **10-second** intervals to capture all activity 
   as it occurs. Ad tracking events occur at **1-second** intervals.
 * **Drive engagement** - Fully engage users through fewer buffering events and 
@@ -76,8 +76,8 @@ Some of the many benefits that Adobe's video solutions provide include:
 ## Heartbeat versus Milestone Benefits {#hb_vs_m_b}
 
 Adobe Analytics for Video is able to be measured through two means: the legacy 
-Milestone method and the current Heartbeats method \(including both the SDK and 
-RESTful Media Collection API\). The Heartbeats method is the preferred method of 
+Milestone method and the current Heartbeats method (including both the SDK and 
+RESTful Media Collection API). The Heartbeats method is the preferred method of 
 measurement and we encourage all clients to move to this version if they haven’t 
 already, to take advantage of the benefits described below.
 
@@ -114,24 +114,35 @@ Some of the many benefits of the Heartbeats method include:
 | **Video Events** | High-level Standard Events | Detailed and Custom Events every 10s for main content, every 1s for ads |
 | **Metrics and Dimensions** | Variances among Vendors, Non-Standardized Metrics and Dimensions | Clear, Standardized Metrics, Dimensions, and Benchmarks across Vendors |
 | **Integrations with Adobe Products** | Individual Sessions with some Mappings and Integrations | Stitched Experience Cloud ID linked to full Adobe Experience Cloud for easier cross-analysis |
-| **Pricing** | Tracked and billed against each server call | Transparent tracking by video stream \(single\) |
+| **Pricing** | Tracked and billed against each server call | Transparent tracking by video stream (single) |
 | **Implementation and Support** | Longer integrations with limited support on legacy versions & no upgrades | Streamlined configuration with ongoing updates and improvements |
 | **Partner Sharing** | N/A | Federated Analytics and Certified Metrics |
 | **Advanced Tracking** | N/A | Error Recovery Tracking and Concurrent Viewers |
 
 ## Devices Supported {#devices_supported}
 
-Adobe Analytics for Video has evolved with the industry to provide strong data collection tools to ensure each video stream is collected and reported across all meaningful devices. Our SDK is developed for all of the most utilized devices, including:
+Adobe Analytics for Video has evolved with the industry to provide strong data 
+collection tools to ensure each video stream is collected and reported across 
+all meaningful devices. Our SDK is developed for all of the most utilized devices, 
+including:
 
 * iOS and Android smartphones and tablets 
 * OTT devices for ROKU, AppleTV, FireTV, and Android TV 
 * JavaScript Browser for Desktop and Laptop 
 
-The SDK’s are routinely updated when new versions of devices are released, and you can use these SDKs to integrate with most of the largest video players today, including Brightcove and Ooyala.
+The SDK’s are routinely updated when new versions of devices are released, and 
+you can use these SDKs to integrate with most of the largest video players today, 
+including Brightcove and Ooyala.
 
-For devices or platforms that do not currently have SDK support \(or even if they do\), you can implement the Media Collection API, through which you make RESTful API calls directly from the device/platform to the Video Analytics backend.
+For devices or platforms that do not currently have SDK support (or even if they 
+do), you can implement the Media Collection API, through which you make RESTful 
+API calls directly from the device/platform to the Video Analytics backend.
 
-The table below provides a list of the devices that are currently supported through our SDK implementation and Media Collection API implementation. To download the most recent version of the SDK, visit [Download Video Heartbeat Library SDKs](https://github.com/krculp/media-analytics-docs/tree/c21a8363a24601b55871136d5c52d7e85a080d88/download-sdks.md). If there is a device that is not listed which you are seeking measurement against, please contact customer care or your solution consultant for the status of that device.
+The table below provides a list of the devices that are currently supported through 
+our SDK implementation and Media Collection API implementation. To download the most 
+recent version of the SDK, visit [Download Video Heartbeat Library SDKs](implementation/README.md). If there 
+is a device that is not listed which you are seeking measurement against, please 
+contact customer care or your solution consultant for the status of that device.
 
 #### Table 2. VA SDK versus Media Collection API
 
@@ -140,16 +151,16 @@ The table below provides a list of the devices that are currently supported thro
 | **JavaScript Browser** | **✔** | ✔ |
 | **iOS Devices** | **✔** | ✔ |
 | **Android Devices** | **✔** |  |
-| **Unified Windows Platforms \(UWP\)** |  | **✔** |
+| **Unified Windows Platforms (UWP)** |  | **✔** |
 | **Blackberry** |  | **✔** |
-| **Apple TV \(new/legacy\)** | **✔** |  |
-| **ROKU \(JS\)** | **✔** | ✔ |
-| **ROKU \(Native app\)** |  | ✔ |
+| **Apple TV (new/legacy)** | **✔** |  |
+| **ROKU (JS)** | **✔** | ✔ |
+| **ROKU (Native app)** |  | ✔ |
 | **OSX** |  | **✔** |
 | **Fire TV** | **✔** | ✔ |
 | **Android TV** | **✔** | ✔ |
 | **Chromecast** | **✔** | ✔ |
 | **Xbox One/360** |  | **✔** |
 | **Sony PS3/PS4** |  | **✔** |
-| **\(Other/New Connected Devices\)** |  | ✔ |
+| **(Other/New Connected Devices)** |  | ✔ |
 
