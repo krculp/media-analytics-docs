@@ -15,8 +15,8 @@ Adobe's new Media Collection API for heartbeat measurement. It does not include
 instructions around the legacy milestone video implementation. We encourage all 
 customers to move towards adopting one or both of the two latest video tracking 
 solutions, in order to capitalize on improvements and expanded measurement. You 
-can view the [benefits of transitioning to the latest solutions](./) below. While 
-we will continue to support the milestone method of tracking videos, there will 
+can view the [benefits of transitioning to the latest solutions](./#benefits) below. 
+While we will continue to support the milestone method of tracking videos, there will 
 not be any planned updates, fixes or feature improvements. Please reach out to 
 your Adobe Account Manager if you have any further questions.
 
@@ -27,11 +27,11 @@ clients with robust video measurement for content, audio and advertisements. Vid
 Analytics (VA) provides many benefits to customers to allow for real-time monitoring, 
 detailed analysis, actionable insights and monetization opportunities.
 
-Video tracking is enabled through either of the following:
+You can enable video tracking through either of the following:
 
-* VA SDK integrations with the most commonly used video players. The latest SDKs 
+* _**VA SDK**_ integrations with the most commonly used video players. The latest SDKs 
   have the additional capability of capturing audio related metrics. 
-* Media Collection API integrations (RESTful API) in players for which there 
+* _**Media Collection API**_ integrations (RESTful API) in players for which there 
   is no SDK support, or for which you choose not to use the SDK.
 
 Adobe Analytics for Video enables clients to track the full customer journey across 
@@ -75,11 +75,15 @@ Some of the many benefits that Adobe's video solutions provide include:
 
 ## Heartbeat versus Milestone Benefits {#hb_vs_m_b}
 
-Adobe Analytics for Video is able to be measured through two means: the legacy 
-Milestone method and the current Heartbeats method (including both the SDK and 
-RESTful Media Collection API). The Heartbeats method is the preferred method of 
-measurement and we encourage all clients to move to this version if they haven’t 
-already, to take advantage of the benefits described below.
+You can measure Adobe Analytics for Video through two means: 
+
+* The current Heartbeats method (including both the VA SDK and the 
+  RESTful Media Collection API). 
+* The legacy Milestone method 
+
+The Heartbeats method is the preferred method of measurement, and Adobe encourages 
+all clients to move to this version if they haven’t already, to take advantage 
+of the benefits described below.
 
 The legacy Milestone method is based on individual server calls to the Analytics 
 server, for video starts, quartiles, duration, and completes. The Heartbeats method 
