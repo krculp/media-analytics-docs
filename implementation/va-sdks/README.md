@@ -1,4 +1,2 @@
-# VA SDKs
-
-
+# Media Analytics SDKs
 
