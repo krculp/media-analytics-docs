@@ -26,7 +26,7 @@ For more information about implementing the Experience Cloud ID Service, see [Ex
 
 ## Analytics Enablement \(required\)
 
-To enable video reports in Analytics and see the video and video ad data you are collecting, see [Video Reports Enablement](https://github.com/krculp/media-analytics-docs/tree/15e67a02c08a04547e0e2128e92f3a7295469d8e/before-you-begin/add_link.md).
+To enable video reports in Analytics and see the video and video ad data you are collecting, see [Video Reports Enablement](../reporting-and-analysis/video-reports-enablement.md).
 
 ## Audience Manager Enablement\(optional\)
 
