@@ -1,4 +1,2 @@
 # Media Collection API
 
-
-
