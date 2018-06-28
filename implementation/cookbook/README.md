@@ -37,6 +37,6 @@ call `trackPlay` when the app returns and/or the video resumes playing.
   session is closed. 
 
   For detailed instructions on restarting a tracking session, see this page:
-  [Manually resume a previously closed session](../va_sdks/js-sdk/c_vhl_resume-inact-vid-sess-man-resume-cl-sess_js.md)
+  [Manually resume a previously closed session](../va_sdks/js-sdk/manually-resume-session.md)
   The SDK sends a resume ping to notify the back-end that the user is manually 
   resuming the session.
