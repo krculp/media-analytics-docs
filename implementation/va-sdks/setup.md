@@ -154,10 +154,10 @@ validated:
   **Important:** An RDC tracking server or CNAME resolving to an RDC server is
   required for Experience Cloud Visitor ID service.
 
-    The analytics tracking server should end in `.sc.omtrdc.net` or be a CNAME.
+  The analytics tracking server should end in `.sc.omtrdc.net` or be a CNAME.
 
 * **Video Heartbeat**
 
-  Always has the format [namespace].hb.omtrdc.net, where [namespace] is defined
+  Always has the format `[namespace].hb.omtrdc.net`, where `[namespace]` is defined
   by your login company and is provided by Adobe.
 
