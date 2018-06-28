@@ -17,6 +17,7 @@
     * [Android SDK](implementation/va-sdks/android-sdk/README.md)
     * [iOS SDK](implementation/va-sdks/ios-sdk/README.md)
     * [JavaScript SDK](implementation/va-sdks/js-sdk/README.md)
+      * [Getting Started]getting-started-js.md
       * [Manually resume a previously closed session](implementation/cookbook/manually-resume-session.md)
     * [Chromecast SDK](implementation/va-sdks/cc-sdk/README.md)
     * [Roku SDK](implementation/va-sdks/roku-sdk/README.md)
