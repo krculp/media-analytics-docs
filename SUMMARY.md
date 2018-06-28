@@ -12,6 +12,7 @@
     * [Track Ads](implementation/va-sdks/track-ads.md)
     * [Track Chapters and Segments](implementation/va-sdks/track-chapters.md)
     * [Track Quality of Experience](implementation/va-sdks/track-qos.md)
+    * [Audience Manager Enablement](implementation/audience-mgr-enablement.md)
     * [Media Analytics 1.x to 2.x Migration](implementation/va-sdks/va-1x-to-2x.md)
     * [Android SDK](implementation/va-sdks/android-sdk/README.md)
     * [iOS SDK](implementation/va-sdks/ios-sdk/README.md)
