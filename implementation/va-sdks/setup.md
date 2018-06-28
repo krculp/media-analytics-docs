@@ -52,7 +52,7 @@ the SDK, you can download the Developers Guide further down the page.
    |`fps`|The frames displayed per second.|Yes|
    |`droppedFrames`|The number of dropped frames so far.|Yes|
 
-  4. Create the MediaHeartbeat instance. 
+4. Create the MediaHeartbeat instance. 
 
    Use `MediaHeartbeatConfig` and `MediaHeartbeatDelegate` to create the
    `MediaHeartbeat` instance.
@@ -64,7 +64,7 @@ the SDK, you can download the Developers Guide further down the page.
    **Tip:** `MediaHeartbeat` requires an instance of `AppMeasurement` to send 
    calls to Adobe Analytics.
 
-  5. Combine all of the pieces. 
+5. Combine all of the pieces. 
 
    The following sample code utilizes our JavaScript 2.x SDK for an HTML5 video
    player:
@@ -107,92 +107,33 @@ the SDK, you can download the Developers Guide further down the page.
 
 ## Code
 
-<table><title>Table 1. VA 2.x</title>
-    <thead>
-        <tr>
-            <th>Video Analytics 2.x SDKs </th>
-            <th>Developer Guides </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Android/FireTV </td>
-            <td> [Configure for Android]() </td>
-        </tr>
-        <tr>
-            <td>iOS/AppleTV </td>
-            <td>[Configure for iOS]() </td>
-        </tr>
-        <tr>
-            <td>JavaScript </td>
-            <td> [Configure for JavaScript]() </td>
-        </tr>
-        <tr>
-            <td>Roku </td>
-            <td> [Configure for Roku]() </td>
-        </tr>
-        <tr>
-            <td>Chromecast</td>
-            <td>[Configure for Chromecast]() </td>
-        </tr>
-        <tr>
-            <td>Primetime</td>
-            <td>
-                <ul>
-                    <li>Android: [Configure Video Analytics]()</li>
-                    <li>DHLS: [Configure Video Analytics]()</li>
-                    <li>iOS: [Configure Video Analytics]()</li>
-                </ul>
-            </td>
-        </tr>
-    </tbody>
-</table>
-<table><title>Table 2. VA 1.x</title>
-    <thead>
-        <tr>
-            <th>Video Analytics 1.x SDKs* </th>
-            <th>Developer Guides </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>Android </td>
-            <td> [Configure for Android]() </td>
-        </tr>
-        <tr>
-            <td>AppleTV </td>
-            <td> [Configure for AppleTV]() </td>
-        </tr>
-        <tr>
-            <td>Chromecast </td>
-            <td> [Configure for Chromecast]() </td>
-        </tr>
-        <tr>
-            <td>iOS </td>
-            <td> [Configure for iOS]() </td>
-        </tr>
-        <tr>
-            <td>JavaScript </td>
-            <td> [Configure for JavaScript]() </td>
-        </tr>
-        <tr>
-            <td>Primetime </td>
-        <td>
-            <ul>
-                <li>Android: [Configure Video Analytics]()</li>
-                <li>DHLS: [Configure Video Analytics]()</li>
-                <li>iOS: [Configure Video Analytics]()</li>
-            </ul>
-        </td>
-        </tr>
-        <tr>
-            <td>TVML </td>
-            <td>[Configure for TVML]() </td>
-        </tr>
-    </tbody>
-</table>
+### Video Analytics 2.x SDKs: Developer Guides 
 
-***** For all 1.x SDKs, the links are for the full PDF download of the documentation. 
+* Android/FireTV - [Configure for Android]() 
+* iOS/AppleTV - [Configure for iOS]() 
+* JavaScript - [Configure for JavaScript]() 
+* Roku - [Configure for Roku]() 
+* Chromecast [Configure for Chromecast]():
+* Primetime
+  * Android - [Configure Video Analytics]()
+  * DHLS - [Configure Video Analytics]()
+  * iOS - [Configure Video Analytics]()
+
+### Video Analytics 1.x SDKs:* Developer Guides 
+
+* Android - [Configure for Android]() 
+* AppleTV - [Configure for AppleTV]() 
+* Chromecast - [Configure for Chromecast]() 
+* iOS - [Configure for iOS]() 
+* JavaScript - [Configure for JavaScript]() 
+* Primetime:
+  * Android - [Configure Video Analytics]()
+  * DHLS - [Configure Video Analytics]()
+  * iOS - [Configure Video Analytics]()
+
+TVML: [Configure for TVML]() 
+
+\* For all 1.x SDKs, the links are for the full PDF download of the documentation. 
 
 ## Validate
 
