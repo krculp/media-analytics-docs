@@ -7,10 +7,10 @@ user explicitly presses pause, or when a user puts the application into the
 background. Regardless of what causes an interruption in video playback, the
 tracking instructions are the same:
 
-  1. Call **trackPause** when the application is interrupted (goes to background, video pauses, etc.). 
-  2. Call **trackPlay** when the application returns to the foreground and/or the video resumes playing.
+1. Call **trackPause** when the application is interrupted (goes to background, video pauses, etc.). 
+2. Call **trackPlay** when the application returns to the foreground and/or the video resumes playing.
 
-**Note:** The Video Analytics team has seen instances where customers called 
+**Note:** The Media Analytics team has seen instances where customers called 
 `trackSessionStart` when their app returned from the background. Doing this 
 results in the playback up to that point not counting towards the total playback 
 time, along with losing earlier progress markers, segments, and so on. Instead, 
