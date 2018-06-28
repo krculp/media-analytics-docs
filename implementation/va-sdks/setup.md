@@ -8,9 +8,9 @@ the SDK, you can download the Developers Guide further down the page.
 
 ## Implement
 
-1. For mobile platforms, import the Heartbeat libraries. For JavaScript, create 
+1. **Libraries/Classes** - For mobile platforms, import the Heartbeat libraries. For JavaScript, create 
    local references to the classes. There are three classes/libraries to reference.  
-   (For links to platforms and additional details, see the **Code** section below.)
+   (For links to platforms and additional details, see the <a href="#code">Code</a> section below.)
 
    Libraries/Classes:
 
@@ -18,11 +18,9 @@ the SDK, you can download the Developers Guide further down the page.
    * Media Heartbeat Delegate: The delegate controls playback time and the QoS object. 
    * Media Heartbeat: The primary library containing members and methods. 
 
-2. Create a MediaHeartbeatConfig Instance. 
+2. **Create a MediaHeartbeatConfig Instance** - Set the config values on your `MediaHeartbeatConfig` instance for accurate tracking.
 
-   Set the config values on your `MediaHeartbeatConfig` instance for accurate tracking.
-
-   |Variable Name|Description|Required|Default Value|
+   |**Variable Name**|**Description**|**Required**|**Default Value**|
    |---|---|---|---|
    |`trackingServer`|Define the server for tracking media heartbeats. This is different from your analytics tracking server.|Yes|Empty String|
    |`channel`|Channel name property|Yes|Empty String|
@@ -32,9 +30,9 @@ the SDK, you can download the Developers Guide further down the page.
    |`ssl`|Property that indicates whether the heartbeat calls should be made over HTTPS.|Yes|false|
    |`debugLogging`|Gets the preference for debug log output.|Yes|false|
 
-3. Implement the MediaHeartbeatDelegate: 
+3. **Implement the MediaHeartbeatDelegate:**
 
-   |Method Name|Description|Required|
+   |**Method Name**|**Description**|**Required**|
    |---|---|---|
    |`getQoSObject()`|Returns the MediaObject instance that contains the current QoS information. This method will be called multiple times during a playback session. Player implementation must always return the most recently available QoS data.|Yes|
    |`getCurrentPlaybackTime()`|Returns the current position of the playhead. For VOD tracking, the value is specified in seconds from the beginning of the media item. For LINEAR/LIVE tracking, the value is specified in seconds from the beginning of the program.|Yes|
@@ -45,17 +43,15 @@ the SDK, you can download the Developers Guide further down the page.
 
    MediaObject (QoS Object) reference:
 
-   |Variable name|Description|Required|
+   |**Variable name**|**Description**|**Required**|
    |---|---|---|
    |`bitrate`|The bitrate of media in bits per second.|Yes|
    |`startupTime`|The start up time of media in milliseconds.|Yes|
    |`fps`|The frames displayed per second.|Yes|
    |`droppedFrames`|The number of dropped frames so far.|Yes|
 
-4. Create the MediaHeartbeat instance. 
-
-   Use `MediaHeartbeatConfig` and `MediaHeartbeatDelegate` to create the
-   `MediaHeartbeat` instance.
+4. **Create the MediaHeartbeat instance** - Use `MediaHeartbeatConfig` and `MediaHeartbeatDelegate` 
+   to create the `MediaHeartbeat` instance.
    
    **Important:** Make sure that your `MediaHeartbeat` instance is accessible and 
    does not get deallocated until the end of the video session. This instance will 
@@ -64,10 +60,8 @@ the SDK, you can download the Developers Guide further down the page.
    **Tip:** `MediaHeartbeat` requires an instance of `AppMeasurement` to send 
    calls to Adobe Analytics.
 
-5. Combine all of the pieces. 
-
-   The following sample code utilizes our JavaScript 2.x SDK for an HTML5 video
-   player:
+5. **Combine all of the pieces** - The following sample code utilizes our 
+   JavaScript 2.x SDK for an HTML5 video player:
 
        ``` javascript
        // Create local references to the heartbeat classes
@@ -105,7 +99,7 @@ the SDK, you can download the Developers Guide further down the page.
          new MediaHeartbeat(mediaDelegate, mediaConfig, appMeasurementInstance); 
        ``` 
 
-## Code
+<H2 id="code">Code</H2>
 
 ### Video Analytics 2.x SDKs: Developer Guides 
 
