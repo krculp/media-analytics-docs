@@ -16,7 +16,7 @@ documentation (e.g., [VA SDK 2.x](c_vhl_feature-js.md), [Metrics and Metadata]
 
 Figure: Media Collection API Data Flow
 
-![](../.gitbook/assets/col_api_overview_simple.png)
+![](../../.gitbook/assets/col_api_overview_simple.png)
 
 ## **Media Collection API Overview**
 
