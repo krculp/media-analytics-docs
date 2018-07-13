@@ -61,11 +61,11 @@ Figure: Media Collection API Data Flow
     }
     ```
 
-* playerTime - Mandatory for all requests.
-* eventType - Mandatory for all requests. 
-* params - Mandatory for certain eventTypes; check the JSON validation schema to determine which eventTypes are mandatory, and which are optional. 
-* qoeData - Optional for all requests.
-* customMetadata - Optional for all requests, but only sent with sessionStart, adStart, and chapterStart event types.
+* `playerTime` - Mandatory for all requests.
+* `eventType` - Mandatory for all requests. 
+* `params` - Mandatory for certain eventTypes; check the JSON validation schema to determine which eventTypes are mandatory, and which are optional. 
+* `qoeData` - Optional for all requests.
+* `customMetadata` - Optional for all requests, but only sent with sessionStart, adStart, and chapterStart event types.
 
 For each eventType, there is a publicly available JSON validation schema that
 you should use to verify parameter types and whether a parameter is optional
@@ -73,19 +73,18 @@ or required for a particular event.
 
 **Event Types: **
 
-* sessionStart
-* play
-* ping
-* pauseStart
-* bufferStart
-* adStart
-* adComplete
-* adSkip
-* adBreakStart
-* adBreakComplete
-* chapterStart
-* chapterSkip
-* chapterComplete
-* sessionEnd
-* sessionComplete
-
+* `sessionStart`
+* `play`
+* `ping`
+* `pauseStart`
+* `bufferStart`
+* `adStart`
+* `adComplete`
+* `adSkip`
+* `adBreakStart`
+* `adBreakComplete`
+* `chapterStart`
+* `chapterSkip`
+* `chapterComplete`
+* `sessionEnd`
+* `sessionComplete`
