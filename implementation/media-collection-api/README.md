@@ -16,7 +16,7 @@ documentation (e.g., [VA SDK 2.x](c_vhl_feature-js.md), [Metrics and Metadata]
 
 Figure: Media Collection API Data Flow
 
-![](./graphics/col_api_overview_simple.png)
+![](../.gitbook/assets/col_api_overview_simple.png)
 
 ## **Media Collection API Overview**
 
@@ -36,6 +36,7 @@ Figure: Media Collection API Data Flow
 
 **Request Body: **
     
+    ``` javascript
     {
         "playerTime": {
             "playhead": {playhead position in seconds},
@@ -58,7 +59,7 @@ Figure: Media Collection API Data Flow
             {parameter-name}: {parameter-value}
         }
     }
-    
+    ```
 
 * playerTime - Mandatory for all requests.
 * eventType - Mandatory for all requests. 
@@ -87,10 +88,4 @@ or required for a particular event.
 * chapterComplete
 * sessionEnd
 * sessionComplete
-
-* **[API Reference](api-reference/reference.md)**  
-
-* **[Implementing the API](impl/implement.md)**  
-
-* **[Video Tracking Timelines](timelines/timelines.md)**  
 
