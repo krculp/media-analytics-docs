@@ -3,8 +3,8 @@
 The following instructions provide guidance for implementation across all 2.x SDKs.
 
 **Important:** The following instructions provide guidance for
-implementation across all 2.x SDks. If you are implementing a 1.x version of
-the SDK, you can download the Developers Guide further down the page.
+implementation across all 2.x SDKs. If you are implementing a 1.x version of
+the SDK, you can download the Developers Guide (further down this page).
 
 ## Implement
 
