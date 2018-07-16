@@ -51,9 +51,9 @@ To implement ad playback:
    
    The general format for the ad break object is:
     
-       ``` javascript
-       var adBreakObject = MediaHeartbeat.createAdBreakObject(<ADBREAK_NAME>, <POSITION>, <START_TIME>);
-       ```
+   ``` javascript
+   var adBreakObject = MediaHeartbeat.createAdBreakObject(<ADBREAK_NAME>, <POSITION>, <START_TIME>);
+   ```
 
 2. Call trackEvent() with AdBreakStart in the MediaHeartbeat instance to begin tracking the ad break. 
     
