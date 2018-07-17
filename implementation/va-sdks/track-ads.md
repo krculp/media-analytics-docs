@@ -165,6 +165,7 @@ To implement ad playback:
 |Chromecast| [Track Ads for Chromecast](conf-med-hrbts-chromecast.md)|
 
 |Video Analytics 1.x SDKs\*  |Developer Guides|
+|---|---|
 |Android| [Track Ads for Android](vhl-dev-guide-v15_android.pdf)|
 |AppleTV| [Track Ads for AppleTV](vhl-dev-guide-v1x_appletv.pdf)|
 |Chromecast| [Track Ads for Chromecast](chromecast_1.x_sdk.pdf)|
