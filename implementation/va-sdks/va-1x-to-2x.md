@@ -54,6 +54,8 @@ The following tables provide side-by-side code comparisons between VHL 1.x and
 VHL 2.x, covering Initialization, Core Playback, Ad Playback, Chapter
 Playback, and some additional events.
 
+### Code Comparison: Initialization
+
 <table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><caption><span>Table 1. VHL Code Comparison: INITIALIZATION</span></caption>
   <thead  align="left">
     <tr>
@@ -263,6 +265,9 @@ appMeasurement);</pre>
   </tbody>
 </table>
 </hr>
+
+### Code Comparison: Core Playback
+
 <table cellpadding="4" cellspacing="0" frame="border" border="1" rules="all"><caption><span >Table 2. VHL Code Comparison: CORE PLAYBACK</span></caption>
   <thead align="left">
     <tr>
@@ -691,6 +696,9 @@ VideoPlayer.prototype.getVideoInfo = function() {
   </tbody>
 </table>
 </hr>
+
+### Code Comparison: Ad Playback
+
 <table cellpadding="4" cellspacing="0" frame="border" border="1" rules="all"><caption><span >Table 3. VHL Code Comparison: AD PLAYBACK</span></caption>
   <thead align="left">
     <tr>
@@ -1021,6 +1029,9 @@ VideoPlayer.prototype.getVideoInfo = function() {
   </tbody>
 </table>
 </hr>
+
+### Code Comparison: Chapter Playback
+
 <table cellpadding="4" cellspacing="0" frame="border" border="1" rules="all"><caption><span >Table 4. VHL Code Comparison: CHAPTER PLAYBACK</span></caption>
   <thead align="left">
     <tr>
@@ -1222,6 +1233,9 @@ VideoPlayer.prototype.getVideoInfo = function() {
   </tbody>
 </table>
 <hr/>
+
+### Code Comparison: Other Events
+
 <table cellpadding="4" cellspacing="0" frame="border" border="1" rules="all"><caption><span >Table 5. VHL Code Comparison: OTHER EVENTS</span></caption>
   <thead align="left">
     <tr>
