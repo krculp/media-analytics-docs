@@ -171,7 +171,7 @@ To implement ad playback:
 |Chromecast| [Track Ads for Chromecast](chromecast_1.x_sdk.pdf)|
 |iOS| [Track Ads for iOS](vhl-dev-guide-v15_ios.pdf)|
 |JavaScript| [Track Ads for JavaScript](vhl-dev-guide-v15_js.pdf)|
-|Primetime| **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_) **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20) **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
+|Primetime| \[**Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)\] \[**DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20)\] \[**iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)\]|
 |TVML| [Track Ads for TVML](vhl_tvml.pdf)|
 
 \* For all 1.x SDKs, the links are for the full PDF download of the documentation. 

@@ -121,12 +121,11 @@ To implement custom video chapters:
 
 |Video Analytics 2.x SDKs**|**Developer Guides**|
 |---|---|
-|Android/FireTV|[Track Chapters for Android](https://marketing.adobe.com/resources/help/en_US/
-sc/appmeasurement/hbvideo/android_2.0/t_vhl_track-chap_android.html)|
-|iOS/AppleTV|[Track Chapers for iOS](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/ios_2.0/t_vhl_track-chap_ios.html)|
-|JavaScript|[Track Chapters for JavaScript](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/js_2.0/t_vhl_track-chap_js.html)|
-|Roku|[Track Chapters for Roku](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/roku/c_vhl_conf-med-hrbts.html)|
-|Chromecast|[Track Chapters for Chromecast](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/chromecast/c_vhl_conf-med-hrbts-chromecast.html)|
+|Android/FireTV|[Track Chapters for Android](track-chap_android.md)|
+|iOS/AppleTV|[Track Chapers for iOS](track-chap_ios.md)|
+|JavaScript|[Track Chapters for JavaScript](track-chap_js.md)|
+|Roku|[Track Chapters for Roku](conf-med-hrbts.md)|
+|Chromecast|[Track Chapters for Chromecast](conf-med-hrbts-chromecast.md)|
 
 |**Video Analytics 1.x SDKs\* **|**Developer Guides**|
 |---|---|
@@ -135,7 +134,7 @@ sc/appmeasurement/hbvideo/android_2.0/t_vhl_track-chap_android.html)|
 |Chromecast|[Track Chapters for Chromecast](chromecast_1.x_sdk.pdf)|
 |iOS|[Track Chapters for iOS](vhl-dev-guide-v15_ios.pdf)|
 |JavaScript|[Track Chapters for JavaScript](vhl-dev-guide-v15_js.pdf)|
-|Primetime|**Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_) **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20) **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
+|Primetime|\[**Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)\] \[**DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20)\] \[**iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)\]|
 |TVML|[Track Chapters for TVML](vhl_tvml.pdf)|
 
 **\***For all 1.x SDKs, the links are for the full PDF download of the documentation. 

@@ -49,10 +49,10 @@ To implement core video playback:
    
    |**Variable Name**|**Description**|**Required**|
    |---|---|---|
-   |name| Video name| Yes|
-   |mediaid| Video unique identifier| Yes|
-   |length| Video length| Yes|
-   |streamType| Stream type (see constants MediaHeartbeat.StreamType.VOD)| Yes|
+   |name|Video name|Yes|
+   |mediaid|Video unique identifier|Yes|
+   |length|Video length|Yes|
+   |streamType|Stream type (see constants MediaHeartbeat.StreamType.VOD)|Yes|
    
    `MediaHeartbeat.StreamType.VOD` constants reference:
    
@@ -106,7 +106,7 @@ To implement core video playback:
    
    **Tip:** Attaching `standardVideoMetadata` to `mediaObject` is optional.
 
-3. To begin tracking a video session, call trackSessionStart in the MediaHeartbeat instance. 
+3. To begin tracking a video session, call `trackSessionStart` in the MediaHeartbeat instance. 
 
    **Tip:** The second value is the custom video metadata object name that you
    created in step 2.
@@ -121,25 +121,25 @@ To implement core video playback:
    `trackSessionStart()` and `trackPlay()`).
    
    **Tip:** If you are not using custom video metadata, simply send an empty object
-   for the data argument in trackSessionStart(). For example:
+   for the data argument in `trackSessionStart()`. For example:
    
    ``` javascript
    mediaHeartbeat.trackSessionStart(mediaObject, data)
    ```
 
-4. Identify the event from the video player for the beginning of the video playback, where the first frame of the video is rendered on the screen, and call trackPlay(): 
+4. Identify the event from the video player for the beginning of the video playback, where the first frame of the video is rendered on the screen, and call `trackPlay()`: 
     
    ``` javascript
    mediaHeartbeat.trackPlay();
    ```
 
-5. Identify the event from the video player for the completion of the video playback, where the user has watched the content until the end, and call trackComplete(): 
+5. Identify the event from the video player for the completion of the video playback, where the user has watched the content until the end, and call `trackComplete()`: 
     
    ``` javascript
    mediaHeartbeat.trackComplete();
    ```
 
-6. Identify the event from the video player for the unloading/closing of the video playback, where the user closes the video and/or the video is completed and has been unloaded, and call trackSessionEnd(): 
+6. Identify the event from the video player for the unloading/closing of the video playback, where the user closes the video and/or the video is completed and has been unloaded, and call `trackSessionEnd()`: 
     
    ``` javascript
    mediaHeartbeat.trackSessionEnd();
@@ -279,21 +279,21 @@ player:
 
 |**Video Analytics 2.x SDKs**|**Developer Guides**|
 |---|---|
-|Android/FireTV| [Track Core for Android](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/t_vhl_track-core-playback_android.html)|
-| iOS/AppleTV| [Track Core for iOS](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/ios_2.0/t_vhl_track-core-playback_ios.html)|
-| JavaScript| [Track Core for JavaScript](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/js_2.0/t_vhl_track-core-playback_js.html)|
-| Roku| [Track Core for Roku](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/roku/c_vhl_conf-med-hrbts.html)|
-| Chromecast| [Track Core for Chromecast](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/chromecast/c_vhl_conf-med-hrbts-chromecast.html)|
+|Android/FireTV|[Track Core for Android](track-core-playback_android.md)|
+|iOS/AppleTV|[Track Core for iOS](track-core-playback_ios.md)|
+|JavaScript|[Track Core for JavaScript](track-core-playback_js.md)|
+|Roku|[Track Core for Roku](conf-med-hrbts.md)|
+|Chromecast|[Track Core for Chromecast](conf-med-hrbts-chromecast.md)|
 
 |**Video Analytics 1.x SDKs\*  **|**Developer Guides**|
 |---|---|
-| Android| [Track Core for Android](vhl-dev-guide-v15_android.pdf)|
-| AppleTV| [Track Core for AppleTV](vhl-dev-guide-v1x_appletv.pdf)|
-| Chromecast| [Track Core for Chromecast](chromecast_1.x_sdk.pdf)|
-| iOS| [Track Core for iOS](vhl-dev-guide-v15_ios.pdf)|
-| JavaScript| [Track Core for JavaScript](vhl-dev-guide-v15_js.pdf)|
-| Primetime| **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_) **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20) **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
-| TVML| [Track Core for TVML](vhl_tvml.pdf)|
+|Android|[Track Core for Android](vhl-dev-guide-v15_android.pdf)|
+|AppleTV|[Track Core for AppleTV](vhl-dev-guide-v1x_appletv.pdf)|
+|Chromecast|[Track Core for Chromecast](chromecast_1.x_sdk.pdf)|
+|iOS|[Track Core for iOS](vhl-dev-guide-v15_ios.pdf)|
+|JavaScript|[Track Core for JavaScript](vhl-dev-guide-v15_js.pdf)|
+|Primetime|\[**Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)\] \[**DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20)\] \[**iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)\]|
+|TVML|[Track Core for TVML](vhl_tvml.pdf)|
 
 \* For all 1.x SDKs, the links are for the full PDF download of the documentation. 
 

@@ -88,11 +88,11 @@ To implement quality of experience and error tracking:
 
 |**Video Analytics 2.x SDKs**|**Developer Guides**|
 |---|---|
-|Android/FireTV| [Track Quality for Android](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/t_vhl_track-bitrate-changes_android.html)|
-| iOS/AppleTV| [Track Quality for iOS](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/ios_2.0/t_vhl_track-bitrate-changes_ios.html)|
-| JavaScript| [Track Quality for JavaScript](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/js_2.0/t_vhl_track-bitrate-changes_js.html)|
-| Roku| [Track Quality for Roku](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/roku/c_vhl_conf-med-hrbts.html)|
-| Chromecast| [Track Quality for Chromecast](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/chromecast/c_vhl_conf-med-hrbts-chromecast.html)|
+|Android/FireTV| [Track Quality for Android](track-bitrate-changes_android.md)|
+| iOS/AppleTV| [Track Quality for iOS](track-bitrate-changes_ios.md)|
+| JavaScript| [Track Quality for JavaScript](track-bitrate-changes_js.md)|
+| Roku| [Track Quality for Roku](conf-med-hrbts.md)|
+| Chromecast| [Track Quality for Chromecast](conf-med-hrbts-chromecast.md)|
 
 |**Video Analytics 1.x SDKs\* **|**Developer Guides**|
 |---|---|
@@ -101,7 +101,7 @@ To implement quality of experience and error tracking:
 | Chromecast| [Track Quality for Chromecast](chromecast_1.x_sdk.pdf)|
 | iOS| [Track Quality for iOS](vhl-dev-guide-v15_ios.pdf)|
 | JavaScript| [Track Quality for JavaScript](vhl-dev-guide-v15_js.pdf)|
-| Primetime| **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_) **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20) **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
+| Primetime|\[**Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)\] \[**DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20)\] \[**iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)\]|
 | TVML| [Track Quality for TVML](vhl_tvml.pdf)|
 
 \* For all 1.x SDKs, the links are for the full PDF download of the documentation. 
