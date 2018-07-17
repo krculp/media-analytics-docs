@@ -264,7 +264,6 @@ appMeasurement);</pre>
     </tr>
   </tbody>
 </table>
-</hr>
 
 ### Code Comparison: Core Playback
 
@@ -695,7 +694,6 @@ VideoPlayer.prototype.getVideoInfo = function() {
     </tr>
   </tbody>
 </table>
-</hr>
 
 ### Code Comparison: Ad Playback
 
@@ -1028,7 +1026,6 @@ VideoPlayer.prototype.getVideoInfo = function() {
     </tr>
   </tbody>
 </table>
-</hr>
 
 ### Code Comparison: Chapter Playback
 
@@ -1232,7 +1229,6 @@ VideoPlayer.prototype.getVideoInfo = function() {
     </tr>
   </tbody>
 </table>
-<hr/>
 
 ### Code Comparison: Other Events
 
