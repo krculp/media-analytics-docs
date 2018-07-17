@@ -1,6 +1,6 @@
 # Track Ads
 
-Important: The following instructions provide guidance for implementation
+**Important:** The following instructions provide guidance for implementation
 across all 2.x SDKs. If you are implementing a 1.x version of the SDK, you can
 download the Developers Guide further down this page.
 
@@ -12,12 +12,12 @@ populate the required and optional ad variables.
 
 Here are the key elements to track ad playback:
 * On ad break start, including pre-roll
-  * Create the adBreak object instance for the ad break, for example, adBreakObject. 
+  * Create the `adBreak` object instance for the ad break, for example, `adBreakObject`. 
   * Call `trackEvent(MediaHeartbeat.Event.AdBreakStart, adBreakObject);`. 
 
 * On every ad asset start
-  * Create the ad object instance for the ad asset, for example, adObject. 
-  * Populate the ad metadata, adCustomMetadata. 
+  * Create the ad object instance for the ad asset, for example, `adObject`. 
+  * Populate the ad metadata, `adCustomMetadata`. 
   * Call `trackEvent(MediaHeartbeat.Event.AdStart, adObject, adCustomMetadata);`. 
 
 * On every ad asset complete
@@ -87,17 +87,18 @@ To implement ad playback:
     };
    ```
 
-5. Call `trackEvent()` with the `AdStart` event in the `MediaHeartbeat` instance to begin tracking the ad playback. 
-
-   Be sure to include a reference to your custom metadata variable as the third
-   parameter in the event call:
-
+5. Call `trackEvent()` with the `AdStart` event in the `MediaHeartbeat` instance 
+   to begin tracking the ad playback.  Be sure to include a reference to your 
+   custom metadata variable as the third parameter in the event call:
     
    ``` javascript
-   mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdStart, adObject, adCustomMetadata);
+   mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdStart, 
+                             adObject, 
+                             adCustomMetadata);
    ```
 
-6. When the ad asset playback reaches the end of the ad, call trackEvent() with the AdComplete event. 
+6. When the ad asset playback reaches the end of the ad, call trackEvent() with 
+   the AdComplete event. 
     
    ``` javascript
    mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdComplete);
@@ -155,29 +156,24 @@ To implement ad playback:
 
 ## Code
 
-|Video Analytics 2.x SDKs  |Developer Guides|
+|Video Analytics 2.x SDKs|Developer Guides|
 |---|---|
-|Android/FireTV| [Track Ads for Android](https://marketing.adobe.com/resources/help/en_US/sc/ap
-pmeasurement/hbvideo/android_2.0/t_vhl_track-ads_android.html)|
-| iOS/AppleTV| [Track Ads for iOS](https://marketing.adobe.com/resources/help/en_US/sc/appmea
-surement/hbvideo/ios_2.0/t_vhl_track-ads_ios.html)|
-| JavaScript| [Track Ads for JavaScript](https://marketing.adobe.com/resources/help/en_US/sc
-/appmeasurement/hbvideo/js_2.0/t_vhl_track-ads_js.html)|
-| Roku| [Track Ads for Roku](https://marketing.adobe.com/resources/help/en_US/sc/appme
-asurement/hbvideo/roku/c_vhl_conf-med-hrbts.html)|
-| Chromecast| [Track Ads for Chromecast](https://marketing.adobe.com/resources/help/en_US/sc
-/appmeasurement/hbvideo/chromecast/c_vhl_conf-med-hrbts-chromecast.html)|
+|Android/FireTV| [Track Ads for Android](track-ads_android.md)|
+|iOS/AppleTV| [Track Ads for iOS](track-ads_ios.md)|
+|JavaScript| [Track Ads for JavaScript](track-ads_js.md)|
+|Roku| [Track Ads for Roku](conf-med-hrbts.md)|
+|Chromecast| [Track Ads for Chromecast](conf-med-hrbts-chromecast.md)|
 
 |Video Analytics 1.x SDKs\*  |Developer Guides|
-| Android| [Track Ads for Android](vhl-dev-guide-v15_android.pdf)|
-| AppleTV| [Track Ads for AppleTV](vhl-dev-guide-v1x_appletv.pdf)|
-| Chromecast| [Track Ads for Chromecast](chromecast_1.x_sdk.pdf)|
-| iOS| [Track Ads for iOS](vhl-dev-guide-v15_ios.pdf)|
-| JavaScript| [Track Ads for JavaScript](vhl-dev-guide-v15_js.pdf)|
-| Primetime| **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)
+|Android| [Track Ads for Android](vhl-dev-guide-v15_android.pdf)|
+|AppleTV| [Track Ads for AppleTV](vhl-dev-guide-v1x_appletv.pdf)|
+|Chromecast| [Track Ads for Chromecast](chromecast_1.x_sdk.pdf)|
+|iOS| [Track Ads for iOS](vhl-dev-guide-v15_ios.pdf)|
+|JavaScript| [Track Ads for JavaScript](vhl-dev-guide-v15_js.pdf)|
+|Primetime| **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)
   **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20)
   **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
-| TVML| [Track Ads for TVML](vhl_tvml.pdf)|
+|TVML| [Track Ads for TVML](vhl_tvml.pdf)|
 
 \* For all 1.x SDKs, the links are for the full PDF download of the documentation. 
 
