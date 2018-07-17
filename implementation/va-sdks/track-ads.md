@@ -1,8 +1,12 @@
 # Track Ads
 
+-------
+
 **Important:** The following instructions provide guidance for implementation
 across all 2.x SDKs. If you are implementing a 1.x version of the SDK, you can
 download the Developers Guide further down this page.
+
+-------
 
 ## Overview
 
@@ -163,6 +167,8 @@ To implement ad playback:
 |JavaScript| [Track Ads for JavaScript](track-ads_js.md)|
 |Roku| [Track Ads for Roku](conf-med-hrbts.md)|
 |Chromecast| [Track Ads for Chromecast](conf-med-hrbts-chromecast.md)|
+
+-------
 
 |**Video Analytics 1.x SDKs\* **|**Developer Guides**|
 |---|---|
