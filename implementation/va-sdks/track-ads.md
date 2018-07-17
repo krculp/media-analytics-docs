@@ -12,28 +12,28 @@ populate the required and optional ad variables.
 
 Here are the key elements to track ad playback:
 
-**On ad break start, including pre-roll**
+* On ad break start, including pre-roll
 
   * Create the adBreak object instance for the ad break, for example, adBreakObject. 
-  * Call trackEvent(MediaHeartbeat.Event.AdBreakStart, adBreakObject);. 
+  * Call `trackEvent(MediaHeartbeat.Event.AdBreakStart, adBreakObject);`. 
 
-**On every ad asset start**
+* On every ad asset start
 
   * Create the ad object instance for the ad asset, for example, adObject. 
   * Populate the ad metadata, adCustomMetadata. 
-  * Call trackEvent(MediaHeartbeat.Event.AdStart, adObject, adCustomMetadata);. 
+  * Call `trackEvent(MediaHeartbeat.Event.AdStart, adObject, adCustomMetadata);`. 
 
-**On every ad asset complete**
+* On every ad asset complete
 
-  * Call trackEvent(MediaHeartbeat.Event.AdComplete);. 
+  * Call `trackEvent(MediaHeartbeat.Event.AdComplete);`. 
 
-**On ad skip**
+* On ad skip
 
-  * Call trackEvent(MediaHeartbeat.Event.AdSkip);. 
+  * Call `trackEvent(MediaHeartbeat.Event.AdSkip);`. 
 
-**On ad break complete**
+* On ad break complete
 
-  * Call trackEvent(MediaHeartbeat.Event.AdBreakComplete);. 
+  * Call `trackEvent(MediaHeartbeat.Event.AdBreakComplete);`. 
 
 ## Implement
 
@@ -52,12 +52,15 @@ To implement ad playback:
    The general format for the ad break object is:
     
    ``` javascript
-   var adBreakObject = MediaHeartbeat.createAdBreakObject(<ADBREAK_NAME>, <POSITION>, <START_TIME>);
+   var adBreakObject = 
+     MediaHeartbeat.createAdBreakObject(<ADBREAK_NAME>, <POSITION>, <START_TIME>);
    ```
 
-2. Call trackEvent() with AdBreakStart in the MediaHeartbeat instance to begin tracking the ad break. 
+2. Call `trackEvent()` with `AdBreakStart` in the `MediaHeartbeat` instance to begin tracking the ad break. 
     
-    mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdBreakStart, adBreakObject);
+   ``` javascript
+   mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdBreakStart, adBreakObject);
+   ```
 
 3. Identify when the ad asset starts and create an AdObject instance using the ad information. 
 
@@ -71,45 +74,56 @@ To implement ad playback:
    |length| Ad asset length| Yes|
    
    The general format for the ad object is:
-
     
-    var adObject = MediaHeartbeat.createAdObject(<AD_NAME>, <AD_ID>, <POSITION>, <LENGTH>);
+   ``` javascript
+   var adObject = MediaHeartbeat.createAdObject(<AD_NAME>, <AD_ID>, <POSITION>, <LENGTH>);
+   ```
 
 4. Attach all the custom ad metadata to the video tracking session through context data variables. 
 
    For custom metadata, create a variable object for the custom data variables
    and populate with the data for the current ad asset. For example:
     
+   ``` javascript
     /* Set custom context data */
     var adCustomMetadata = {
         affiliate: "Sample affiliate",
         campaign: "Sample ad campaign",
         creative: "Sample creative"
     };
-    
+   ```
 
-5. Call trackEvent() with the AdStart event in the MediaHeartbeat instance to begin tracking the ad playback. 
+5. Call `trackEvent()` with the `AdStart` event in the `MediaHeartbeat` instance to begin tracking the ad playback. 
 
    Be sure to include a reference to your custom metadata variable as the third
    parameter in the event call:
 
     
-    mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdStart, adObject, adCustomMetadata);
+   ``` javascript
+   mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdStart, adObject, adCustomMetadata);
+   ```
 
 6. When the ad asset playback reaches the end of the ad, call trackEvent() with the AdComplete event. 
     
-    mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdComplete);
+   ``` javascript
+   mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdComplete);
+   ```
 
 7. If ad playback did not complete because the user chose to skip the ad, track the AdSkip event. 
     
-    mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdSkip);
+   ``` javascript
+   mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdSkip);
+   ```
 
 8. When the ad break is complete, use the AdBreakComplete event to track. 
     
-    mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdBreakComplete);
+   ``` javascript
+   mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdBreakComplete);
+   ```
 
    The following sample code utilizes our JavaScript 2.x SDK for an HTML5 video player.
     
+   ``` javascript
     /* Call on ad break start */
     
     if (e.type == "ad break start") {
@@ -143,7 +157,7 @@ To implement ad playback:
     if (e.type == "ad break complete") {
         this.mediaHeartbeat.trackEvent(MediaHeartbeat.Event.AdBreakComplete);
     };
-    
+   ```
 
 ## Code
 
@@ -160,51 +174,45 @@ asurement/hbvideo/roku/c_vhl_conf-med-hrbts.html)|
 | Chromecast| [Track Ads for Chromecast](https://marketing.adobe.com/resources/help/en_US/sc
 /appmeasurement/hbvideo/chromecast/c_vhl_conf-med-hrbts-chromecast.html)|
 
-|Video Analytics 1.x SDKs*  |Developer Guides|
+|Video Analytics 1.x SDKs\*  |Developer Guides|
 | Android| [Track Ads for Android](vhl-dev-guide-v15_android.pdf)|
 | AppleTV| [Track Ads for AppleTV](vhl-dev-guide-v1x_appletv.pdf)|
 | Chromecast| [Track Ads for Chromecast](chromecast_1.x_sdk.pdf)|
 | iOS| [Track Ads for iOS](vhl-dev-guide-v15_ios.pdf)|
 | JavaScript| [Track Ads for JavaScript](vhl-dev-guide-v15_js.pdf)|
-
-Primetime
-
+| Primetime|
   * **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)
   * **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20)
-  * **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)
+  * **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
+| TVML| [Track Ads for TVML](vhl_tvml.pdf)|
 
-TVML
-
-[Track Ads for TVML](vhl_tvml.pdf)
-
-***** For all 1.x SDKs, the links are for the full PDF download of the documentation. 
+\* For all 1.x SDKs, the links are for the full PDF download of the documentation. 
 
 ## Validate
 
-**Ad Start**
+##Ad Start
 
 On start of an individual ad playback, three key calls are sent in the
 following order:
 
-1. Video ad analytics start*****
-2. Heartbeat ad start*****
+1. Video ad analytics start\*
+2. Heartbeat ad start\*
 3. Heartbeat analytics start 
 
-*****These calls contain additional metadata variables for both custom and standard. 
+\* These calls contain additional metadata variables for both custom and standard. 
 
-**Ad Play**
+###Ad Play
 
 During ad playback, Heartbeat ad play calls are sent to the Heartbeat server
 every ten seconds.
 
-**Ad Complete**
+###Ad Complete
 
 At the 100% point on an ad, a Heartbeat ad complete call will be sent.
 
-**Ad Skip**
+###Ad Skip
 
 When an ad is skipped, no events are sent, so the tracking calls will not
 include the ad information.
 
-Tip: No unique calls are sent on ad break start and ad break complete.
-
+**Tip:** No unique calls are sent on ad break start and ad break complete.
