@@ -15,20 +15,19 @@ video heartbeat implementations.
 Chapter tracking includes chapter starts, chapter completes, and chapter
 skips. You can use the video player API with customized segmentation logic to
 identify chapter events and to populate the required and optional chapter
-variables. Here are the key elements of tracking chapter playback:
+variables. 
 
-###On chapter start 
+Here are the key elements of tracking chapter playback:
 
+* On chapter start 
   * Create the chapter object instance for the chapter, chapterObject 
   * Populate the chapter metadata, chapterCustomMetadata
   * Call trackEvent(MediaHeartbeat.Event.ChapterStart, chapterObject, chapterCustomMetadata);
 
-###On chapter complete 
-
+* On chapter complete 
   * Call trackEvent(MediaHeartbeat.Event.ChapterComplete); 
 
-###On chapter skip
-
+* On chapter skip
   * Call trackEvent(MediaHeartbeat.Event.ChapterSkip);
 
 ## Implement

@@ -11,28 +11,22 @@ skips. You can use the video player's API to identify key player events and to
 populate the required and optional ad variables.
 
 Here are the key elements to track ad playback:
-
 * On ad break start, including pre-roll
-
   * Create the adBreak object instance for the ad break, for example, adBreakObject. 
   * Call `trackEvent(MediaHeartbeat.Event.AdBreakStart, adBreakObject);`. 
 
 * On every ad asset start
-
   * Create the ad object instance for the ad asset, for example, adObject. 
   * Populate the ad metadata, adCustomMetadata. 
   * Call `trackEvent(MediaHeartbeat.Event.AdStart, adObject, adCustomMetadata);`. 
 
 * On every ad asset complete
-
   * Call `trackEvent(MediaHeartbeat.Event.AdComplete);`. 
 
 * On ad skip
-
   * Call `trackEvent(MediaHeartbeat.Event.AdSkip);`. 
 
 * On ad break complete
-
   * Call `trackEvent(MediaHeartbeat.Event.AdBreakComplete);`. 
 
 ## Implement
@@ -180,10 +174,9 @@ asurement/hbvideo/roku/c_vhl_conf-med-hrbts.html)|
 | Chromecast| [Track Ads for Chromecast](chromecast_1.x_sdk.pdf)|
 | iOS| [Track Ads for iOS](vhl-dev-guide-v15_ios.pdf)|
 | JavaScript| [Track Ads for JavaScript](vhl-dev-guide-v15_js.pdf)|
-| Primetime|
-  * **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)
-  * **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20)
-  * **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
+| Primetime| **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)
+  **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20)
+  **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
 | TVML| [Track Ads for TVML](vhl_tvml.pdf)|
 
 \* For all 1.x SDKs, the links are for the full PDF download of the documentation. 
