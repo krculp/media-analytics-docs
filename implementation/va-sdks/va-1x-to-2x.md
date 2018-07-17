@@ -1331,3 +1331,126 @@ VideoPlayer.prototype.getVideoInfo = function() {
     </tr>
   </tbody>
 </table>
+
+## VHL 1.x to 2.x API Conversion
+
+### Required Track APIs
+
+<table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><caption>Table 1. Required Track APIs:</caption>
+          
+          
+  <thead align="left">
+    <tr>
+      <th align="center" valign="top" >VHL 1.x</th>
+      <th align="center" valign="top" >VHL 2.x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top" >videoPlayerPlugin.trackVideoLoad()</td>
+      <td valign="top" >N/A</td>
+    </tr>
+    <tr>
+      <td valign="top" >videoPlayerPlugin.trackSessionStart()</td>
+      <td valign="top" ><a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#trackSessionStart">mediaHeartbeat.trackSessionStart(mediaObject,
+            mediaCustomMetadata)</a></td>
+    </tr>
+    <tr>
+      <td valign="top" >videoPlayerPlugin.trackPlay()</td>
+      <td valign="top" ><a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#trackPlay">mediaHeartbeat.trackPlay()</a></td>
+    </tr>
+    <tr>
+      <td valign="top" >videoPlayerPlugin.trackPause()</td>
+      <td valign="top" ><a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#trackPause">mediaHeartbeat.trackPause()</a></td>
+    </tr>
+    <tr>
+      <td valign="top" >videoPlayerPlugin.trackComplete()</td>
+      <td valign="top" ><a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#trackComplete">mediaHeartbeat.trackComplete()</a></td>
+    </tr>
+    <tr>
+      <td valign="top" >videoPlayerPlugin.trackVideoUnload()</td>
+      <td valign="top" ><a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#trackSessionEnd">mediaHeartbeat.trackSessionEnd()</a></td>
+    </tr>
+    <tr>
+      <td valign="top" >videoPlayerPlugin.trackApplicationError()</td>
+      <td valign="top" >N/A</td>
+    </tr>
+    <tr>
+      <td valign="top" >videoPlayerPlugin.trackVideoPlayerError()</td>
+      <td valign="top" ><a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#trackError">mediaHeartbeat.trackError()</a></td>
+    </tr>
+  </tbody>
+</table>
+
+All of the optional tracking APIs such as (Ads, Chapters, Bitrate change, Seeking, and Buffering) are now part of a single trackEvent API. The <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#trackEvent">trackEvent</a> API receives a constant parameter that represents the type of event that it is intended to track:
+
+### Optional trackEvent APIs
+      
+<table cellpadding="4" cellspacing="0" summary="" frame="border" border="1" rules="all"><caption>Table 2. Optional trackEvent APIs:</caption>
+  <thead align="left">
+    <tr>
+      <th align="center" valign="top" >VHL 1.x</th>
+      <th align="center" valign="top" >VHL 2.x</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td valign="top" >Return a valid AdBreakInfo in
+          VideoPlayerPlugin.getAdBreakInfo()</td>
+      <td valign="top" >trackEvent(Event.AdBreakStart)</td>
+    </tr>
+    <tr>
+      <td valign="top" >Return null in VideoPlayerPlugin.getAdBreakInfo()</td>
+      <td valign="top" >trackEvent(Event.AdBreakComplete)</td>
+    </tr>
+    <tr>
+      <td valign="top" >playerPlugin.trackAdStart()</td>
+      <td valign="top" >trackEvent(Event.AdStart, adObject, adCustomMetadata)</td>
+    </tr>
+    <tr>
+      <td valign="top" >playerPlugin.trackAdComplete()</td>
+      <td valign="top" >trackEvent(Event.AdComplete)</td>
+    </tr>
+    <tr>
+      <td valign="top" >Return null in VideoPlayerPlugin.getAdInfo()</td>
+      <td valign="top" >trackEvent(Event.AdSkip)</td>
+    </tr>
+    <tr>
+      <td valign="top" >playerPlugin.trackChapterStart()</td>
+      <td valign="top" >trackEvent(Event.ChapterStart, chapterObject,
+          chapterCustomMetadata)</td>
+    </tr>
+    <tr>
+      <td valign="top" >playerPlugin.trackChapterComplete()</td>
+      <td valign="top" >trackEvent(Event.ChapterComplete)</td>
+    </tr>
+    <tr>
+      <td valign="top" >Return null in VideoPlayerPlugin.getChapterInfo()</td>
+      <td valign="top" >trackEvent(Event.ChapterSkip)</td>
+    </tr>
+    <tr>
+      <td valign="top" >playerPlugin.trackSeekStart()</td>
+      <td valign="top" >trackEvent(Event.SeekStart)</td>
+    </tr>
+    <tr>
+      <td valign="top" >playerPlugin.trackSeekComplete()</td>
+      <td valign="top" >trackEvent(Event.SeekComplete)</td>
+    </tr>
+    <tr>
+      <td valign="top" >playerPlugin.trackBufferStart()</td>
+      <td valign="top" >trackEvent(Event.BufferStart)</td>
+    </tr>
+    <tr>
+      <td valign="top" >playerPlugin.trackBufferComplete()</td>
+      <td valign="top" >trackEvent(Event.BufferComplete)</td>
+    </tr>
+    <tr>
+      <td valign="top" >playerPlugin.trackBitrateChange()</td>
+      <td valign="top" >trackEvent(Event.BitrateChange)</td>
+    </tr>
+    <tr>
+      <td valign="top" >playerPlugin.trackTimedMetadata()</td>
+      <td valign="top" >trackEvent(Event.TimedMetadataUpdate)</td>
+    </tr>
+  </tbody>
+</table>
