@@ -54,6 +54,525 @@ The following tables provide side-by-side code comparisons between VHL 1.x and
 VHL 2.x, covering Initialization, Core Playback, Ad Playback, Chapter
 Playback, and some additional events.
 
+## stripped of classes, ids
+<table cellpadding="4" cellspacing="0" summary=""   frame="border" border="1" rules="all"><caption><span >Table 1. VHL Code Comparison: INITIALIZATION</span></caption>
+  <thead  align="left">
+    <tr>
+      <th  align="center" valign="top" >VHL 1.x API </th>
+      <th  align="center" valign="top" >VHL 2.x API</th>
+    </tr>
+  </thead>
+  <tbody >
+    <tr>
+      <td  align="left" valign="top" headers="d79986e106 ">
+        <p ><em ><strong >Object Initialization</strong></em></p>
+        <p ><strong >1.x:</strong></p>
+        <div >
+          <ul  >
+            <li ><samp >Heartbeat()</samp></li>
+            <li ><samp >VideoPlayerPlugin() </samp></li>
+            <li ><samp >AdobeAnalyticsPlugin() </samp></li>
+            <li ><samp >HeartbeatPlugin()</samp></li>
+          </ul>
+        </div>
+      </td>
+      <td  align="left" valign="top" headers="d79986e109 ">
+        <p >... </p>
+        <p ><strong >2.x:</strong></p>
+        <div >
+          <ul  >
+            <li ><samp >MediaHeartbeat()</samp></li>
+            <li ><samp >MediaHeartbeatConfig()</samp></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td  align="left" valign="top" headers="d79986e106 ">
+        <div ><strong >Set up the video player plugin:
+            </strong><pre class="pre codeblock syntax javascript">this._playerPlugin = 
+ new VideoPlayerPlugin(
+new SampleVideoPlayerPluginDelegate(this._player));
+var playerPluginConfig = 
+  new VideoPlayerPluginConfig();
+playerPluginConfig.debugLogging = true; 
+// Set up the AppMeasurement plugin
+this._aaPlugin = 
+ new AdobeAnalyticsPlugin(
+appMeasurement, 
+new SampleAdobeAnalyticsPluginDelegate());
+var aaPluginConfig = new AdobeAnalyticsPluginConfig();
+aaPluginConfig.channel = 
+  Configuration.HEARTBEAT.CHANNEL;
+aaPluginConfig.debuglogging = true; 
+this._aaPlugin.configure(aaPluginConfig); 
+// Set up the AdobeHeartbeat plugin
+var ahPlugin = 
+  new AdobeHeartbeatPlugin(
+new SampleAdobeHeartbeatPluginDelegate());
+var ahPluginConfig = new AdobeHeartbeatPluginConfig(
+configuration.HEARTBEAT.TRACKING_SERVER,
+configuration.HEARTBEAT.PUBLISHER);
+ahPluginConfig.ovp = configuration.HEARTBEAT.OVP;
+ahPluginConfig.sdk = configuration.HEARTBEAT.SDK;
+ahPluginConfig.debugLogging = true; 
+ahPlugin.configure(ahPluginConfig);
+var plugins = 
+  [this._playerPlugin, this._aaPlugin, ahPlugin];
+// Set up and configure the heartbeat library
+this._heartbeat = 
+ new Heartbeat(new SampleHeartbeatDelegate(), 
+       plugins);
+var configData = new HeartbeatConfig();
+configData.debugLogging = true; 
+this._heartbeat.configure(configData);</pre>
+<a  href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/video.analytics.provider.js#L58" target="_blank">1.x Sample Player</a></div>
+        <p >...</p>
+      </td>
+      <td  align="left" valign="top" headers="d79986e109 ">
+        <div ><strong >Media Heartbeat initialization:
+            </strong><pre class="pre codeblock syntax javascript">
+var mediaConfig = 
+  new MediaHeartbeatConfig();
+mediaConfig.trackingServer = 
+  Configuration.HEARTBEAT.TRACKING_SERVER; 
+mediaConfig.playerName = 
+  Configuration.PLAYER.NAME;
+mediaConfig.debugLogging = true;
+mediaConfig.channel = 
+  Configuration.HEARTBEAT.CHANNEL;
+mediaConfig.ssl = false;
+mediaConfig.ovp = 
+  Configuration.HEARTBEAT.OVP;
+mediaConfig.appVersion = 
+  Configuration.HEARTBEAT.SDK;
+this._mediaHeartbeat = new MediaHeartbeat(
+ new SampleMediaHeartbeatDelegate(this._player),
+ mediaConfig, 
+ appMeasurement);</pre>
+<a  href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/video.analytics.provider.js#L47" target="_blank">2.x Sample Player</a></div>
+        <p >...</p>
+      </td>
+    </tr>
+    <tr>
+      <td  align="left" valign="top" headers="d79986e106 ">
+        <p ><em ><strong >Delegates</strong></em></p>
+        <p ><strong >1.x:</strong></p>
+        <div >
+          <ul  >
+            <li ><samp >VideoPlayerPluginDelegate()</samp></li>
+            <li ><samp >VideoPlayerPluginDelegate().getVideoInfo</samp></li>
+            <li ><samp >VideoPlayerPluginDelegate().getAdBreakInfo</samp></li>
+            <li ><samp >VideoPlayerPluginDelegate().getAdInfo</samp></li>
+            <li ><samp >VideoPlayerPluginDelegate().getChapterInfo</samp></li>
+            <li ><samp >VideoPlayerPluginDelegate().getQoSInfo</samp></li>
+            <li ><samp >VideoPlayerPluginDelegate().get.onError</samp></li>
+            <li ><samp >AdobeAnalyticsPluginDelegate()</samp></li>
+            <li ><samp >AdobeHeartbeatPluginDelegate()</samp></li>
+          </ul>
+        </div>
+      </td>
+      <td  align="left" valign="top" headers="d79986e109 ">
+        <p >... </p>
+        <p ><strong >2.x:</strong></p>
+        <div >
+          <ul  >
+            <li ><samp >MediaHeartbeatDelegate()</samp></li>
+            <li ><samp >MediaHeartbeatDelegate().getCurrentPlaybackTime</samp></li>
+            <li ><samp >MediaHeartbeatDelegate().getQoSObject</samp></li>
+          </ul>
+        </div>
+      </td>
+    </tr>
+    <tr>
+      <td  align="left" valign="top" headers="d79986e106 ">
+        <div ><strong >VideoPlayerPluginDelegate:
+            </strong><pre class="pre codeblock syntax javascript">
+$.extend(SampleVideoPlayerPluginDelegate.prototype, 
+ VideoPlayerPluginDelegate.prototype);
+function SampleVideoPlayerPluginDelegate(player) {
+this._player = player;
+}
+SampleVideoPlayerPluginDelegate.prototype.getVideoInfo = 
+  function() { 
+  return this._player.getVideoInfo(); 
+  };
+SampleVideoPlayerPluginDelegate.prototype.getAdBreakInfo = 
+  function() { 
+  return this._player.getAdBreakInfo(); 
+  };
+SampleVideoPlayerPluginDelegate.prototype.getAdInfo = 
+  function() { 
+  return this._player.getAdInfo(); 
+  };
+SampleVideoPlayerPluginDelegate.prototype.getChapterInfo = 
+  function() { 
+  return this._player.getChapterInfo(); 
+  };
+SampleVideoPlayerPluginDelegate.prototype.getQoSInfo = 
+  function() { 
+  return this._player.getQoSInfo(); 
+  };</pre>
+<a  href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/sample.video.player.plugin.delegate.js#L17" target="_blank">Sample 1.x Player</a></div>
+        <p >...</p>
+        <div ><strong >AdobeAnalyticsPluginDelegate:
+            </strong><pre class="pre codeblock syntax javascript">
+$.extend(SampleAdobeAnalyticsPluginDelegate.prototype, 
+ AdobeAnalyticsPluginDelegate.prototype);
+function SampleAdobeAnalyticsPluginDelegate() {}
+SampleAdobeAnalyticsPluginDelegate.prototype.onError = 
+  function(errorInfo) {
+  console.log("AdobeAnalyticsPlugin error: " + 
+           errorInfo.getMessage() + 
+           " | " + 
+           errorInfo.getDetails());
+  };</pre>
+<a  href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/sample.adobe.analytics.plugin.delegate.js#L17" target="_blank">Sample 1.x Player</a></div>
+        <p >...</p>
+        <div ><strong >HeartbeatDelegate:
+            </strong><pre class="pre codeblock syntax javascript">
+$.extend(SampleHeartbeatDelegate.prototype, 
+ HeartbeatDelegate.prototype);
+function SampleHeartbeatDelegate() {}
+SampleHeartbeatDelegate.prototype.onError = 
+  function(errorInfo) {
+  console.log("Heartbeat error: " + 
+          errorInfo.getMessage() + 
+          " | " + 
+          errorInfo.getDetails());
+};</pre>
+<a  href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/sample.heartbeat.delegate.js#L17" target="_blank">Sample 1.x Player</a></div>
+      </td>
+      <td  align="left" valign="top" headers="d79986e109 ">
+        <div ><strong >MediaHeartbeatDelegate:
+            </strong><pre class="pre codeblock syntax javascript">
+ADB.core.extend(SampleMediaHeartbeatDelegate.prototype, 
+  MediaHeartbeatDelegate.prototype);
+function SampleMediaHeartbeatDelegate(player) {
+   this._player = player;
+}
+SampleMediaHeartbeatDelegate.prototype.getCurrentPlaybackTime = 
+  function() {
+  return this._player.getCurrentPlaybackTime();
+  };
+SampleMediaHeartbeatDelegate.prototype.getQoSObject = 
+  function() {
+  return this._player.getQoSInfo();
+  };
+this._mediaHeartbeat = 
+  new MediaHeartbeat(new 
+SampleMediaHeartbeatDelegate(this._player), 
+mediaConfig, 
+appMeasurement);</pre>
+<a  href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/video.analytics.provider.js#L57" target="_blank">Sample 2.x Player</a></div>
+        <p >...</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+## un-stripped table
+<table cellpadding="4" cellspacing="0" summary="" id="concept_qqg_wmv_s1b__table_ay5_rnw_2bb" class="table codescroll" frame="border" border="1" rules="all"><caption><span class="tablecap">Table 1. VHL Code Comparison: INITIALIZATION</span></caption>
+  
+  
+  <thead class="thead" align="left">
+    <tr>
+      <th class="entry" align="center" valign="top" id="d79986e106">VHL 1.x API </th>
+
+      <th class="entry" align="center" valign="top" id="d79986e109">VHL 2.x API</th>
+
+    </tr>
+
+  </thead>
+
+  <tbody class="tbody">
+    <tr>
+      <td class="entry" align="left" valign="top" headers="d79986e106 ">
+        <p class="p"><em class="ph i"><strong class="ph b">Object Initialization</strong></em></p>
+
+        <p class="p"><strong class="ph b">1.x:</strong></p>
+
+        <div class="p">
+          <ul class="ul" id="concept_qqg_wmv_s1b__ul_ebb_cpw_2bb">
+            <li class="li"><samp class="ph codeph">Heartbeat()</samp></li>
+
+            <li class="li"><samp class="ph codeph">VideoPlayerPlugin() </samp></li>
+
+            <li class="li"><samp class="ph codeph">AdobeAnalyticsPlugin() </samp></li>
+
+            <li class="li"><samp class="ph codeph">HeartbeatPlugin()</samp></li>
+
+          </ul>
+
+        </div>
+
+      </td>
+
+      <td class="entry" align="left" valign="top" headers="d79986e109 ">
+        <p class="p">... </p>
+
+        <p class="p"><strong class="ph b">2.x:</strong></p>
+
+        <div class="p">
+          <ul class="ul" id="concept_qqg_wmv_s1b__ul_bck_dpw_2bb">
+            <li class="li"><samp class="ph codeph">MediaHeartbeat()</samp></li>
+
+            <li class="li"><samp class="ph codeph">MediaHeartbeatConfig()</samp></li>
+
+          </ul>
+
+        </div>
+
+      </td>
+
+    </tr>
+
+    <tr>
+      <td class="entry" align="left" valign="top" headers="d79986e106 ">
+        <div class="p"><strong class="ph b">Set up the video player plugin:
+            </strong><pre class="pre codeblock syntax javascript">this._playerPlugin = 
+ new VideoPlayerPlugin(
+new SampleVideoPlayerPluginDelegate(this._player));
+var playerPluginConfig = 
+  new VideoPlayerPluginConfig();
+playerPluginConfig.debugLogging = true; 
+
+// Set up the AppMeasurement plugin
+this._aaPlugin = 
+ new AdobeAnalyticsPlugin(
+appMeasurement, 
+new SampleAdobeAnalyticsPluginDelegate());
+var aaPluginConfig = new AdobeAnalyticsPluginConfig();
+
+aaPluginConfig.channel = 
+  Configuration.HEARTBEAT.CHANNEL;
+
+aaPluginConfig.debuglogging = true; 
+this._aaPlugin.configure(aaPluginConfig); 
+
+// Set up the AdobeHeartbeat plugin
+var ahPlugin = 
+  new AdobeHeartbeatPlugin(
+new SampleAdobeHeartbeatPluginDelegate());
+var ahPluginConfig = new AdobeHeartbeatPluginConfig(
+configuration.HEARTBEAT.TRACKING_SERVER,
+configuration.HEARTBEAT.PUBLISHER);
+ahPluginConfig.ovp = configuration.HEARTBEAT.OVP;
+ahPluginConfig.sdk = configuration.HEARTBEAT.SDK;
+ahPluginConfig.debugLogging = true; 
+ahPlugin.configure(ahPluginConfig);
+
+var plugins = 
+  [this._playerPlugin, this._aaPlugin, ahPlugin];
+
+// Set up and configure the heartbeat library
+this._heartbeat = 
+ new Heartbeat(new SampleHeartbeatDelegate(), 
+       plugins);
+var configData = new HeartbeatConfig();
+configData.debugLogging = true; 
+this._heartbeat.configure(configData);</pre>
+<a class="xref" href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/video.analytics.provider.js#L58" target="_blank">1.x Sample Player</a></div>
+
+        <p class="p">...</p>
+
+      </td>
+
+      <td class="entry" align="left" valign="top" headers="d79986e109 ">
+        <div class="p"><strong class="ph b">Media Heartbeat initialization:
+            </strong><pre class="pre codeblock syntax javascript">
+var mediaConfig = 
+  new MediaHeartbeatConfig();
+mediaConfig.trackingServer = 
+  Configuration.HEARTBEAT.TRACKING_SERVER; 
+mediaConfig.playerName = 
+  Configuration.PLAYER.NAME;
+mediaConfig.debugLogging = true;
+mediaConfig.channel = 
+  Configuration.HEARTBEAT.CHANNEL;
+mediaConfig.ssl = false;
+mediaConfig.ovp = 
+  Configuration.HEARTBEAT.OVP;
+mediaConfig.appVersion = 
+  Configuration.HEARTBEAT.SDK;
+
+this._mediaHeartbeat = new MediaHeartbeat(
+ new SampleMediaHeartbeatDelegate(this._player),
+ mediaConfig, 
+ appMeasurement);</pre>
+<a class="xref" href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/video.analytics.provider.js#L47" target="_blank">2.x Sample Player</a></div>
+
+        <p class="p">...</p>
+
+      </td>
+
+    </tr>
+
+    <tr>
+      <td class="entry" align="left" valign="top" headers="d79986e106 ">
+        <p class="p"><em class="ph i"><strong class="ph b">Delegates</strong></em></p>
+
+        <p class="p"><strong class="ph b">1.x:</strong></p>
+
+        <div class="p">
+          <ul class="ul" id="concept_qqg_wmv_s1b__ul_qdt_bqw_2bb">
+            <li class="li"><samp class="ph codeph">VideoPlayerPluginDelegate()</samp></li>
+
+            <li class="li"><samp class="ph codeph">VideoPlayerPluginDelegate().getVideoInfo</samp></li>
+
+            <li class="li"><samp class="ph codeph">VideoPlayerPluginDelegate().getAdBreakInfo</samp></li>
+
+            <li class="li"><samp class="ph codeph">VideoPlayerPluginDelegate().getAdInfo</samp></li>
+
+            <li class="li"><samp class="ph codeph">VideoPlayerPluginDelegate().getChapterInfo</samp></li>
+
+            <li class="li"><samp class="ph codeph">VideoPlayerPluginDelegate().getQoSInfo</samp></li>
+
+            <li class="li"><samp class="ph codeph">VideoPlayerPluginDelegate().get.onError</samp></li>
+
+            <li class="li"><samp class="ph codeph">AdobeAnalyticsPluginDelegate()</samp></li>
+
+            <li class="li"><samp class="ph codeph">AdobeHeartbeatPluginDelegate()</samp></li>
+
+          </ul>
+
+        </div>
+
+      </td>
+
+      <td class="entry" align="left" valign="top" headers="d79986e109 ">
+        <p class="p">... </p>
+
+        <p class="p"><strong class="ph b">2.x:</strong></p>
+
+        <div class="p">
+          <ul class="ul" id="concept_qqg_wmv_s1b__ul_ans_cqw_2bb">
+            <li class="li"><samp class="ph codeph">MediaHeartbeatDelegate()</samp></li>
+
+            <li class="li"><samp class="ph codeph">MediaHeartbeatDelegate().getCurrentPlaybackTime</samp></li>
+
+            <li class="li"><samp class="ph codeph">MediaHeartbeatDelegate().getQoSObject</samp></li>
+
+          </ul>
+
+        </div>
+
+      </td>
+
+    </tr>
+
+    <tr>
+      <td class="entry" align="left" valign="top" headers="d79986e106 ">
+        <div class="p"><strong class="ph b">VideoPlayerPluginDelegate:
+            </strong><pre class="pre codeblock syntax javascript">
+$.extend(SampleVideoPlayerPluginDelegate.prototype, 
+ VideoPlayerPluginDelegate.prototype);
+
+function SampleVideoPlayerPluginDelegate(player) {
+this._player = player;
+}
+
+SampleVideoPlayerPluginDelegate.prototype.getVideoInfo = 
+  function() { 
+  return this._player.getVideoInfo(); 
+  };
+
+SampleVideoPlayerPluginDelegate.prototype.getAdBreakInfo = 
+  function() { 
+  return this._player.getAdBreakInfo(); 
+  };
+
+SampleVideoPlayerPluginDelegate.prototype.getAdInfo = 
+  function() { 
+  return this._player.getAdInfo(); 
+  };
+
+SampleVideoPlayerPluginDelegate.prototype.getChapterInfo = 
+  function() { 
+  return this._player.getChapterInfo(); 
+  };
+
+SampleVideoPlayerPluginDelegate.prototype.getQoSInfo = 
+  function() { 
+  return this._player.getQoSInfo(); 
+  };</pre>
+<a class="xref" href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/sample.video.player.plugin.delegate.js#L17" target="_blank">Sample 1.x Player</a></div>
+
+        <p class="p">...</p>
+
+        <div class="p"><strong class="ph b">AdobeAnalyticsPluginDelegate:
+            </strong><pre class="pre codeblock syntax javascript">
+$.extend(SampleAdobeAnalyticsPluginDelegate.prototype, 
+ AdobeAnalyticsPluginDelegate.prototype);
+
+function SampleAdobeAnalyticsPluginDelegate() {}
+
+SampleAdobeAnalyticsPluginDelegate.prototype.onError = 
+  function(errorInfo) {
+  console.log("AdobeAnalyticsPlugin error: " + 
+           errorInfo.getMessage() + 
+           " | " + 
+           errorInfo.getDetails());
+  };</pre>
+<a class="xref" href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/sample.adobe.analytics.plugin.delegate.js#L17" target="_blank">Sample 1.x Player</a></div>
+
+        <p class="p">...</p>
+
+        <div class="p"><strong class="ph b">HeartbeatDelegate:
+            </strong><pre class="pre codeblock syntax javascript">
+$.extend(SampleHeartbeatDelegate.prototype, 
+ HeartbeatDelegate.prototype);
+
+function SampleHeartbeatDelegate() {}
+
+SampleHeartbeatDelegate.prototype.onError = 
+  function(errorInfo) {
+  console.log("Heartbeat error: " + 
+          errorInfo.getMessage() + 
+          " | " + 
+          errorInfo.getDetails());
+};</pre>
+<a class="xref" href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/sample.heartbeat.delegate.js#L17" target="_blank">Sample 1.x Player</a></div>
+
+      </td>
+
+      <td class="entry" align="left" valign="top" headers="d79986e109 ">
+        <div class="p"><strong class="ph b">MediaHeartbeatDelegate:
+            </strong><pre class="pre codeblock syntax javascript">
+ADB.core.extend(SampleMediaHeartbeatDelegate.prototype, 
+  MediaHeartbeatDelegate.prototype);
+
+function SampleMediaHeartbeatDelegate(player) {
+   this._player = player;
+}
+
+SampleMediaHeartbeatDelegate.prototype.getCurrentPlaybackTime = 
+  function() {
+  return this._player.getCurrentPlaybackTime();
+  };
+
+SampleMediaHeartbeatDelegate.prototype.getQoSObject = 
+  function() {
+  return this._player.getQoSInfo();
+  };
+
+this._mediaHeartbeat = 
+  new MediaHeartbeat(new 
+SampleMediaHeartbeatDelegate(this._player), 
+mediaConfig, 
+appMeasurement);</pre>
+<a class="xref" href="https://github.com/Adobe-Marketing-Cloud/video-heartbeat-v2/blob/master/sdks/js/samples/BasicPlayerSample/script/app/analytics/video.analytics.provider.js#L57" target="_blank">Sample 2.x Player</a></div>
+
+        <p class="p">...</p>
+
+      </td>
+
+    </tr>
+
+  </tbody>
+
+</table>
+
 Table 1. VHL Code Comparison: INITIALIZATION
 
 VHL 1.x API  VHL 2.x API
