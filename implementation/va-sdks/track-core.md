@@ -1,6 +1,6 @@
 # Track Core Video Playback
 
-Important: If you are implementing a 1.x version of the SDK, you can download
+**Important:** If you are implementing a 1.x version of the SDK, you can download
 the 1.x Developers Guide further down this page.
 
 ## Overview
@@ -10,35 +10,34 @@ and scrubbing. Utilize the video player API to identify key player events and
 to populate the required and optional video variables. The following are the
 key elements of tracking video playback; details for each item are below:
 
-* On video load:*
+* On video load:
   * Create the media object 
   * Populate the metadata 
-  * Call trackSessionStart(mediaObject, contextData)
+  * Call `trackSessionStart(mediaObject, contextData)`
 
 * On video start: 
-  * Call trackPlay()
+  * Call `trackPlay()`
 
 * On video complete:
-  * Call trackComplete()
-  * Call trackSessionEnd()
+  * Call `trackComplete()`
+  * Call `trackSessionEnd()`
 
 * On video pause:
-  * Call trackPause()
-  * Call trackPlay() when the video resumes 
+  * Call `trackPause()`
+  * Call `trackPlay()` when the video resumes 
 
 * On video scrub:
-  * Call trackEvent(MediaHeartbeat.Event.SeekStart)
-  * Call trackEvent(MediaHeartbeat.Event.SeekComplete)
+  * Call `trackEvent(MediaHeartbeat.Event.SeekStart)`
+  * Call `trackEvent(MediaHeartbeat.Event.SeekComplete)`
 
 * On video buffer:
 
-  * Call trackEvent(MediaHeartbeat.Event.BufferStart);
-  * Call trackEvent(MediaHeartbeat.Event.BufferComplete);
+  * Call `trackEvent(MediaHeartbeat.Event.BufferStart)`
+  * Call `trackEvent(MediaHeartbeat.Event.BufferComplete)`
 
 **Tip:** The playhead position is set as part of the set-up and configuration
-code. For more information about getCurrentPlayheadTime(), see [Set up and
-Configure](c_vhl_setup-and-
-config.html#concept_425EDB4E08BA47EABBCDE3F02742EBD8).
+code. For more information about getCurrentPlayheadTime(), see 
+[Set up and Configure](setup-and-config.md).
 
 ## Implement
 
@@ -48,20 +47,20 @@ To implement core video playback:
 
    Here is the MediaObject reference:
    
-   |Variable Name|  Description|  Required|
+   |**Variable Name**|**Description**|**Required**|
    |---|---|---|
    |name| Video name| Yes|
    |mediaid| Video unique identifier| Yes|
    |length| Video length| Yes|
    |streamType| Stream type (see constants MediaHeartbeat.StreamType.VOD)| Yes|
    
-   Here is the MediaHeartbeat.StreamType.VOD constants reference:
+   `MediaHeartbeat.StreamType.VOD` constants reference:
    
-   |Constant Name  |Description|
+   |**Constant Name**|**Description**|
    |---|---|
-   |VOD| Stream type for Video on Demand.|
-   |LIVE| Stream type for LIVE content.|
-   |LINEAR| Stream type for LINEAR content.|
+   |VOD|Stream type for Video on Demand.|
+   |LIVE|Stream type for LIVE content.|
+   |LINEAR|Stream type for LINEAR content.|
    
    The general format for the MediaObject is:
 
@@ -145,6 +144,7 @@ To implement core video playback:
    ``` javascript
    mediaHeartbeat.trackSessionEnd();
    ```
+   -------
 
    **Important:** `trackSessionEnd()` marks the end of a video tracking session. If the
    session was successfully watched to completion, where the user watched the
@@ -153,7 +153,9 @@ To implement core video playback:
    `trackSessionEnd()`, except for `trackSessionStart()` for a new video tracking
    session.
 
-7. Identify the event from the video player for video pause and call trackPause(). 
+   -------
+
+7. Identify the event from the video player for video pause and call `trackPause()`. 
     
    ``` javascript
     mediaHeartbeat.trackPause();
@@ -164,7 +166,7 @@ that `trackPause()` is properly called. Sample scenarios include when an
 application goes to the background or the player automatically pauses because
 of a mobile interrupt.
 
-8. Identify the event from the video player for video play and/or video resume from pause and call trackPlay(). 
+8. Identify the event from the video player for video play and/or video resume from pause and call `trackPlay()`. 
     
    ``` javascript
    mediaHeartbeat.trackPlay();
@@ -275,29 +277,22 @@ player:
    ```
 ## Code
 
-|Video Analytics 2.x SDKs  |Developer Guides|
+|**Video Analytics 2.x SDKs**|**Developer Guides**|
 |---|---|
-|Android/FireTV| [Track Core for Android](https://marketing.adobe.com/resources/help/en_US/sc/a
-ppmeasurement/hbvideo/android_2.0/t_vhl_track-core-playback_android.html)|
-| iOS/AppleTV| [Track Core for iOS](https://marketing.adobe.com/resources/help/en_US/sc/appme
-asurement/hbvideo/ios_2.0/t_vhl_track-core-playback_ios.html)|
-| JavaScript| [Track Core for JavaScript](https://marketing.adobe.com/resources/help/en_US/s
-c/appmeasurement/hbvideo/js_2.0/t_vhl_track-core-playback_js.html)|
-| Roku| [Track Core for Roku](https://marketing.adobe.com/resources/help/en_US/sc/appm
-easurement/hbvideo/roku/c_vhl_conf-med-hrbts.html)|
-| Chromecast| [Track Core for Chromecast](https://marketing.adobe.com/resources/help/en_US/s
-c/appmeasurement/hbvideo/chromecast/c_vhl_conf-med-hrbts-chromecast.html)|
+|Android/FireTV| [Track Core for Android](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/android_2.0/t_vhl_track-core-playback_android.html)|
+| iOS/AppleTV| [Track Core for iOS](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/ios_2.0/t_vhl_track-core-playback_ios.html)|
+| JavaScript| [Track Core for JavaScript](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/js_2.0/t_vhl_track-core-playback_js.html)|
+| Roku| [Track Core for Roku](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/roku/c_vhl_conf-med-hrbts.html)|
+| Chromecast| [Track Core for Chromecast](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/chromecast/c_vhl_conf-med-hrbts-chromecast.html)|
 
-|Video Analytics 1.x SDKs*  |Developer Guides|
+|**Video Analytics 1.x SDKs\*  **|**Developer Guides**|
+|---|---|
 | Android| [Track Core for Android](vhl-dev-guide-v15_android.pdf)|
 | AppleTV| [Track Core for AppleTV](vhl-dev-guide-v1x_appletv.pdf)|
 | Chromecast| [Track Core for Chromecast](chromecast_1.x_sdk.pdf)|
 | iOS| [Track Core for iOS](vhl-dev-guide-v15_ios.pdf)|
 | JavaScript| [Track Core for JavaScript](vhl-dev-guide-v15_js.pdf)|
-| Primetime|
-  * **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)
-  * **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20)
-  * **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
+| Primetime| **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_) **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20) **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
 | TVML| [Track Core for TVML](vhl_tvml.pdf)|
 
 \* For all 1.x SDKs, the links are for the full PDF download of the documentation. 

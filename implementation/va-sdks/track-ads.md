@@ -60,7 +60,7 @@ To implement ad playback:
 
    Here is the AdObject reference:
    
-   |**Variable Name|Description|Required**|
+   |**Variable Name**|**Description**|**Required**|
    |---|---|---|
    |name| Friendly name of the ad asset.| Yes|
    |adId| Unique identified for the ad asset.| Yes|

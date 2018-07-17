@@ -38,20 +38,23 @@ To implement custom video chapters:
 
    Here is the ChapterObject chapter tracking reference:
    
-   |Variable Name|  Description|  Required|
+   |**Variable Name**|**Description**|**Required**|
    |---|---|---|
    |name| Chapter name| Yes|
    |position| Chapter position| Yes|
    |length| Chapter length| Yes|
    |startTime| Chapter start time| Yes|
    
-   Tip: These variables are only required if you are planning to track chapters.
+   **Tip:** These variables are only required if you are planning to track chapters.
    
    The general format of the chapter object is:
    
    ``` javascript
    var chapterObject = 
-     MediaHeartbeat.createChapterObject(<CHAPTER_NAME>, <POSITION>, <LENGTH>, <START_TIME>);
+     MediaHeartbeat.createChapterObject(<CHAPTER_NAME>, 
+                                        <POSITION>, 
+                                        <LENGTH>, 
+                                        <START_TIME>);
    ```
 
 2. If you include custom metadata for the chapter, create the context data variables for the metadata. 
@@ -116,32 +119,26 @@ To implement custom video chapters:
     
 ## Code
 
-|Video Analytics 2.x SDKs  |Developer Guides|
+|Video Analytics 2.x SDKs**|**Developer Guides**|
 |---|---|
-|Android/FireTV| [Track Chapters for Android](https://marketing.adobe.com/resources/help/en_US/
+|Android/FireTV|[Track Chapters for Android](https://marketing.adobe.com/resources/help/en_US/
 sc/appmeasurement/hbvideo/android_2.0/t_vhl_track-chap_android.html)|
-| iOS/AppleTV| [Track Chapers for iOS](https://marketing.adobe.com/resources/help/en_US/sc/ap
-pmeasurement/hbvideo/ios_2.0/t_vhl_track-chap_ios.html)|
-| JavaScript| [Track Chapters for JavaScript](https://marketing.adobe.com/resources/help/en_
-US/sc/appmeasurement/hbvideo/js_2.0/t_vhl_track-chap_js.html)|
-| Roku| [Track Chapters for Roku](https://marketing.adobe.com/resources/help/en_US/sc/
-appmeasurement/hbvideo/roku/c_vhl_conf-med-hrbts.html)|
-| Chromecast| [Track Chapters for Chromecast](https://marketing.adobe.com/resources/help/en_
-US/sc/appmeasurement/hbvideo/chromecast/c_vhl_conf-med-hrbts-chromecast.html)|
+|iOS/AppleTV|[Track Chapers for iOS](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/ios_2.0/t_vhl_track-chap_ios.html)|
+|JavaScript|[Track Chapters for JavaScript](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/js_2.0/t_vhl_track-chap_js.html)|
+|Roku|[Track Chapters for Roku](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/roku/c_vhl_conf-med-hrbts.html)|
+|Chromecast|[Track Chapters for Chromecast](https://marketing.adobe.com/resources/help/en_US/sc/appmeasurement/hbvideo/chromecast/c_vhl_conf-med-hrbts-chromecast.html)|
 
-|Video Analytics 1.x SDKs\*  |Developer Guides|
-| Android| [Track Chapters for Android](vhl-dev-guide-v15_android.pdf)|
-| AppleTV| [Track Chapters for AppleTV](vhl-dev-guide-v1x_appletv.pdf)|
-| Chromecast| [Track Chapters for Chromecast](chromecast_1.x_sdk.pdf)|
-| iOS| [Track Chapters for iOS](vhl-dev-guide-v15_ios.pdf)|
-| JavaScript| [Track Chapters for JavaScript](vhl-dev-guide-v15_js.pdf)|
-| Primetime|
-  * **Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)
-  * **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20)
-  * **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
-| TVML| [Track Chapters for TVML](vhl_tvml.pdf)|
+|**Video Analytics 1.x SDKs\* **|**Developer Guides**|
+|---|---|
+|Android|[Track Chapters for Android](vhl-dev-guide-v15_android.pdf)|
+|AppleTV|[Track Chapters for AppleTV](vhl-dev-guide-v1x_appletv.pdf)|
+|Chromecast|[Track Chapters for Chromecast](chromecast_1.x_sdk.pdf)|
+|iOS|[Track Chapters for iOS](vhl-dev-guide-v15_ios.pdf)|
+|JavaScript|[Track Chapters for JavaScript](vhl-dev-guide-v15_js.pdf)|
+|Primetime|**Android**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/android/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_) **DHLS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/dhls/index.html#PSDKs-task-Initialize_and_configure_video_analytics_%20) **iOS**: [Configure Video Analytics](http://help.adobe.com/en_US/primetime/psdk/ios/1.4/index.html#PSDKs-task-Initialize_and_configure_video_analytics_)|
+|TVML|[Track Chapters for TVML](vhl_tvml.pdf)|
 
-\* For all 1.x SDKs, the links are for the full PDF download of the documentation. 
+**\***For all 1.x SDKs, the links are for the full PDF download of the documentation. 
 
 ## Validate
 
@@ -151,7 +148,7 @@ On start of an individual chapter playback, one key calls are sent:
 
   * Heartbeat chapter start\*
 
-\* This call contains additional chapter metadata variables. 
+**\***This call contains additional chapter metadata variables. 
 
 ###Chapter Complete
 
