@@ -1,4 +1,0 @@
-# Nielsen Partnership
-
-
-
