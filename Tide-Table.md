@@ -1,6 +1,6 @@
 # Tides at Diablo Canyon
 
-### Info scraped from DCCP weather email
+### Info scraped from DCCP weather email, and edited into Markdown using vim.
 
 | ||Low Tide||||High Tide||||
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
