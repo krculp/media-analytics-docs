@@ -1,3 +1,3 @@
 # Test File
 
-This will be used initially to try out various merging scenarios.
+This will was created to be used for trying out various merging scenarios.
