@@ -1,4 +1,6 @@
-# Tides
+# Tides at Diablo Canyon
+
+### Info scraped from DCCP weather email
 
 | ||Low Tide||||High Tide||||
 | --- | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
