@@ -4,7 +4,7 @@ This fantastic file was created to be used for trying out various merging scenar
 
 Here's a chunk of HTML table code:
 
-<div><table cellpadding="4" cellspacing="0" summary="" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__table_t4x_th2_k1b" frame="border" border="1" rules="all">
+<table cellpadding="4" cellspacing="0" summary="" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__table_t4x_th2_k1b" frame="border" border="1" rules="all">
 						
 						
 						
@@ -234,5 +234,3 @@ Here's a chunk of HTML table code:
 						</tbody>
 
 					</table>
-</div>
-
