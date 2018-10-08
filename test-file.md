@@ -10,7 +10,7 @@ Available only through the <a href="media-collection-api.html"> Media Collection
 ## **Content ID** 
 | Implementation | Network Parameters | Reporting | 
 | --- | --- | --- |
-| <ul> <li> **SDK Key:** **`mediaId\*`** </li> <li> **API Key:** `**media.id**` </li> <li> **Required:** Yes </li> <li> **Type:** string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any </li> <li> **Sample value:** `"4586695ABC"` </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.name` </li> <li> **Heartbeats:** `s:asset:video_id` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On VISIT </li> <li> **Report Name:** Content </li> <li> **Context Data:** `a.media.name` </li> <li> **Data Feed:** `video` </li> <li> **Audience Manager:** `c_contextdata.a.media.name` </li> </ul> |
+| <ul> <li> **SDK Key:** mediaId* </li> <li> **API Key:** `**media.id**` </li> <li> **Required:** Yes </li> <li> **Type:** string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any </li> <li> **Sample value:** `"4586695ABC"` </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.name` </li> <li> **Heartbeats:** `s:asset:video_id` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On VISIT </li> <li> **Report Name:** Content </li> <li> **Context Data:** `a.media.name` </li> <li> **Data Feed:** `video` </li> <li> **Audience Manager:** `c_contextdata.a.media.name` </li> </ul> |
 
 **Notes:**  
 Content ID of the content, which can be used to tie back to other industry / CMS IDs, equal to the last value of `s:asset:video_id` . Any integer and/or letter combination.  
