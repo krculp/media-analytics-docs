@@ -11,10 +11,10 @@
 1. Get rid of any spanny kind of tags that you can't or don't want to turn into MD formatting, e.g. <div> tags, <p> tags, ...
     At this point, you're left with font formatting, and lists, and ?
 1. If you're using asterisks for anything, say, footnotes, escape them. - `:%s/\*/\\\*/`
-1. ?? - If you're using underlines for anything, escape them. - `:%s/\*/\\\*/` ??
 1. Turn your "simple" font formatting tags into their MD counterparts.
     a. First, get rid of any empty code font or bold font tag pairs, e.g. <strong class="bleh"/>. - `:%s/<strong.*\/>//`
-    b. <samp> or <code> into '`' chars, and their </samp> and </code> closers.
+    a. Clean out class and id parameters, etc., from tags. - `:%s/<ul.*>/<ul>/g`
+    b. <samp> or <code> into '`' chars (don't forget closing chars for <\/samp>, etc.))
     c. <bold> or <strong> into '**' chars, and their </bold> or </strong> closers.
     d. Do line joins to pull the text being bolded or "coded" onto the same line as the formatting. You can do the first line join automagically, but for multi-lines, you have to do it manually (at this point anyway, I haven't figured out a trickier way). - I'm going to figure out how many there are by doing `grep "\*\*" [filename] | wc -l`, and then record `/ ^\*\*;J` and run it as many times as there are instances. `44@q` if there are 44 and I recorded the operation in buffer 'q'.
     e. Get rid of spaces before and after your formatting characters. - `:%s/\*\* /\*\*/` with some recording as well to do repeat line-join space-removal as necessary.
