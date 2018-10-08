@@ -1,0 +1,4878 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xml:lang="en-us" lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta name="copyright" content="(C) Copyright 2015"/>
+<meta name="DC.rights.owner" content="(C) Copyright 2015"/>
+<meta name="DC.Type" content="reference"/>
+<meta name="DC.Title" content="Audio and Video Parameters"/>
+<meta name="abstract" content=""/>
+<meta name="description" content=""/>
+<meta name="DC.Relation" scheme="URI" content="metrics-and-metadata.html"/>
+<meta name="DC.Format" content="XHTML"/>
+<meta name="DC.Identifier" content="reference_0470E81636C8483DB2C79A1E0C51B5D0"/>
+<link rel="stylesheet" type="text/css" href="https://microsite.omniture.com/t2/help/css/content.css"/>
+<title>Audio and Video Parameters</title>
+<script type="text/javascript">
+var filename="audio-video-parameters.xml";
+var rootname = filename.slice(0, -4);
+if (window.location.href.indexOf("/" + rootname + ".html") != -1) {
+  window.location.replace("index.html?f=" + rootname.toLowerCase());
+}
+</script></head>
+<body id="reference_0470E81636C8483DB2C79A1E0C51B5D0">
+
+<div id="topic">
+	<h1 class="title topictitle1">Audio and Video Parameters</h1>
+
+	
+	<div class="body refbody"><p class="shortdesc"/>
+
+		<div class="section refsyn" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__refsyn_E28357D6B2D149AC88B4913F90031D1D">
+			<div class="note important"><span class="importanttitle">Important:</span> Beginning on September 13th, 2018 a change was made to the labels
+				for some dimensions, metrics, and reports, to allow for cross-content tracking of
+				video and audio analytics. The labels that have been changed include: <em class="ph i">video
+					initiates</em> to <em class="ph i">media initiates</em>, <em class="ph i">video length</em> to <em class="ph i">content
+					length</em>, and <em class="ph i">video name</em> to <em class="ph i">content name</em>. The video reports in
+				Reports and Analytics have all been updated to use the name "Media" rather than
+				"Video". The label changes did not change data collection or historic data. Please
+				take note of these changes in the case that you're using them within Report Builder
+				or in any other external automated data pulls that might be impacted by this
+				change.</div>
+
+			<p class="p">This topic presents a list of audio and video content data, including context data values,
+				that Adobe collects via solution variables. </p>
+
+			<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_D67247FE89454B6CA85801C02D9EB289">
+				<li class="li"><a class="xref" href="#reference_0470E81636C8483DB2C79A1E0C51B5D0__section_y55_y1m_n1b">Core Audio and Video Data</a></li>
+
+				<li class="li"><a class="xref" href="#reference_0470E81636C8483DB2C79A1E0C51B5D0__section_pfc_hbm_n1b">Standard Audio and Video Metadata</a></li>
+
+				<li class="li" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__li_E03006186A0E4CE481BC217B0921D6CC">
+					<a class="xref" href="#reference_0470E81636C8483DB2C79A1E0C51B5D0__section_3D5F9C555274428AA6030D07596177E9">Audio and Video Metrics</a>
+				</li>
+
+			</ul>
+
+			<p class="p">Table data description: </p>
+
+			<div class="p">
+				<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_w4j_mhm_n1b">
+					<li class="li"><strong class="ph b">Label:</strong> The name of the parameter. </li>
+
+					<li class="li"><strong class="ph b">Implementation:</strong> Information on implementation values and
+							requirements<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_x4j_mhm_n1b">
+							<li class="li"><em class="ph i">Key</em> - Variable, set either manually in your app, or
+								automatically by the Adobe VHL SDK.</li>
+
+							<li class="li"><em class="ph i">Required</em> - Indicates whether the parameter is required for basic audio and video
+								tracking.</li>
+
+							<li class="li"><em class="ph i">Type</em> - Specifies the type of the variable to be set, string
+								or number.</li>
+
+							<li class="li"><em class="ph i">Sent With</em> - Indicates when the data is sent: <em class="ph i">Initiate</em> is the analytics call
+								sent on media start, <em class="ph i">Ad Start</em> is the analytics call sent on
+								ad start, <em class="ph i">Chapter Start</em> is the analytics call sent on chapter
+								start, and <em class="ph i">Close</em> is the compiled analytics call sent directly
+								from the heartbeat server to the analytics server at the end of the
+								audio or video session, or the end of the ad. The Close calls are
+								not available in network packet calls.</li>
+
+							<li class="li"><em class="ph i">Min. SDK Version</em> - Indicates which SDK version you would need
+								to access the parameter.</li>
+
+							<li class="li"><em class="ph i">Sample Value</em> - Provides example of common variable usage.
+							</li>
+
+						</ul>
+
+					</li>
+
+					<li class="li"><strong class="ph b">Network Parameters:</strong> Displays the values that are passed to Adobe Analytics or
+						Heartbeat servers. This column shows the names of the parameters that are
+						seen in the network calls generated by Adobe VA SDKs. </li>
+
+					<li class="li"><strong class="ph b">Reporting:</strong> Information on how to view and analyze the audio and video data.<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_i5d_xhm_n1b">
+							<li class="li"><em class="ph i">Available</em> - Indicates whether the data is available in
+								reporting by default (<em class="ph i">Yes</em>), or requires custom set-up
+									(<em class="ph i">Custom</em>)</li>
+
+							<li class="li"><em class="ph i">Reserved Variable</em> - Indicates whether the data is captured as
+								an event, eVar, prop, or classification in a reserved variable. </li>
+
+							<li class="li"><em class="ph i">Expiration</em> - Indicates whether the data expires after each
+								hit or after each visit.</li>
+
+							<li class="li"><em class="ph i">Report Name</em> - Name of Adobe Aanlytics report for
+								variable</li>
+
+							<li class="li"><em class="ph i">Context Data</em> - Name of the Adobe Analytics context data
+								passed to the reporting server and used in processing rules.</li>
+
+							<li class="li"><em class="ph i">Data Feed</em> - Column name for variable found in Clickstream or
+								Live Stream data feeds</li>
+
+							<li class="li"><em class="ph i">Audience Manager</em> - Trait name found in Adobe Audience
+								Manager</li>
+
+						</ul>
+</li>
+
+				</ul>
+
+			</div>
+
+		</div>
+
+		<div class="section" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__section_y55_y1m_n1b"><h2 class="title sectiontitle">Core Audio and Video Data</h2>
+			
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__table_t4x_th2_k1b" class="table" frame="border" border="1" rules="all">
+						
+						
+						
+						
+						<thead class="thead" align="left">
+							<tr class="row">
+								<th class="entry" align="center" valign="middle" width="10%" id="d8318e204">
+									<p class="p">Label </p>
+
+								</th>
+
+								<th class="entry" align="center" valign="middle" width="30%" id="d8318e210">
+									<p class="p">Implementation </p>
+
+								</th>
+
+								<th class="entry" align="center" valign="middle" width="30%" id="d8318e216">
+									<p class="p">Network Parameters </p>
+
+								</th>
+
+								<th class="entry" align="center" valign="middle" width="30%" id="d8318e222">
+									<p class="p">Reporting</p>
+
+								</th>
+
+							</tr>
+
+						</thead>
+
+						<tbody class="tbody">
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Stream Type</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_dt3_htw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph"><strong class="ph b"/></samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.streamType</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> Yes </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"video" </samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_et3_htw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.streamType</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.streamType</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ft3_htw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On VISIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content</li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.streamType</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videostreamtype</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.streamType</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<div class="note note"><span class="notetitle">Note:</span> Available only through the <a class="xref" href="media-collection-api.html">Media Collection API (RESTful)</a>.</div>
+
+									<p class="p">Identifies the stream type. Valid values are "audio",
+										"video", and "".</p>
+
+									<p class="p"><strong class="ph b"><a class="xref" href="segments.html">Segments</a>:</strong></p>
+
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_xzh_mff_ffb">
+											<li class="li">StreamType "All" - Segment all media stream data.
+												<strong class="ph b">Rule:</strong> Content (ID) exists</li>
+
+											<li class="li">StreamType "Audio" - Segment all audio stream data.
+												<strong class="ph b">Rule:</strong> Content (ID) exists AND Stream Type =
+												audio</li>
+
+											<li class="li">StreamType "Video" - Segment all video stream data.
+												<strong class="ph b">Rule:</strong> Content (ID) exists AND Stream Type =
+												video</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Content ID</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_pjx_1ts_1fb">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph"><strong class="ph b">mediaId*</strong></samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.id</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> Yes </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"4586695ABC"
+												</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_qjx_1ts_1fb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.name</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:asset:video_id</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_rjx_1ts_1fb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On VISIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content</li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.name</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">video</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.name</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p">Content ID of the content, which can be used to tie back to
+										other industry / CMS IDs, equal to the last value of
+											<samp class="ph codeph">s:asset:video_id</samp>. Any integer and/or
+										letter combination.</p>
+
+									<p class="p"><strong class="ph b">*</strong>
+										<samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject</a>(name,
+												<strong class="ph b"><em class="ph i">mediaId</em></strong>, length,
+										streamType)</samp></p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Content Length (variable)</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_gt3_htw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph"><strong class="ph b">length*</strong></samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.length</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> Yes</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> number</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any**</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ljx_yr1_41b">
+												<li class="li">VOD: 128</li>
+
+												<li class="li">Live: 86400</li>
+
+												<li class="li">Linear: 1800</li>
+
+												</ul>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ht3_htw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.length</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">l:asset:length</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_it3_htw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Length (variable)</li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.length</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videolength</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.length</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<p class="p">Clip Length/Runtime - This is the maximum length (or
+										duration) of the content being consumed (in seconds). It
+										equals the last value of <samp class="ph codeph">l:asset:length</samp>
+										from events of type Main. If <samp class="ph codeph">l:asset:length</samp>
+										is not set, then the last value of
+											<samp class="ph codeph">l:asset:duration</samp> is used.</p>
+
+									<p class="p">In reporting, Video Length is the classification, and Content
+										Length (variable) is the eVAR.</p>
+
+									<div class="p">
+										<div class="note important"><span class="importanttitle">Important:</span> This property is used to compute
+											several metrics, such as progress tracking metrics and
+											Average Minute Audience. If this is not set, or not
+											greater than zero, then these metrics are not
+											available.</div>
+
+									</div>
+
+									<p class="p">For Live media with an unknown duration, the value of 86400 is the default. </p>
+
+									<p class="p"><strong class="ph b">*</strong>
+										<samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject</a>(name, mediaId,
+												<strong class="ph b"><em class="ph i">length</em></strong>, streamType)</samp></p>
+
+									<p class="p"><strong class="ph b">**</strong> Pre Version 1.5.1, this was
+											<samp class="ph codeph">l:asset:duration</samp>; after 1.5.1, this is
+											<samp class="ph codeph">l:asset:length</samp>.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Video Length</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_kgk_qrk_hfb">
+											<li class="li"><strong class="ph b">SDK Key:</strong>
+												<samp class="ph codeph"><strong class="ph b">length*</strong></samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.length</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> Yes</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> number</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any**</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong>
+												<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_lgk_qrk_hfb">
+												<li class="li">VOD: 128</li>
+
+												<li class="li">Live: 86400</li>
+
+												<li class="li">Linear: 1800</li>
+
+												</ul>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_mgk_qrk_hfb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong>
+												<p class="p"><samp class="ph codeph">a.media.length</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">l:asset:length</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ngk_qrk_hfb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> classification</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Video Length</li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.length</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong>
+											<samp class="ph codeph">videoclassificationlength</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.length</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p"><strong class="ph b">Release Date: 09/27/18</strong></p>
+
+									<p class="p">Clip Length/Runtime - This is the maximum length (or
+										duration) of the content being consumed (in seconds). It
+										equals the last value of <samp class="ph codeph">l:asset:length</samp>
+										from events of type Main. If <samp class="ph codeph">l:asset:length</samp>
+										is not set, then the last value of
+											<samp class="ph codeph">l:asset:duration</samp> is used.</p>
+
+									<p class="p">In reporting, Video Length is the classification, and Content
+										Length (variable) is the eVAR.</p>
+
+									<div class="p">
+										<div class="note important"><span class="importanttitle">Important:</span> This property is used to compute
+											several metrics, such as progress tracking metrics and
+											Average Minute Audience. If this is not set, or not
+											greater than zero, then these metrics are not
+											available.</div>
+
+									</div>
+
+									<p class="p">For Live media with an unknown duration, the value of 86400
+										is the default. </p>
+
+									<p class="p"><strong class="ph b">*</strong>
+										<samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject</a>(name, mediaId,
+												<strong class="ph b"><em class="ph i">length</em></strong>, streamType)</samp></p>
+
+									<p class="p"><strong class="ph b">**</strong> Pre Version 1.5.1, this was
+											<samp class="ph codeph">l:asset:duration</samp>; after 1.5.1, this is
+											<samp class="ph codeph">l:asset:length</samp>.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Content Type</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_jt3_htw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph"><strong class="ph b">streamType*</strong></samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.contentType</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> Yes </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> restricted string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"vod"</samp>
+											</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_kt3_htw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.contentType</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:stream:type</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_lt3_htw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Type </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.contentType</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videocontenttype</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.contentType</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<div class="p">Available values per <strong class="ph b">Stream Type</strong>:<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_n2w_vxs_1fb">
+											<li class="li"><strong class="ph b">Audio:</strong> "song", "podcast", "audiobook",
+												"radio"</li>
+
+											<li class="li"><strong class="ph b">Video:</strong> "VoD", "Live", "Linear", "UGC",
+												"DVoD"</li>
+
+										</ul>
+Customers can provide custom values for this
+										parameter.</div>
+
+									<p class="p">This equals <samp class="ph codeph">s:stream:type</samp>. If that is unset,
+										this equals <samp class="ph codeph">missing_content_type</samp>.</p>
+
+									<p class="p"><strong class="ph b">*</strong>
+										<samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject</a>(name, mediaId, length,
+												<strong class="ph b"><em class="ph i">streamType</em></strong>)</samp></p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Video Session ID</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_mt3_htw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set</li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> Obtained from backend</li>
+
+											<li class="li"><strong class="ph b">Required:</strong> Yes </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> number</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.8</li>
+
+											<li class="li"><strong class="ph b">Sample value:
+												</strong><samp class="ph codeph">1482236761294786918253</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_nt3_htw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.vsid</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeat:</strong> <samp class="ph codeph">s:event:sid</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ot3_htw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Use processing rule</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> N/A</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Custom </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.vsid</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">vsid</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.vsid</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p">This identifies an instance of a content stream unique to an
+										individual playback. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Content Player Name</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_pt3_htw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph"><strong class="ph b">playerName*</strong></samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.playerName</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> Yes</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"Brightcove"</samp>,
+												<samp class="ph codeph">"Primetime"</samp>, etc. </li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_qt3_htw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.playerName</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:sp:player_name</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_rt3_htw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Player Name </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.playerName</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoplayername</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.playerName</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p">Name of the player. </p>
+
+									<p class="p"><strong class="ph b">*</strong>
+										<samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank">MediaHeartbeatConfig</a>.<strong class="ph b"><em class="ph i">playerName</em></strong></samp></p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Content Channel</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_st3_htw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph"><strong class="ph b">channel*</strong></samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.channel</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> Yes</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"Sports"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_tt3_htw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.channel </samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:sp:channel</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ut3_htw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Channel </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.channel
+											</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videochannel</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.channel
+											</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p">Distribution Station/Channels or where the content is played.
+										Any string value is accepted here.</p>
+
+									<p class="p"><strong class="ph b">*</strong>
+										<samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank">MediaHeartbeatConfig</a>.<strong class="ph b"><em class="ph i">channel</em></strong></samp></p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Content Segment</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_vt3_htw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Required:</strong> Yes </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <p class="p"><samp class="ph codeph">"[0-10]"</samp>
+												(minutes) </p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_wt3_htw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A </li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_xt3_htw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Segment </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.segment</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videosegment</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.segment</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p">The interval that describes the part of the content that has
+										been viewed (in minutes). The segment is computed as min and
+										max of the playhead values during a playback session. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Content Name (variable)</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_fd2_5bm_n1b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph"><strong class="ph b">name*</strong></samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.name</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.1</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"The Big Bang
+												Theory"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_epx_th2_k1b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.friendlyName</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:asset:name</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_fpx_th2_k1b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar </li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Name (variable)</li>
+
+										<li class="li"><strong class="ph b">Context Data:
+												</strong><samp class="ph codeph">a.media.friendlyName</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoname</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.friendlyName</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<p class="p">In reporting, Video Name is the classification, and Content
+										Name (variable) is the eVAR.</p>
+
+									<p class="p">This is the "friendly" (human-readable) name of the content,
+										equal to the last value of
+										<samp class="ph codeph">s:asset:name</samp>.</p>
+
+									<p class="p"><strong class="ph b">*</strong>
+										<samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject</a>(<strong class="ph b"><em class="ph i">name</em></strong>,
+											mediaId, length, streamType)</samp></p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Video Name</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_vqq_frk_hfb">
+											<li class="li"><strong class="ph b">SDK Key:</strong>
+												<samp class="ph codeph"><strong class="ph b">name*</strong></samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.name</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.1</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong>
+												<samp class="ph codeph">"The Big Bang Theory"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_wqq_frk_hfb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong>
+												<p class="p"><samp class="ph codeph">a.media.friendlyName</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:asset:name</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_xqq_frk_hfb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> classification </li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Video Name</li>
+
+										<li class="li"><strong class="ph b">Context Data:
+												</strong><samp class="ph codeph">a.media.friendlyName</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong>
+											<samp class="ph codeph">videoclassificationname</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.friendlyName</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p"><strong class="ph b">Release Date: 09/27/18</strong></p>
+
+									<p class="p">This is the "friendly" (human-readable) name of the content,
+										equal to the last value of
+										<samp class="ph codeph">s:asset:name</samp>.</p>
+
+									<p class="p">In reporting, Video Name is the classification, and Content
+										Name (variable) is the eVAR.</p>
+
+									<p class="p"><strong class="ph b">*</strong>
+										<samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject</a>(<strong class="ph b"><em class="ph i">name</em></strong>,
+											mediaId, length, streamType)</samp></p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">Video Path</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_twm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:
+												</strong><samp class="ph codeph">"4586695ABC"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_uwm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.name</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:asset:video_id</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_vwm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> prop</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Video Path </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.name</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videopath</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.name</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p">Ability to track path of viewer across site and/or App to see
+										path they took to view a particular video. Any integer
+										and/or letter combination.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">SDK Version</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_wwm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph"><strong class="ph b">appVersion*</strong></samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.sdkVersion</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:
+												</strong><samp class="ph codeph">"2.62.0_release"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_xwm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.sdkVersion</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:sp:sdk</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ywm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Use custom processing rule</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> N/A</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> <em class="ph i"/>
+										</li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.sdkVersion</samp>`</li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">N/A</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.sdkVersion</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p">The SDK version used by the player. This could have any
+										custom value that makes sense for your player. Customers
+										will have to create their own processing rules to have the
+										value available for reporting. </p>
+
+									<p class="p"><strong class="ph b">*</strong>
+										<samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank">MediaHeartbeatConfig</a>.<strong class="ph b"><em class="ph i">appVersion</em></strong></samp></p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e204 ">
+									<p class="p"><strong class="ph b">VHL Version</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e210 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_zwm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set* </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:
+												</strong><samp class="ph codeph">"js-2.0.1.88-c8c0b1"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e216 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_axm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.vhlVersion</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:sp:hb_version</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e222 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_bxm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Use custom processing rule</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> N/A</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Custom </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.vhlVersion</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">N/A</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.vhlVersion</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e210 d8318e216 d8318e222 ">
+									<p class="p">The heartbeat SDK version used for the tracking session.
+										Customers will have to create their own processing rules to
+										have the value available for reporting. </p>
+
+									<p class="p">* <samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html" target="_blank">MediaHeartbeat</a>.version();</samp></p>
+
+								</td>
+
+							</tr>
+
+						</tbody>
+
+					</table>
+</div>
+
+			</div>
+
+		</div>
+
+		<div class="section" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__section_pfc_hbm_n1b"><h2 class="title sectiontitle">Standard Audio and Video Metadata</h2>
+			
+			<p class="p"><samp class="ph codeph"><a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#toc8" target="_blank">MediaHeartbeat.VideoMetadataKeys</a></samp></p>
+
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__table_trh_pbm_n1b" class="table" frame="border" border="1" rules="all">
+						
+						
+						
+						
+						<thead class="thead" align="left">
+							<tr class="row">
+								<th class="entry" align="center" valign="middle" width="10%" id="d8318e2551">
+									<p class="p">Label </p>
+
+								</th>
+
+								<th class="entry" align="center" valign="middle" width="30%" id="d8318e2557">
+									<p class="p">Implementation </p>
+
+								</th>
+
+								<th class="entry" align="center" valign="middle" width="30%" id="d8318e2563">
+									<p class="p">Network Parameters </p>
+
+								</th>
+
+								<th class="entry" align="center" valign="middle" width="30%" id="d8318e2569">
+									<p class="p">Reporting</p>
+
+								</th>
+
+							</tr>
+
+						</thead>
+
+						<tbody class="tbody">
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Show</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_qx1_jcm_n1b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">SHOW</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.show</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <p class="p"><samp class="ph codeph">"Modern
+												Family"</samp>, <samp class="ph codeph">"Blacklist"</samp>,
+												<samp class="ph codeph">"New Girl"</samp>, etc. </p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_vrh_pbm_n1b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.show</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.show</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_wrh_pbm_n1b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Show </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.show</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoshow</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.show</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">Program/Series Name </p>
+
+									<div class="p">
+										<div class="note note"><span class="notetitle">Note:</span> 
+											<em class="ph i">Program Name</em> is required only if the show is part
+											of a series.</div>
+
+									</div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Stream Format</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_cxm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">STREAM_FORMAT</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"Live"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_dxm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.format</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.format</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_exm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Use custom processing rule</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> N/A</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Custom </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.format</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">N/A</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.format</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">Format of the stream (Live, VOD, Linear). </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Season</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_dvm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">SEASON</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.season</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"2"</samp> (an
+												integer representing the season number)</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_evm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.season</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.season</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_fvm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Season </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.season</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoseason</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.season</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">The season number the show belongs to.</p>
+
+									<div class="note note"><span class="notetitle">Note:</span> Season Series is required only if the show is part of a
+										series. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Episode</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_gvm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">EPISODE</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.episode</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"13"</samp> (an
+												integer representing the episode number)</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_hvm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.episode</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.episode</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ivm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Episode </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.episode</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoepisode</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.episode</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">The number of the episode.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Asset ID</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_jvm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">ASSET_ID</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.assetId</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"89745363"</samp>
+												(any integer and/or letter combination)</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_kvm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.asset</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.asset</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_lvm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Use custom processing rule</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> N/A</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Custom </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.asset</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">N/A</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.asset</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">This is the unique identifier for the content of the media asset, such as the TV series
+										episode identifier, movie asset identifier, or live event
+										identifier. Typically these IDs are derived from metadata
+										authorities such as EIDR, TMS/Gracenote, or Rovi. These
+										identifiers can also be from other proprietary or in-house
+										systems. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Genre</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_mvm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">GENRE</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.genre</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"Drama",
+												"Comedy"</samp>, etc.</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_nvm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.genre</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.genre</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ovm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> List eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Genre </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.genre</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videogenre</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.genre</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">Type or grouping of content as defined by content producer.
+										Values should be comma delimited in variable implementation.
+										In reporting, the list eVar will split each value into a
+										line item, with each line item receiving equal metrics
+										weight.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">First Air Date</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_pvm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">FIRST_AIR_DATE</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.firstAirDate</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:
+												</strong><samp class="ph codeph">"2016-01-25"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_qvm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.airDate</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.airDate</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_rvm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Use custom processing rule</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Custom </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.airDate</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">N/A</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.airDate</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">The date when the content first aired on television. Any date
+										format is acceptable, but Adobe recommends: YYYY-MM-DD </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">First Digital Date</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_svm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">FIRST_DIGITAL_DATE</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.firstDigitalDate</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:
+												</strong><samp class="ph codeph">"2016-01-25"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_tvm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.digitalDate</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.digitalDate</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_uvm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Use custom processing rule</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> N/A</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Custom </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+												</strong><samp class="ph codeph">a.media.digitalDate</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">N/A</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.digitalDate</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">The date when the content first aired on any digital channel
+										or platform. Any date format is acceptable but Adobe
+										recommends: YYYY-MM-DD </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Content Rating</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_vvm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">RATING</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.rating</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TVY, TVG, TVPG,
+												TVMA</samp>, etc.</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_wvm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.rating</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.rating</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_xvm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Use custom processing rule</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> N/A</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Custom </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.rating</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">N/A</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.rating</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">Rating as defined by TV Parental Guidelines. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Originator</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_yvm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">ORIGINATOR</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.originator</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"Warner Brothers",
+												"Sony", "Disney"</samp>, etc.</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_zvm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.originator</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.originator</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_awm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Use custom processing rule</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> N/A</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Custom </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.originator</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">N/A</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.originator</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">Creator of the content. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Network</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_bwm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">NETWORK</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.network</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"Fox", "Bravo",
+												"ESPN"</samp>, etc. </li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_cwm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.network</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.network</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_dwm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Network </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.network</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videonetwork</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.network</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">The network/channel name. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Show Type</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ewm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">SHOW_TYPE</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.showType</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_svj_tzb_41b">
+												<li class="li">"0" = Full episode </li>
+
+												<li class="li">"1" = Preview/trailer </li>
+
+												<li class="li">"2" = Clip </li>
+
+												<li class="li">"3" = Other </li>
+
+												</ul>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_fwm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.type</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.type</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_gwm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Show Type </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.type</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoshowtype</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.type</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">Type of content, expressed as an integer between 0 and 3.
+									</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">MVPD</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_hwm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">MVPD</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.pass.mvpd</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"Comcast", "DirecTV",
+												"Dish"</samp>, etc.</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_iwm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.pass.mvpd</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.pass.mvpd</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_jwm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> MVPD </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.pass.mvpd</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videomvpd</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.pass.mvpd</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">MVPD provided via Adobe authentication. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Authorized</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_kwm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">AUTHORIZED</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.pass.auth</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"TRUE"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_lwm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.pass.auth</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.pass.auth</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_mwm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Authorized </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.pass.auth</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoauthorized</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.pass.auth</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">The user has been authorized via AdobePass. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Day Part</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_nwm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">DAY_PART</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.dayPart</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph"/></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_owm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.dayPart</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.dayPart</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_pwm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Day Part </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.dayPart</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videodaypart</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.dayPart</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">A property that defines the time of the day when the content
+										was broadcast or played. This could have any value set as
+										necessary by customers. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Media Feed Type</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_qwm_jtw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> <samp class="ph codeph">FEED</samp>
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.feed</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"East-HD", "West-HD",
+												"East-SD"</samp>, etc.</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_rwm_jtw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.feed</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.feed</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_swm_jtw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Media Feed Type </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.feed</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videofeedtype</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.feed</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<p class="p">Type of feed. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Ad Load Type</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_x1y_3sr_cfb">
+											<li class="li"><strong class="ph b">SDK Key:</strong> AD_LOAD </li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.adLoad</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"1"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_y1y_3sr_cfb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.adload</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.adload</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_z1y_3sr_cfb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Ad Load</li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.adload</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">adload</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.adload</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p">Type of ad loaded.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Artist</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_pvm_c1z_1fb">
+											<li class="li"><strong class="ph b">SDK Key:</strong> 
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.artist</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"The
+												Beatles"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_qvm_c1z_1fb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.artist</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.artist</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_rvm_c1z_1fb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.artist</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoaudioartist</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.artist</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<div class="note note"><span class="notetitle">Note:</span> Available only through the <a class="xref" href="media-collection-api.html">Media Collection API (RESTful)</a>.</div>
+
+									<p class="p">Name of the artist.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Album</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_zmm_bcz_1fb">
+											<li class="li"><strong class="ph b">SDK Key:</strong> 
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.album</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:
+												</strong><samp class="ph codeph">"Revolver"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_anm_bcz_1fb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.album</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.album</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_bnm_bcz_1fb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.album</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoaudioalbum</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.album</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<div class="note note"><span class="notetitle">Note:</span> Available only through the <a class="xref" href="media-collection-api.html">Media Collection API (RESTful)</a>.</div>
+
+									<p class="p">Name of the album.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Label</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_qht_jcz_1fb">
+											<li class="li"><strong class="ph b">SDK Key:</strong> 
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.label</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:
+												</strong><samp class="ph codeph">"Revolver"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_rht_jcz_1fb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.label</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.label</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_sht_jcz_1fb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.label</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoaudiolabel</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.label</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<div class="note note"><span class="notetitle">Note:</span> Available only through the <a class="xref" href="media-collection-api.html">Media Collection API (RESTful)</a>.</div>
+
+									<p class="p">Name of the record label.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Author</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_e1c_pcz_1fb">
+											<li class="li"><strong class="ph b">SDK Key:</strong> 
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.author</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">"John Kennedy
+												Toole"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_f1c_pcz_1fb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.author</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.author</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_g1c_pcz_1fb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.author</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoaudioauthor</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.author</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<div class="note note"><span class="notetitle">Note:</span> Available only through the <a class="xref" href="media-collection-api.html">Media Collection API (RESTful)</a>.</div>
+
+									<p class="p">Name of the author (of an audiobook).</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Station</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_fdm_pdz_1fb">
+											<li class="li"><strong class="ph b">SDK Key:</strong> 
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.station</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong>
+												<samp class="ph codeph">"NPR"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_gdm_pdz_1fb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.station</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.station</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_hdm_pdz_1fb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.station</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:
+											</strong><samp class="ph codeph">videoaudiostation</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.station</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<div class="note note"><span class="notetitle">Note:</span> Available only through the <a class="xref" href="media-collection-api.html">Media Collection API (RESTful)</a>.</div>
+
+									<p class="p">Name / ID of the radio station.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e2551 ">
+									<p class="p"><strong class="ph b">Publisher</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2557 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_xm5_vdz_1fb">
+											<li class="li"><strong class="ph b">SDK Key:</strong> 
+											</li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><samp class="ph codeph"><strong class="ph b">media.publisher</strong></samp></li>
+
+											<li class="li"><strong class="ph b">Required:</strong> No </li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate, Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.7</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong>
+												<samp class="ph codeph">"Random Bauhaus"</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2563 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ym5_vdz_1fb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.publisher</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:meta:a.media.publisher</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e2569 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_zm5_vdz_1fb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> eVar</li>
+
+										<li class="li"><strong class="ph b">Expiration:</strong> On HIT</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.publisher</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:
+											</strong><samp class="ph codeph">videoaudiopublisher</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.publisher</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e2557 d8318e2563 d8318e2569 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<div class="note note"><span class="notetitle">Note:</span> Available only through the <a class="xref" href="media-collection-api.html">Media Collection API (RESTful)</a>.</div>
+
+									<p class="p">Name of the audio content publisher.</p>
+
+								</td>
+
+							</tr>
+
+						</tbody>
+
+					</table>
+</div>
+
+			</div>
+
+		</div>
+
+		<div class="section" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__section_3D5F9C555274428AA6030D07596177E9"><h2 class="title sectiontitle">Audio and Video Metrics</h2>
+			
+			<div class="p">
+				
+<div class="tablenoborder"><table cellpadding="4" cellspacing="0" summary="" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__table_mjz_lcm_n1b" class="table" frame="border" border="1" rules="all">
+						
+						
+						
+						
+						<thead class="thead" align="left">
+							<tr class="row">
+								<th class="entry" align="center" valign="middle" width="10%" id="d8318e5954">
+									<p class="p">Label </p>
+
+								</th>
+
+								<th class="entry" align="center" valign="middle" width="30%" id="d8318e5960">
+									<p class="p">Implementation </p>
+
+								</th>
+
+								<th class="entry" align="center" valign="middle" width="30%" id="d8318e5966">
+									<p class="p">Network Parameters </p>
+
+								</th>
+
+								<th class="entry" align="center" valign="middle" width="30%" id="d8318e5972">
+									<p class="p">Reporting</p>
+
+								</th>
+
+							</tr>
+
+						</thead>
+
+						<tbody class="tbody">
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Media Initiates</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_njz_lcm_n1b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set</li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Initiate</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ojz_lcm_n1b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> 
+												<p class="p"><samp class="ph codeph">a.media.view</samp></p>
+</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:event:type=start</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_pjz_lcm_n1b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Media Initiates </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.view</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videostart</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.view</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<p class="p">Load event for the media. (This occurs when the viewer clicks
+										the <strong class="ph b">Play</strong> button). This would count even if there are
+										pre-roll ads, buffering, errors, and so on. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Content Starts</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_irw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_jrw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_krw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Starts </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.play</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoplay</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.play</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">First frame of media is consumed. If the user drops during ad, buffering, etc., then
+										there would be no "Content Start" event. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Content Complete</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_lrw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_mrw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:event:type=complete</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_nrw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Completes </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.complete</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videocomplete</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.complete</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">A stream that was watched to completion - This does not necessarily mean the user
+										watched or listened to the whole stream; they could have
+										skipped ahead. This only means the user reached the end of
+										the stream, 100%. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Content Time Spent</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_orw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> number</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">105</samp>
+											</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_prw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_qrw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Time Spent </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.timePlayed</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videotime</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.timePlayed</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">Sums the event duration (in seconds) for all events of type
+										PLAY on the main content.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Media Time Spent</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_rrw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> number</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">120</samp>
+											</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_srw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_trw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Media Time Spent </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+												</strong><samp class="ph codeph">a.media.totalTimePlayed</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videototaltime</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.totalTimePlayed</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<p class="p">Sums the event duration (in seconds) for all events of type
+										PLAY, both main and ad content. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Unique Time Played</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_aby_3sr_cfb">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> number</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">94</samp>
+											</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_bby_3sr_cfb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_cby_3sr_cfb">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Custom</li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.uniqueTimePlayed
+											</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:
+											</strong><samp class="ph codeph">videouniquetimeplayed</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.uniqueTimePlayed</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p"><strong class="ph b">Release Date: 09/13/18</strong></p>
+
+									<p class="p">The value in seconds of the unique segments of content played
+										during a session. Excludes time played on seek back
+										scenarios in which a viewer is watching the same segment of
+										the content multiple times.</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">10% Progress Marker</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_urw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_vrw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A </li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_wrw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> 10% Progress Marker </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.progress10</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoprogress10</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.progress10</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">Playhead passes the 10% marker of content based on length. The marker is only counted
+										once, even if seeking backwards. If seeking forward, markers
+										that are skipped are not counted. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">25% Progress Marker</strong> 
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_xrw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_yrw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_zrw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> 25% Progress Marker </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.progress25</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoprogress25</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.progress25</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">Playhead passes the 25% marker of content based on content length. Marker only counted
+										once, even if seeking backwards. If seeking forward, markers
+										that are skipped are not counted. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">50% Progress Marker</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_asw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_bsw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_csw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> 50% Progress Marker </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.progress50</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoprogress50</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.progress50</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">Playhead passes the 50% marker of content based on content length. Marker only counted
+										once, even if seeking backwards. If seeking forward, markers
+										that are skipped are not counted.</p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">75% Progress Marker</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_dsw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> <strong class="ph b">N/A</strong></li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_esw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_fsw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> 75% Progress Marker </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.progress75</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoprogress75</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.progress75</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">Playhead passes the 75% marker of content based on content length. Marker only counted
+										once, even if seeking backwards. If seeking forward, markers
+										that are skipped are not counted. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">95% Progress Marker</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_gsw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_hsw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_isw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> 95% Progress Marker </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.progress95</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoprogress95</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.progress95</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">Playhead passes the 95% marker of content based on content length. Marker only counted
+										once, even if seeking backwards. If seeking forward, markers
+										that are skipped are not counted. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Average Minute Audience</strong> 
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_jsw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> number</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> Greater than or equal to 1
+											</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ksw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_lsw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Average Minute Audience </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+												</strong><samp class="ph codeph">a.media.averageMinuteAudience</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:
+												</strong><samp class="ph codeph">videoaverageminuteaudience</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.averageMinuteAudience</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">Average Minute Audience metric is computed as Total Content Time Spent, for one specific
+										media item, divided by its length for all of its playback
+										sessions: <samp class="ph codeph">average_minute_audience = timeSpent /
+											videoLength;</samp>
+									</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Estimated Streams</strong> 
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_dby_3sr_cfb">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> number</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> 
+												<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_lfv_dxc_r1b">
+												<li class="li">1 - For a 19 minutes playback</li>
+
+												<li class="li">2 - For a 31 minutes playback</li>
+
+												<li class="li">3 - For a 78 minutes playback</li>
+
+												</ul>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_eby_3sr_cfb">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_fby_3sr_cfb">
+										<li class="li"><strong class="ph b">Available:</strong> Use custom processing rule</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> N/A</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Custom </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+												</strong><samp class="ph codeph">a.media.estimatedStreams</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">N/A</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.estimatedStreams</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 "><p class="p">The estimated number of video or audio streams per
+										each individual content. This value is increased for each 30
+										minutes of  play time (content + ads). Customers must create
+										their own processing rules to have the value available for
+										reporting.</p>
+A stream is counted at every 30 minutes, based
+									on the <samp class="ph codeph">ms_s</samp> (or <samp class="ph codeph">totalTimePlayed = Video
+										Total Time</samp>), similar to: <samp class="ph codeph">estimatedStreams =
+										FLOOR(ms_s/1800) +1</samp></td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Paused Impacted Streams</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_msw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.6 </li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_nsw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:event:type=pause</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_osw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Paused Impacted Stream </li>
+
+										<li class="li"><strong class="ph b">Context Data:</strong> <samp class="ph codeph">a.media.pause</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videopause</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.pause</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">This value is either true or false. It is true if one or more pauses occurred during
+										playback of a single media item. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Pause Events</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_psw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> number</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.6</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">2</samp>
+												(Integer)</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_qsw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:event:type=pause</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_rsw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Pause Events </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.pauseCount</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videopausecount</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.pauseCount</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">This metric is computed as a count of pause periods that
+										occurred during a playback session. </p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Total Pause Duration</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ssw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> number</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.6</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">190</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_tsw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_usw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Total Pause Duration </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.pauseTime</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videopausetime</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.pauseTime</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">Sums the duration (in seconds) of all events of type PAUSE.
+									</p>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Content Resumes</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_vsw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:
+												</strong><strong class="ph b"><samp class="ph codeph">media.resume</samp></strong></li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> 1.5.6</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_wsw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:
+												</strong><p class="p"><samp class="ph codeph">s:event:type=resume</samp></p>
+</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_xsw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Resumes </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+											</strong><samp class="ph codeph">a.media.resume</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:</strong> <samp class="ph codeph">videoresume</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.resume</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">A Resume is counted for each playback that resumes after more
+										than 30 minutes of buffer, pause, or stall period OR if this
+										value is set by the player on the <samp class="ph codeph">VideoInfo</samp>
+										object before <samp class="ph codeph">trackPlay</samp>. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" rowspan="2" align="left" valign="top" width="10%" headers="d8318e5954 ">
+									<p class="p"><strong class="ph b">Content Segment Views</strong>
+									</p>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5960 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_ysw_ktw_41b">
+											<li class="li"><strong class="ph b">SDK Key:</strong> Automatically set </li>
+
+											<li class="li"><strong class="ph b">API Key:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Type:</strong> string</li>
+
+											<li class="li"><strong class="ph b">Sent with:</strong> Close</li>
+
+											<li class="li"><strong class="ph b">Min. SDK Version:</strong> Any</li>
+
+											<li class="li"><strong class="ph b">Sample value:</strong> <samp class="ph codeph">TRUE</samp></li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5966 ">
+									<div class="p">
+										<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_zsw_ktw_41b">
+											<li class="li"><strong class="ph b">Adobe Analytics:</strong> N/A</li>
+
+											<li class="li"><strong class="ph b">Heartbeats:</strong> N/A</li>
+
+										</ul>
+
+									</div>
+
+								</td>
+
+								<td class="entry" align="left" valign="top" width="30%" headers="d8318e5972 ">
+									<ul class="ul" id="reference_0470E81636C8483DB2C79A1E0C51B5D0__ul_atw_ktw_41b">
+										<li class="li"><strong class="ph b">Available:</strong> Yes</li>
+
+										<li class="li"><strong class="ph b">Reserved Variable:</strong> event</li>
+
+										<li class="li"><strong class="ph b">Report Name:</strong> Content Segment Views </li>
+
+										<li class="li"><strong class="ph b">Context Data:
+												</strong><samp class="ph codeph">a.media.segmentView</samp></li>
+
+										<li class="li"><strong class="ph b">Data Feed:
+											</strong><samp class="ph codeph">videosegmentviews</samp></li>
+
+										<li class="li"><strong class="ph b">Audience Manager:
+												</strong><samp class="ph codeph">c_contextdata.a.media.segmentView</samp></li>
+
+									</ul>
+
+								</td>
+
+							</tr>
+
+							<tr class="row">
+								<td class="entry" colspan="3" align="left" valign="top" headers="d8318e5960 d8318e5966 d8318e5972 ">
+									<p class="p">The number of views of the main content. A Content Segment
+										View is counted when there is at least one frame viewed. </p>
+
+									<div class="note important"><span class="importanttitle">Important:</span> This can only be true if it is set. If it
+										is not set, no value is returned. </div>
+
+								</td>
+
+							</tr>
+
+						</tbody>
+
+					</table>
+</div>
+
+			</div>
+
+		</div>
+
+	</div>
+
+<div class="related-links">
+<div class="familylinks">
+<div class="parentlink"><strong>Parent topic:</strong> <a class="link" href="metrics-and-metadata.html">Metrics and Metadata</a></div>
+</div>
+</div>
+
+</div></body>
+</html>
