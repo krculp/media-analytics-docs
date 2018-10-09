@@ -24,8 +24,7 @@
         2. Clean up spacing
 
 
-## Label 
-**Stream Type**
+## **Stream Type**
 
 ### Implementation 
 * **SDK Key:**  
@@ -59,8 +58,7 @@ Identifies the stream type. Valid values are "audio", "video", and "".
 * StreamType "Audio" - Segment all audio stream data.  **Rule:** Content (ID) exists AND Stream Type = audio  
 * StreamType "Video" - Segment all video stream data.  **Rule:** Content (ID) exists AND Stream Type = video  
 
-## Label 
-**Content ID**
+## **Content ID**
 
 ### Implementation 
 * **SDK Key:** `**mediaId\***`  
@@ -92,8 +90,7 @@ Any integer and/or letter combination.
 
 \* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank"> createMediaObject </a> (name, <strong> <em> mediaId </em> </strong> , length, streamType)
 
-## Label 
-**Content Length (variable)**
+## **Content Length (variable)**
 
 ### Implementation 
 * **SDK Key:** `**length\***`  
@@ -142,8 +139,7 @@ For Live media with an unknown duration, the value of 86400 is the default.
 **+** Pre Version 1.5.1, this was `l:asset:duration` ; after 1.5.1, this is `l:asset:length`
 .
 
-## Label 
-**Video Length**
+## **Video Length**
 
 ### Implementation 
 * **SDK Key:** `**length\***`  
@@ -190,8 +186,7 @@ Pre Version 1.5.1, this was
 `l:asset:length`
 .
 
-## Label 
-**Content Type**
+## **Content Type**
 
 ### Implementation 
 * **SDK Key:** `**streamType\***`  
@@ -224,8 +219,7 @@ This equals `s:stream:type` . If that is unset, this equals `missing_content_typ
 
 \* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank"> createMediaObject </a> (name, mediaId, length, **<em> streamType </em>**)
 
-## Label 
-**Video Session ID**
+## **Video Session ID**
 
 ### Implementation 
 * **SDK Key:** Automatically set  
@@ -254,8 +248,7 @@ This equals `s:stream:type` . If that is unset, this equals `missing_content_typ
 This identifies an instance of a content stream unique to an
 individual playback. 
 
-## Label 
-**Content Player Name**
+## **Content Player Name**
 
 ### Implementation 
 * **SDK Key:** `**playerName\***`  
@@ -284,8 +277,7 @@ Name of the player.
 
 \* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank"> MediaHeartbeatConfig </a>.  
 
-## Label 
-**Content Channel**
+## **Content Channel**
 
 ### Implementation 
 * **SDK Key:** `**channel\***`  
@@ -315,8 +307,7 @@ Any string value is accepted here.
 
 \* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank"> MediaHeartbeatConfig </a>.
 
-## Label 
-**Content Segment**
+## **Content Segment**
 
 ### Implementation 
 * **SDK Key:** Automatically set  
@@ -344,8 +335,7 @@ The interval that describes the part of the content that has
 been viewed (in minutes). The segment is computed as min and
 max of the playhead values during a playback session. 
 
-## Label 
-**Content Name (variable)**
+## **Content Name (variable)**
 
 ### Implementation 
 * **SDK Key:** `**name\***`  
@@ -380,8 +370,7 @@ equal to the last value of `s:asset:name`.
 
 \* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank"> createMediaObject </a> ( **<em> name </em>** , mediaId, length, streamType)
 
-## Label 
-**Video Name**
+## **Video Name**
 
 ### Implementation 
 * **SDK Key:** `**name\***`  
@@ -416,8 +405,7 @@ Name (variable) is the eVAR.
 
 \* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank"> createMediaObject </a> ( **<em> name </em>** , mediaId, length, streamType)
 
-## Label 
-**Video Path**
+## **Video Path**
 
 ### Implementation 
 * **SDK Key:** Automatically set  
@@ -445,8 +433,7 @@ Ability to track path of viewer across site and/or App to see
 path they took to view a particular video. Any integer
 and/or letter combination.
 
-## Label 
-**SDK Version**
+## **SDK Version**
 
 ### Implementation 
 * **SDK Key:** `**appVersion\***` 
@@ -477,8 +464,7 @@ value available for reporting.
 
 \* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank"> MediaHeartbeatConfig </a>.  
 
-## Label 
-**VHL Version**
+## **VHL Version**
 
 ### Implementation 
 * **SDK Key:** Automatically set\* 
