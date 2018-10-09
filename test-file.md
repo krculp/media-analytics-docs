@@ -1,5 +1,9 @@
 # Table Transforming: HTML to MD
 
+There are auto-magical converters online that do this conversion in a jiffy. 
+But if you're offline (is that even possible), or you don't like the jiffy 
+results, or you just like this sort of thing...
+
 ## Using `vi` to transform an HTML table to (mostly) Markdown
 
 1. Copy your HTML table into a MD text file.
@@ -52,7 +56,7 @@
     6. Turn  `</samp>` or `</code>` tags into '\`' chars.  
     7. Repeat with `<strong>`/`<bold>`, `<em>/<i>`, etc., using their respective MD chars.  
 12. **Lists:** I think your best bet is to stick with HTML list tags within table cells. 
-    (Depends upon the SSG being used. GB doesn't like this idea at all. GB barely handles straight MD tables.)
+    (Depends upon the SSG being used. GitBook doesn't like this idea at all. GitBook doesn't like you doing much at all in tables.)
 13. Put everything into MD table rows:
     1. Join all table lines into one long one
     1. If you have a uniform number of cells in your rows, start recording, find (`f`) the correct number of '|' symbols, and add a carriage return. Repeat for n rows.
@@ -66,9 +70,9 @@
     * Grab every second row (the col spanning row) and plant it under the row as a paragraph; 
     * Turn the "Label" into a ## Header above each row; 
     * Copy the table header rows to each individual table row. 
-18. In conclusion:
-    * You could do all of 1-16 above very quickly if the table is simple.
-    * GitBook does not support a LOT of what GitHub renders correctly.
+18. In conclusion: You could do all of 1-16 above very quickly if the table is simple. The above is in no way refined, just a slap-dashery of lower-intermediate vi messing-about.
+    
+    *Note:* This looks alright on GitHub. GitBook? Not so much. GB does not support a LOT of what GitHub renders correctly. If you have to use GitBook, you might just need to De-Table.
 
  
 ## Stream Type
