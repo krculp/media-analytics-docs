@@ -26,7 +26,7 @@
         4. Repeat with additional formatting tags.
     4. Clean up spacing around formatting tags and their enclosed content. (`Good: "Content <code>code text</code>"; Bad: "Content<code> code text</code>"`)
     5. Turn `<samp>` or `<code>`` tags into '\`' chars.  b. Turn  </samp>  or  </code>  tags into '\`' chars.  c. Repeat with `<strong>`/`<bold>`, `<em>/<i>`, etc., using their respective MD chars.  
-12.  **Lists:** I think your best bet is to stick with HTML list tags within table cells. 
+12.  **Lists:** I think your best bet is to stick with HTML list tags within table cells. (Depends upon the SSG being used.)
 13. Put everything into MD table rows:
     1. Join all table lines into one long one
     1. If you have a uniform number of cells in your rows, start recording, find (`f`) the correct number of '|' symbols, and add a carriage return. Repeat for n rows.
@@ -38,7 +38,9 @@
     column; adjust table header; grab every second row (the col spanning row) and 
     plant it under the row as a paragraph; turn the "Label" into a ## Header above 
     each row; copy the table header rows to each individual table row. Sheesh.
-
+18. In conclusion:
+    You could do all of the above very quickly if the table is simple.
+    GitBook does not support a LOT of what GitHub renders correctly.
 
  
 ## Stream Type
@@ -48,7 +50,10 @@
 
 **Release Date: 09/13/18** Note: Available only through the <a href="media-collection-api.html">Media Collection API (RESTful) </a>.  Identifies the stream type. Valid values are "audio", "video", and "".  
 
-<a href="segments.html"><br/>Segments </a>:  <ul> <li>StreamType "All" - Segment all media stream data.  **Rule:** Content (ID) exists </li> <li>StreamType "Audio" - Segment all audio stream data.  **Rule:** Content (ID) exists AND Stream Type = audio </li> <li>StreamType "Video" - Segment all video stream data.  **Rule:** Content (ID) exists AND Stream Type = video </li> </ul> 
+<a href="segments.html"><br/>Segments:</a> 
+* StreamType "All" - Segment all media stream data.  **Rule:** Content (ID) exists </li> 
+* StreamType "Audio" - Segment all audio stream data.  **Rule:** Content (ID) exists AND Stream Type = audio </li> 
+* StreamType "Video" - Segment all video stream data.  **Rule:** Content (ID) exists AND Stream Type = video </li>
 
 ## Content ID
 | Implementation | Network Parameters | Reporting |
