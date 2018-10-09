@@ -51,9 +51,9 @@
 **Release Date: 09/13/18** Note: Available only through the <a href="media-collection-api.html">Media Collection API (RESTful) </a>.  Identifies the stream type. Valid values are "audio", "video", and "".  
 
 <a href="segments.html"><br/>Segments:</a> 
-* StreamType "All" - Segment all media stream data.  **Rule:** Content (ID) exists </li> 
-* StreamType "Audio" - Segment all audio stream data.  **Rule:** Content (ID) exists AND Stream Type = audio </li> 
-* StreamType "Video" - Segment all video stream data.  **Rule:** Content (ID) exists AND Stream Type = video </li>
+* StreamType "All" - Segment all media stream data.  **Rule:** Content (ID) exists  
+* StreamType "Audio" - Segment all audio stream data.  **Rule:** Content (ID) exists AND Stream Type = audio  
+* StreamType "Video" - Segment all video stream data.  **Rule:** Content (ID) exists AND Stream Type = video 
 
 ## Content ID
 | Implementation | Network Parameters | Reporting |
