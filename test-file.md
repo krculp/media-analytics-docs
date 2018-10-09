@@ -130,7 +130,7 @@ Clip Length/Runtime - This is the maximum length (or duration) of the content be
 
 \* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, mediaId, **length**, streamType) 
 
-+** Pre Version 1.5.1, this was `l:asset:duration`; after 1.5.1, this is `l:asset:length`.  
++ Pre Version 1.5.1, this was `l:asset:duration`; after 1.5.1, this is `l:asset:length`.  
 
 ## Content Type
 | Implementation | Network Parameters | Reporting |
