@@ -28,7 +28,7 @@
 
 ### Implementation 
 * **SDK Key:**  
-* **API Key:** `**media.streamType**`  
+* **API Key:** `media.streamType`  
 * **Required:** Yes  
 * **Type:** string  
 * **Sent with:** Initiate, Close  
@@ -61,8 +61,8 @@ Identifies the stream type. Valid values are "audio", "video", and "".
 ## **Content ID**
 
 ### Implementation 
-* **SDK Key:** `**mediaId\***`  
-* **API Key:** `**media.id**`  
+* **SDK Key:** `mediaId\*`  
+* **API Key:** `media.id`  
 * **Required:** Yes  
 * **Type:** string  
 * **Sent with:** Initiate, Close  
@@ -93,8 +93,8 @@ Any integer and/or letter combination.
 ## **Content Length (variable)**
 
 ### Implementation 
-* **SDK Key:** `**length\***`  
-* **API Key:** `**media.length**`  
+* **SDK Key:** `length\*`  
+* **API Key:** `media.length`  
 * **Required:** Yes  
 * **Type:** number  
 * **Sent with:** Initiate, Close  
@@ -142,8 +142,8 @@ For Live media with an unknown duration, the value of 86400 is the default.
 ## **Video Length**
 
 ### Implementation 
-* **SDK Key:** `**length\***`  
-* **API Key:** `**media.length**`  
+* **SDK Key:** `length\*`  
+* **API Key:** `media.length`  
 * **Required:** Yes  
 * **Type:** number  
 * **Sent with:** Initiate, Close  
@@ -189,8 +189,8 @@ Pre Version 1.5.1, this was
 ## **Content Type**
 
 ### Implementation 
-* **SDK Key:** `**streamType\***`  
-* **API Key:** `**media.contentType**`  
+* **SDK Key:** `streamType\*`  
+* **API Key:** `media.contentType`  
 * **Required:** Yes  
 * **Type:** restricted string  
 * **Sent with:** Initiate, Close  
@@ -251,8 +251,8 @@ individual playback.
 ## **Content Player Name**
 
 ### Implementation 
-* **SDK Key:** `**playerName\***`  
-* **API Key:** `**media.playerName**`  
+* **SDK Key:** `playerName\*`  
+* **API Key:** `media.playerName`  
 * **Required:** Yes  
 * **Type:** string  
 * **Sent with:** Initiate, Close  
@@ -280,8 +280,8 @@ Name of the player.
 ## **Content Channel**
 
 ### Implementation 
-* **SDK Key:** `**channel\***`  
-* **API Key:** `**media.channel**`  
+* **SDK Key:** `channel\*`  
+* **API Key:** `media.channel`  
 * **Required:** Yes  
 * **Type:** string  
 * **Sent with:** Initiate, Close  
@@ -338,8 +338,8 @@ max of the playhead values during a playback session.
 ## **Content Name (variable)**
 
 ### Implementation 
-* **SDK Key:** `**name\***`  
-* **API Key:** `**media.name**`  
+* **SDK Key:** `name\*`  
+* **API Key:** `media.name`  
 * **Required:** No  
 * **Type:** string  
 * **Sent with:** Initiate, Close  
@@ -373,8 +373,8 @@ equal to the last value of `s:asset:name`.
 ## **Video Name**
 
 ### Implementation 
-* **SDK Key:** `**name\***`  
-* **API Key:** `**media.name**`  
+* **SDK Key:** `name\*`  
+* **API Key:** `media.name`  
 * **Required:** No  
 * **Type:** string  
 * **Sent with:** Initiate, Close  
@@ -436,8 +436,8 @@ and/or letter combination.
 ## **SDK Version**
 
 ### Implementation 
-* **SDK Key:** `**appVersion\***` 
-* **API Key:** `**media.sdkVersion**` 
+* **SDK Key:** `appVersion\*` 
+* **API Key:** `media.sdkVersion` 
 * **Required:** No 
 * **Type:** string 
 * **Sent with:** Close 
