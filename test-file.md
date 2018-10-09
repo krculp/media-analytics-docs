@@ -46,8 +46,8 @@
             you must manually.
         4. Repeat with additional formatting tags.
     4. Clean up spacing around formatting tags and their enclosed content. (`Good: "Content <code>code text</code>"; Bad: "Content<code> code text</code>"`)
-    5. Turn `<samp>` or `<code>`` tags into '\`' chars.  
-    6. Turn  </samp>  or  </code>  tags into '\`' chars.  
+    5. Turn `<samp>` or `<code>` tags into '\`' chars.  
+    6. Turn  `</samp>` or `</code>` tags into '\`' chars.  
     7. Repeat with `<strong>`/`<bold>`, `<em>/<i>`, etc., using their respective MD chars.  
 12. **Lists:** I think your best bet is to stick with HTML list tags within table cells. 
     (Depends upon the SSG being used. GB doesn't like this idea at all. GB barely handles straight MD tables.)
