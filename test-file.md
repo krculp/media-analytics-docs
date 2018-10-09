@@ -1,32 +1,56 @@
-# Table Exercising
+# Table Transforming: HTML to MD
 
-# Using `vi` to transform an HTML table to (mostly) Markdown
+## Using `vi` to transform an HTML table to (mostly) Markdown
 
-1. Copy HTML table into a `.md` text file.
-2. Combine all of the table lines into one line. - `[Number of table lines]J` (J is for Join)
-3. Put all tags on their own line. (Sub '<' char with '<[return]' - `:%s/</<ctrl-v[return]/g`
-4. Delete all `<table>`, `<thead>`, and `<tbody>` tags. (You are left with rows, cells, formatting tags and cell content.) - `:%s/<\*.table.\*>//`, etc.
-5. Substitute all `<th>` and `<td>` tags with the '|' char. - `:%s/<t[dh].\*>/|`
-6. Substitute all `</tr>` tags with the '|' char. (You now have your MD cell separators in the right places, albeit on their own lines.)
-    Note: If your table uses row spans and column spans, you'll have to improvise to get your MD table to behave. E.g., you have an info block spanning 3 columns, the second row of a 2 row span? I am pulling it out, and putting it below each row. Yes, a bunch of one-row tables with one cell turned into a header. It'll look great! ;-P
-7. Delete all `<tr>` tags. - :%s/<tr.\*>//
-8. Delete all `</th>` and `</td>` tags - `:%s/<\/t[dh]>//`
-9. Delete all "spanny" kinds of tags that you can't or don't want to turn into MD formatting, e.g. `<div>` tags, `<p>` tags, ...
-    You're now left with (mostly) font formatting tags and list tags.
-10. If you're using single asterisks for anything, say, footnotes, escape them. - `:%s\*/\\\\*/`
-11. Turn your "simple" font formatting tags into their MD counterparts.
-    1. First, get rid of any empty code font or bold font tag pairs, e.g. `<strong class="bleh"/>`. - `:%s/<strong.*\/>//`
-    2. Optionally, get rid of parameters in tags. It's easier to see what's going on, and they're extraneous to MD.
+1. Copy your HTML table into a MD text file.
+2. Combine all of the table lines into one line.
+    `[Number of table lines]J` 
+3. Put all tags on to their own lines. (Sub '<' char with '<[return]') 
+    `:%s/</<ctrl-v[return]/g`
+4. Delete all `<table>`, `<thead>`, and `<tbody>` tags. 
+    (You are left with rows tags, cell tags, formatting tags, and cell content.) 
+    `:%s/<\*.table.\*>//`, etc.
+5. Substitute all `<th>` and `<td>` tags with the '|' char. 
+    `:%s/<t[dh].\*>/|`
+6. Substitute all `</tr>` tags with the '|' char. 
+    (You now have your MD cell separators in the right places, albeit still on 
+    their own lines.)
+
+    **Note:** If your table uses row spans and column spans, you'll have to improvise 
+    to get your MD table to behave. E.g., say you have an info block row spanning 3 
+    columns, the second row of a 2 row span? I am pulling it out, and putting it below 
+    each row.  Yes, a bunch of one-row tables with one cell turned into a header. 
+    No really, it'll look great! ;-P
+7. Delete all `<tr>` tags. 
+    :%s/<tr.\*>//
+8. Delete all `</th>` and `</td>` tags 
+    `:%s/<\/t[dh]>//`
+9. Delete all "spanny" kinds of tags that you can't or don't want to turn into MD 
+    formatting, e.g. `<div>` tags, `<p>` tags, ...  You're now left with (mostly) 
+    font formatting tags and list tags.
+10. If you're using single asterisks for anything, say, footnotes, escape them. 
+    `:%s\*/\\\\*/`
+11. Turn your "simple" font formatting HTML tags into their MD counterparts.
+    1. Get rid of any empty code font or bold font tag pairs, e.g. `<strong class="bleh"/>`. 
+        `:%s/<strong.*\/>//`
+    2. Optionally, get rid of parameters in tags. It's easier to see what's going on, 
+        and they're extraneous to MD.
     3. Move your formatting tag pairs onto the same line, around the content.
         1. Determine how many of a tag there are ( grep "`<tag>`" | wc -l )
-        2. Record to buffer 'q': Find opening tag; join the next line with current one; stop recording; repeat x times.
-           E.g. `qq; /<strong>;J;J;x;q` (the first 'q' starts recording, the second 'q' is a convenient name for a buffer, 
-           the 'x' after the 2 joins is to get rid of a space, the last 'q' quits recording.
-        3. This will get you close, then you can find examples where you join twice, etc., then you clean up what you must manually.
+        2. Record to buffer 'q': Find opening tag; join the next line(s) with current one; 
+            stop recording; repeat x times using your buffer: E.g., `15@q`
+            E.g., `qq; /<strong>;J;J;x;q` (the first 'q' starts recording, the second 'q' 
+            is just a convenient name for a buffer to record into, the 'x' after the 
+            2 joins is to get rid of a space, the last 'q' quits recording.
+        3. Find examples where you join more or fewer lines, etc., then you clean up what 
+            you must manually.
         4. Repeat with additional formatting tags.
     4. Clean up spacing around formatting tags and their enclosed content. (`Good: "Content <code>code text</code>"; Bad: "Content<code> code text</code>"`)
-    5. Turn `<samp>` or `<code>`` tags into '\`' chars.  b. Turn  </samp>  or  </code>  tags into '\`' chars.  c. Repeat with `<strong>`/`<bold>`, `<em>/<i>`, etc., using their respective MD chars.  
-12.  **Lists:** I think your best bet is to stick with HTML list tags within table cells. (Depends upon the SSG being used.)
+    5. Turn `<samp>` or `<code>`` tags into '\`' chars.  
+    6. Turn  </samp>  or  </code>  tags into '\`' chars.  
+    7. Repeat with `<strong>`/`<bold>`, `<em>/<i>`, etc., using their respective MD chars.  
+12. **Lists:** I think your best bet is to stick with HTML list tags within table cells. 
+    (Depends upon the SSG being used. GB doesn't like this idea at all. GB barely handles straight MD tables.)
 13. Put everything into MD table rows:
     1. Join all table lines into one long one
     1. If you have a uniform number of cells in your rows, start recording, find (`f`) the correct number of '|' symbols, and add a carriage return. Repeat for n rows.
@@ -34,13 +58,15 @@
 14. Create your MD table header ( `| --- | --- |` ) etc.
 15. Done.
 16. Hah hah hah hah!  Not likely. Render it and take a look.
-17. Do some semi-Manual, custom cleanup. ( See Step 6 above ) - Get rid of "Label" 
-    column; adjust table header; grab every second row (the col spanning row) and 
-    plant it under the row as a paragraph; turn the "Label" into a ## Header above 
-    each row; copy the table header rows to each individual table row. Sheesh.
+17. Do some semi-manual, custom cleanup. ( See Step 6 above ) - 
+    * Get rid of "Label" column; 
+    * Adjust table header; 
+    * Grab every second row (the col spanning row) and plant it under the row as a paragraph; 
+    * Turn the "Label" into a ## Header above each row; 
+    * Copy the table header rows to each individual table row. 
 18. In conclusion:
-    You could do all of the above very quickly if the table is simple.
-    GitBook does not support a LOT of what GitHub renders correctly.
+    * You could do all of 1-16 above very quickly if the table is simple.
+    * GitBook does not support a LOT of what GitHub renders correctly.
 
  
 ## Stream Type
