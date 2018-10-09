@@ -74,7 +74,11 @@
 | --- | --- | --- |
 | <ul> <li> **SDK Key:** </li> <li> **API Key:** `media.streamType` </li> <li> **Required:** Yes </li> <li> **Type:** string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** 1.5 </li> <li> **Sample value:** `"video"` </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.streamType` </li> <li> **Heartbeats:** `s:meta:a.media.streamType` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On VISIT </li> <li> **Report Name:** Content </li> <li> **Context Data:** `a.media.streamType` </li> <li> **Data Feed:** `videostreamtype` </li> <li> **Audience Manager:** `c_contextdata.a.media.streamType` </li> </ul> |
 
-**Release Date: 09/13/18** Note: Available only through the <a href="media-collection-api.html">Media Collection API (RESTful) </a>.  Identifies the stream type. Valid values are "audio", "video", and "".  
+**Release Date: 09/13/18** 
+
+Note: Available only through the <a href="media-collection-api.html">Media Collection API (RESTful) </a>.  
+
+Identifies the stream type. Valid values are "audio", "video", and "".  
 
 <a href="segments.html"><br/>Segments:</a> 
 * StreamType "All" - Segment all media stream data.  **Rule:** Content (ID) exists  
@@ -96,9 +100,20 @@ Content ID of the content, which can be used to tie back to other industry / CMS
 | --- | --- | --- |
 | <ul> <li> **SDK Key:** `length*` </li> <li> **API Key:** `media.length` </li> <li> **Required:** Yes </li> <li> **Type:** number </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any+ </li> <li> **Sample value:** <ul> <li>VOD: 128 </li> <li>Live: 86400 </li> <li>Linear: 1800 </li> </ul> </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.length` </li> <li> **Heartbeats:** `l:asset:length` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Content Length (variable) </li> <li> **Context Data:** `a.media.length` </li> <li> **Data Feed:** `videolength` </li> <li> **Audience Manager:** `c_contextdata.a.media.length` </li> </ul> |
 
-**Release Date: 09/13/18** Clip Length/Runtime - This is the maximum length (or duration) of the content being consumed (in seconds). It equals the last value of `l:asset:length` from events of type Main. If `l:asset:length` is not set, then the last value of `l:asset:duration` is used.  In reporting, Video Length is the classification, and Content Length (variable) is the eVAR.  Important: This property is used to compute several metrics, such as progress tracking metrics and Average Minute Audience. If this is not set, or not greater than zero, then these metrics are not available.  For Live media with an unknown duration, the value of 86400 is the default.  
+**Release Date: 09/13/18** 
 
-\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, mediaId, **length**, streamType) `+** Pre Version 1.5.1, this was `l:asset:duration`; after 1.5.1, this is `l:asset:length`.  
+Clip Length/Runtime - This is the maximum length (or duration) of the content being consumed (in seconds). 
+It equals the last value of `l:asset:length` from events of type Main. 
+If `l:asset:length` is not set, then the last value of `l:asset:duration` is used.  
+In reporting, Video Length is the classification, and Content Length (variable) is the eVAR.  
+
+**Important:** This property is used to compute several metrics, such as progress tracking 
+metrics and Average Minute Audience. If this is not set, or not greater than zero, then 
+these metrics are not available. For Live media with an unknown duration, the value of 86400 is the default.  
+
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, mediaId, **length**, streamType) `
+
++ Pre Version 1.5.1, this was `l:asset:duration`; after 1.5.1, this is `l:asset:length`.  
 
 ## Video Length
 | Implementation | Network Parameters | Reporting |
