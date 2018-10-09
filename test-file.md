@@ -2,12 +2,12 @@
 
 # Using `vi` to transform an HTML table to (mostly) Markdown
 
-1. Copy HTML table into .md text file.
-1. Combine all of the table lines into one line. - [Number of lines] J (J is for Join)
+1. Copy HTML table into a `.md` text file.
+1. Combine all of the table lines into one line. - `[Number of table lines]J` (J is for Join)
 1. Put all tags on their own line. (Sub '<' char with '<[return]' - `:%s/</<ctrl-v[return]/g`
-1. Delete all <table> tags, <thead> tags, <tbody> tags. (You now have only rows, cells, formatting tags and cell content.) - `:%s/<\*.table.\*>//`
+1. Delete all <table>, <thead>, and <tbody> tags. (You are left with rows, cells, formatting tags and cell content.) - `:%s/<\*.table.\*>//`, etc.
 1. Substitute all <th> and <td> tags with the '|' char. - `:%s/<t[dh].\*>/|`
-1. Substitute all </tr> tags with the '|' char. (You now have your MD cell separators in place.)
+1. Substitute all </tr> tags with the '|' char. (You now have your MD cell separators in the right places, albeit on their own lines.)
     Note: If your table uses row spans and column spans, you'll have to improvise to get your MD table to behave. E.g., you have an info block spanning 3 columns, the second row of a 2 row span? I am pulling it out, and putting it below each row. Yes, a bunch of one-row tables with one cell turned into a header. It'll look great! ;-P
 1. Delete all <tr> tags. - :%s/<tr.\*>//
 1. Delete all </th> and </td> tags - `:%s/<\/t[dh]>//`
