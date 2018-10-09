@@ -23,16 +23,18 @@
         1. This will get you close, then you can find examples where you join twice, etc., then you clean up what you must manually.
         1. Repeat with additional formatting tags.
     1. Clean up spacing around formatting tags and their enclosed content. (`Good: "Content <code>code text</code>"; Bad: "Content<code> code text</code>"`)
-    1. Turn `<samp>` or `<code>` tags into '`' chars.  b. Turn  </samp>  or  </code>  tags into '`' chars.  c. Repeat with `<strong>`/`<bold>`, `<em>/<i>`, etc., using their respective MD chars.  
-1.  \*\*Lists:\*\* I think your best bet is to stick with HTML list tags within table cells. 
+    1. Turn `<samp>` or `<code>`` tags into '\`' chars.  b. Turn  </samp>  or  </code>  tags into '\`' chars.  c. Repeat with `<strong>`/`<bold>`, `<em>/<i>`, etc., using their respective MD chars.  
+1.  **Lists:** I think your best bet is to stick with HTML list tags within table cells. 
 1. Put everything into MD table rows:
     1. Join all table lines into one long one
     1. If you have a uniform number of cells in your rows, start recording, after hitting the correct number of '|' symbols, add a carriage return. Repeat for n rows.
     1. If you don't have a uniform number of cells (e.g., column spans), your recording is slightly more complicated. (Find n '|' chars, add a return, find x, add a return...)
-1. Create your MD table header ( | --- | --- | ) etc.
+       E.g. `qq; /<strong>;J;J;x;q` (the first 'q' starts recording, the second 'q' is a convenient name for a buffer, 
+       the 'x' after the 2 joins is to get rid of a space, the last 'q' quits recording.
+1. Create your MD table header ( `| --- | --- |` ) etc.
 1. Done.
 1. Hah hah hah hah!  Not likely. Render it and take a look.
-1. Semi-Manual, custom cleanup.
+1. Do some semi-Manual, custom cleanup.
 
 
  
