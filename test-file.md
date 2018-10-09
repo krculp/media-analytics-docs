@@ -13,7 +13,7 @@
 8. Delete all `</th>` and `</td>` tags - `:%s/<\/t[dh]>//`
 9. Delete all "spanny" kinds of tags that you can't or don't want to turn into MD formatting, e.g. `<div>` tags, `<p>` tags, ...
     You're now left with (mostly) font formatting tags and list tags.
-10. If you're using single asterisks for anything, say, footnotes, escape them. - `:%s/\\*/\\\\*/`
+10. If you're using single asterisks for anything, say, footnotes, escape them. - `:%s\*/\\\\*/`
 11. Turn your "simple" font formatting tags into their MD counterparts.
     1. First, get rid of any empty code font or bold font tag pairs, e.g. `<strong class="bleh"/>`. - `:%s/<strong.*\/>//`
     2. Optionally, get rid of parameters in tags. It's easier to see what's going on, and they're extraneous to MD.
@@ -46,46 +46,48 @@
 | --- | --- | --- |
 | <ul> <li> **SDK Key:** </li> <li> **API Key:** `media.streamType` </li> <li> **Required:** Yes </li> <li> **Type:** string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** 1.5 </li> <li> **Sample value:** `"video"` </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.streamType` </li> <li> **Heartbeats:** `s:meta:a.media.streamType` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On VISIT </li> <li> **Report Name:** Content </li> <li> **Context Data:** `a.media.streamType` </li> <li> **Data Feed:** `videostreamtype` </li> <li> **Audience Manager:** `c_contextdata.a.media.streamType` </li> </ul> |
 
-**Release Date: 09/13/18** Note: Available only through the <a class="xref" href="media-collection-api.html">Media Collection API (RESTful) </a>.  Identifies the stream type. Valid values are "audio", "video", and "".  
+**Release Date: 09/13/18** Note: Available only through the <a href="media-collection-api.html">Media Collection API (RESTful) </a>.  Identifies the stream type. Valid values are "audio", "video", and "".  
 
-<a class="xref" href="segments.html"><br/>Segments </a>:  <ul> <li>StreamType "All" - Segment all media stream data.  **Rule:** Content (ID) exists </li> <li>StreamType "Audio" - Segment all audio stream data.  **Rule:** Content (ID) exists AND Stream Type = audio </li> <li>StreamType "Video" - Segment all video stream data.  **Rule:** Content (ID) exists AND Stream Type = video </li> </ul> 
+<a href="segments.html"><br/>Segments </a>:  <ul> <li>StreamType "All" - Segment all media stream data.  **Rule:** Content (ID) exists </li> <li>StreamType "Audio" - Segment all audio stream data.  **Rule:** Content (ID) exists AND Stream Type = audio </li> <li>StreamType "Video" - Segment all video stream data.  **Rule:** Content (ID) exists AND Stream Type = video </li> </ul> 
 
 ## Content ID
 | Implementation | Network Parameters | Reporting |
 | --- | --- | --- |
-| <ul> <li> **SDK Key:** `mediaId\\*` </li> <li> **API Key:** `media.id` </li> <li> **Required:** Yes </li> <li> **Type:** string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any </li> <li> **Sample value:** `"4586695ABC"` </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.name` </li> <li> **Heartbeats:** `s:asset:video_id` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On VISIT </li> <li> **Report Name:** Content </li> <li> **Context Data:** `a.media.name` </li> <li> **Data Feed:** `video` </li> <li> **Audience Manager:** `c_contextdata.a.media.name` </li> </ul> |
+| <ul> <li> **SDK Key:** `mediaI\*` </li> <li> **API Key:** `media.id` </li> <li> **Required:** Yes </li> <li> **Type:** string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any </li> <li> **Sample value:** `"4586695ABC"` </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.name` </li> <li> **Heartbeats:** `s:asset:video_id` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On VISIT </li> <li> **Report Name:** Content </li> <li> **Context Data:** `a.media.name` </li> <li> **Data Feed:** `video` </li> <li> **Audience Manager:** `c_contextdata.a.media.name` </li> </ul> |
 
 
 Content ID of the content, which can be used to tie back to other industry / CMS IDs, equal to the last value of `s:asset:video_id`. Any integer and/or letter combination.  
 
-\* `<a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, **<em>mediaId</em>**, length, streamType) ` 
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, **mediaId**, length, streamType) 
 
 ## Content Length (variable)
 | Implementation | Network Parameters | Reporting |
 | --- | --- | --- |
-| <ul> <li> **SDK Key:** `length\\*` </li> <li> **API Key:** `media.length` </li> <li> **Required:** Yes </li> <li> **Type:** number </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any+ </li> <li> **Sample value:** <ul> <li>VOD: 128 </li> <li>Live: 86400 </li> <li>Linear: 1800 </li> </ul> </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.length` </li> <li> **Heartbeats:** `l:asset:length` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Content Length (variable) </li> <li> **Context Data:** `a.media.length` </li> <li> **Data Feed:** `videolength` </li> <li> **Audience Manager:** `c_contextdata.a.media.length` </li> </ul> |
+| <ul> <li> **SDK Key:** `lengt\*` </li> <li> **API Key:** `media.length` </li> <li> **Required:** Yes </li> <li> **Type:** number </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any+ </li> <li> **Sample value:** <ul> <li>VOD: 128 </li> <li>Live: 86400 </li> <li>Linear: 1800 </li> </ul> </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.length` </li> <li> **Heartbeats:** `l:asset:length` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Content Length (variable) </li> <li> **Context Data:** `a.media.length` </li> <li> **Data Feed:** `videolength` </li> <li> **Audience Manager:** `c_contextdata.a.media.length` </li> </ul> |
 
-**Release Date: 09/13/18** Clip Length/Runtime - This is the maximum length (or duration) of the content being consumed (in seconds). It equals the last value of `l:asset:length` from events of type Main. If <samp>l:asset:length ` is not set, then the last value of `l:asset:duration` is used.  In reporting, Video Length is the classification, and Content Length (variable) is the eVAR.  Important: This property is used to compute several metrics, such as progress tracking metrics and Average Minute Audience. If this is not set, or not greater than zero, then these metrics are not available.  For Live media with an unknown duration, the value of 86400 is the default.  
+**Release Date: 09/13/18** Clip Length/Runtime - This is the maximum length (or duration) of the content being consumed (in seconds). It equals the last value of `l:asset:length` from events of type Main. If `l:asset:length` is not set, then the last value of `l:asset:duration` is used.  In reporting, Video Length is the classification, and Content Length (variable) is the eVAR.  Important: This property is used to compute several metrics, such as progress tracking metrics and Average Minute Audience. If this is not set, or not greater than zero, then these metrics are not available.  For Live media with an unknown duration, the value of 86400 is the default.  
 
-\* `<a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, mediaId, **<em>length</em>**, streamType) `+** Pre Version 1.5.1, this was `l:asset:duration`; after 1.5.1, this is <samp>l:asset:length `.  
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, mediaId, **length**, streamType) `+** Pre Version 1.5.1, this was `l:asset:duration`; after 1.5.1, this is `l:asset:length`.  
 
 ## Video Length
 | Implementation | Network Parameters | Reporting |
 | --- | --- | --- |
-| <ul> <li> **SDK Key:** `length\\*` </li> <li> **API Key:** `media.length` </li> <li> **Required:** Yes </li> <li> **Type:** number </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any+ </li> <li> **Sample value:** <ul> <li>VOD: 128 </li> <li>Live: 86400 </li> <li>Linear: 1800 </li> </ul> </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.length` </li> <li> **Heartbeats:** `l:asset:length` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** classification </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Video Length </li> <li> **Context Data:** `a.media.length` </li> <li> **Data Feed:** `videoclassificationlength` </li> <li> **Audience Manager:** `c_contextdata.a.media.length` </li> </ul> |
+| <ul> <li> **SDK Key:** `lengt\*` </li> <li> **API Key:** `media.length` </li> <li> **Required:** Yes </li> <li> **Type:** number </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any+ </li> <li> **Sample value:** <ul> <li>VOD: 128 </li> <li>Live: 86400 </li> <li>Linear: 1800 </li> </ul> </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.length` </li> <li> **Heartbeats:** `l:asset:length` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** classification </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Video Length </li> <li> **Context Data:** `a.media.length` </li> <li> **Data Feed:** `videoclassificationlength` </li> <li> **Audience Manager:** `c_contextdata.a.media.length` </li> </ul> |
 
-**Release Date: 09/27/18** Clip Length/Runtime - This is the maximum length (or duration) of the content being consumed (in seconds). It equals the last value of `l:asset:length` from events of type Main. If <samp>l:asset:length ` is not set, then the last value of `l:asset:duration` is used.  In reporting, Video Length is the classification, and Content Length (variable) is the eVAR.  Important: This property is used to compute several metrics, such as progress tracking metrics and Average Minute Audience. If this is not set, or not greater than zero, then these metrics are not available.  For Live media with an unknown duration, the value of 86400 is the default.  
+**Release Date: 09/27/18** Clip Length/Runtime - This is the maximum length (or duration) of the content being consumed (in seconds). It equals the last value of `l:asset:length` from events of type Main. If `l:asset:length` is not set, then the last value of `l:asset:duration` is used.  In reporting, Video Length is the classification, and Content Length (variable) is the eVAR.  Important: This property is used to compute several metrics, such as progress tracking metrics and Average Minute Audience. If this is not set, or not greater than zero, then these metrics are not available.  For Live media with an unknown duration, the value of 86400 is the default.  
 
-\* `<a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, mediaId, **<em>length</em>**, streamType) `+** Pre Version 1.5.1, this was `l:asset:duration`; after 1.5.1, this is <samp>l:asset:length `.  
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, mediaId, **length**, streamType) 
+
++** Pre Version 1.5.1, this was `l:asset:duration`; after 1.5.1, this is `l:asset:length`.  
 
 ## Content Type
 | Implementation | Network Parameters | Reporting |
 | --- | --- | --- |
-| <ul> <li> **SDK Key:** `streamType\\*` </li> <li> **API Key:** `media.contentType` </li> <li> **Required:** Yes </li> <li> **Type:** restricted string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any </li> <li> **Sample value:** `"vod"` </li> </ul> | <ul> <li> **Adobe Analytics:** `a.contentType` </li> <li> **Heartbeats:** `s:stream:type` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Content Type </li> <li> **Context Data:** `a.contentType` </li> <li> **Data Feed:** `videocontenttype` </li> <li> **Audience Manager:** `c_contextdata.a.contentType` </li> </ul> |
+| <ul> <li> **SDK Key:** `streamTyp\*` </li> <li> **API Key:** `media.contentType` </li> <li> **Required:** Yes </li> <li> **Type:** restricted string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any </li> <li> **Sample value:** `"vod"` </li> </ul> | <ul> <li> **Adobe Analytics:** `a.contentType` </li> <li> **Heartbeats:** `s:stream:type` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Content Type </li> <li> **Context Data:** `a.contentType` </li> <li> **Data Feed:** `videocontenttype` </li> <li> **Audience Manager:** `c_contextdata.a.contentType` </li> </ul> |
 
-Available values per **Stream Type**: <ul> <li> **Audio:** "song", "podcast", "audiobook", "radio" </li> <li> **Video:** "VoD", "Live", "Linear", "UGC", "DVoD" </li> </ul> Customers can provide custom values for this parameter.  This equals `s:stream:type`. If that is unset, this equals <samp>missing_content_type `.  
+Available values per **Stream Type**: <ul> <li> **Audio:** "song", "podcast", "audiobook", "radio" </li> <li> **Video:** "VoD", "Live", "Linear", "UGC", "DVoD" </li> </ul> Customers can provide custom values for this parameter.  This equals `s:stream:type`. If that is unset, this equals `missing_content_type`.  
 
-\* `<a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, mediaId, length, **<em>streamType</em>**) ` 
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>(name, mediaId, length, **streamType**) 
 
 ## Video Session ID
 | Implementation | Network Parameters | Reporting |
@@ -97,20 +99,20 @@ This identifies an instance of a content stream unique to an individual playback
 ## Content Player Name
 | Implementation | Network Parameters | Reporting |
 | --- | --- | --- |
-| <ul> <li> **SDK Key:** `playerName\\*` </li> <li> **API Key:** `media.playerName` </li> <li> **Required:** Yes </li> <li> **Type:** string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any </li> <li> **Sample value:** `"Brightcove"`, <samp>"Primetime" `, etc.  </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.playerName` </li> <li> **Heartbeats:** `s:sp:player_name` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Content Player Name </li> <li> **Context Data:** `a.media.playerName` </li> <li> **Data Feed:** `videoplayername` </li> <li> **Audience Manager:** `c_contextdata.a.media.playerName` </li> </ul> |
+| <ul> <li> **SDK Key:** `playerNam\*` </li> <li> **API Key:** `media.playerName` </li> <li> **Required:** Yes </li> <li> **Type:** string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any </li> <li> **Sample value:** `"Brightcove"`, `"Primetime"`, etc.  </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.playerName` </li> <li> **Heartbeats:** `s:sp:player_name` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Content Player Name </li> <li> **Context Data:** `a.media.playerName` </li> <li> **Data Feed:** `videoplayername` </li> <li> **Audience Manager:** `c_contextdata.a.media.playerName` </li> </ul> |
 
 Name of the player.  
 
-\* `<a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank">MediaHeartbeatConfig </a>.  **<em>playerName</em>** ` 
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank">MediaHeartbeatConfig </a>.  
 
 ## Content Channel
 | Implementation | Network Parameters | Reporting |
 | --- | --- | --- |
-| <ul> <li> **SDK Key:** `channel\\*` </li> <li> **API Key:** `media.channel` </li> <li> **Required:** Yes </li> <li> **Type:** string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any </li> <li> **Sample value:** `"Sports"` </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.channel` </li> <li> **Heartbeats:** `s:sp:channel` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Content Channel </li> <li> **Context Data:** `a.media.channel` </li> <li> **Data Feed:** `videochannel` </li> <li> **Audience Manager:** `c_contextdata.a.media.channel` </li> </ul> |
+| <ul> <li> **SDK Key:** `channe\*` </li> <li> **API Key:** `media.channel` </li> <li> **Required:** Yes </li> <li> **Type:** string </li> <li> **Sent with:** Initiate, Close </li> <li> **Min. SDK Version:** Any </li> <li> **Sample value:** `"Sports"` </li> </ul> | <ul> <li> **Adobe Analytics:** `a.media.channel` </li> <li> **Heartbeats:** `s:sp:channel` </li> </ul> | <ul> <li> **Available:** Yes </li> <li> **Reserved Variable:** eVar </li> <li> **Expiration:** On HIT </li> <li> **Report Name:** Content Channel </li> <li> **Context Data:** `a.media.channel` </li> <li> **Data Feed:** `videochannel` </li> <li> **Audience Manager:** `c_contextdata.a.media.channel` </li> </ul> |
 
 Distribution Station/Channels or where the content is played.  Any string value is accepted here.  
 
-\* `<a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank">MediaHeartbeatConfig </a>.  **<em>channel</em>** ` 
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank">MediaHeartbeatConfig </a>.
 
 ## Content Segment
 | Implementation | Network Parameters | Reporting |
@@ -126,7 +128,7 @@ The interval that describes the part of the content that has been viewed (in min
 
 **Release Date: 09/13/18** In reporting, Video Name is the classification, and Content Name (variable) is the eVAR.  This is the "friendly" (human-readable) name of the content, equal to the last value of `s:asset:name`.  
 
-* `<a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>( **<em>name</em>**, mediaId, length, streamType) ` 
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>( **name**, mediaId, length, streamType) 
 
 ## Video Name
 | Implementation | Network Parameters | Reporting |
@@ -135,7 +137,7 @@ The interval that describes the part of the content that has been viewed (in min
 
 **Release Date: 09/27/18** This is the "friendly" (human-readable) name of the content, equal to the last value of `s:asset:name`.  In reporting, Video Name is the classification, and Content Name (variable) is the eVAR.  
 
-* `<a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>( **<em>name</em>**, mediaId, length, streamType) ` 
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html#-static-createMediaObject" target="_blank">createMediaObject </a>( **name**, mediaId, length, streamType) 
 
 ## Video Path
 | Implementation | Network Parameters | Reporting |
@@ -151,7 +153,7 @@ Ability to track path of viewer across site and/or App to see path they took to 
 
 The SDK version used by the player. This could have any custom value that makes sense for your player. Customers will have to create their own processing rules to have the value available for reporting.  
 
-* `<a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank">MediaHeartbeatConfig </a>.  **<em>appVersion</em>** ` 
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeatConfig.html#toc0" target="_blank">MediaHeartbeatConfig </a>
 
 ## VHL Version
 | Implementation | Network Parameters | Reporting |
@@ -160,4 +162,4 @@ The SDK version used by the player. This could have any custom value that makes 
 
 The heartbeat SDK version used for the tracking session.  Customers will have to create their own processing rules to have the value available for reporting.  
 
-\* `<a class="xref" href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html" target="_blank">MediaHeartbeat </a>.version();`  
+\* <a href="https://adobe-marketing-cloud.github.io/video-heartbeat-v2/reference/javascript/MediaHeartbeat.html" target="_blank">MediaHeartbeat </a>.version();
