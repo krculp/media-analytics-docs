@@ -11,14 +11,14 @@
     Note: If your table uses row spans and column spans, you'll have to improvise to get your MD table to behave. E.g., you have an info block spanning 3 columns, the second row of a 2 row span? I am pulling it out, and putting it below each row. Yes, a bunch of one-row tables with one cell turned into a header. It'll look great! ;-P
 1. Delete all `<tr>` tags. - :%s/<tr.\*>//
 1. Delete all `</th>` and `</td>` tags - `:%s/<\/t[dh]>//`
-1. Delete all "spanny" kinds of tags that you can't or don't want to turn into MD formatting, e.g. `<div>` tags, <p>` tags, ...
+1. Delete all "spanny" kinds of tags that you can't or don't want to turn into MD formatting, e.g. `<div>` tags, `<p>` tags, ...
     You're now left with (mostly) font formatting tags and list tags.
 1. If you're using single asterisks for anything, say, footnotes, escape them. - `:%s/\\*/\\\\*/`
 1. Turn your "simple" font formatting tags into their MD counterparts.
     a. First, get rid of any empty code font or bold font tag pairs, e.g. `<strong class="bleh"/>`. - `:%s/<strong.*\/>//`
     a. Optionally, get rid of parameters in tags. It's easier to see what's going on, and they're extraneous to MD.
     a. Move your formatting pairs onto the same line, around the content.
-        I. Determine how many of a tag there are ( grep "<tag>" | wc -l )
+        I. Determine how many of a tag there are ( grep "`<tag>`" | wc -l )
         II. Record to buffer 'q': Find opening tag; join the next line with current one; stop recording; repeat x times ( `qq; /<strong>; J; q; x@q` ) 
         III. This will get you close, then you can find examples where you join twice, etc., then you clean up what you must manually.
         IV. Repeat with additional formatting tags.
